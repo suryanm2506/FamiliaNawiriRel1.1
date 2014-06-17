@@ -1,0 +1,753 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="report18" pageWidth="8000" pageHeight="595" orientation="Landscape" columnWidth="802" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="bfbae31e-6d36-4045-a7fa-0edc71f9be60">
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="Helium"/>	
+	<style name="Row" mode="Transparent">
+		<conditionalStyle>
+			<conditionExpression><![CDATA[$V{REPORT_COUNT}%2 == 0]]></conditionExpression>
+			<style backcolor="#E6DAC3"/>
+		</conditionalStyle>
+	</style>
+	<parameter name="SCHEMA_NAME" class="java.lang.String">
+		<defaultValueExpression><![CDATA["sandboxed_novpilotstudy_001"]]></defaultValueExpression>
+	</parameter>		
+	<queryString language="SQL">
+		<![CDATA[SELECT INTERVIEWDATE,
+  IC1,
+  IC2,
+  IC3,
+  IC4,
+  IC5,
+  IC6,
+  IC7,
+  INFORMEDCONSENT,
+  DATACAPTUREMODE,
+  SIGNEDBYPARTICIPANT,
+  WITNESSNAME,
+  PARTICIPANTID,
+  PARTICIPANTNAME,
+  COUNTYNAME,
+  WARDNAME,
+  HEALTHFACILITY,
+  FACILITYLEVEL,
+  FACILITYOWNERSHIP,
+  QUESTION1,
+  QUESTION2,
+  QUESTION3,
+  QUESTION4,
+  QUESTION5,
+  QUESTION6,
+  QUESTION7,
+  QUESTION8,
+  QUESTION9,
+  QUESTION10,
+  QUESTION11,
+  QUESTION12,
+  QUESTION13A,
+  QUESTION13B,
+  QUESTION13C,
+  QUESTION13D,
+  QUESTION14,
+  QUESTION15,
+  QUESTION16,
+  QUESTION17,
+  QUESTION18A,
+  QUESTION18B,
+  QUESTION18C,
+  QUESTION19,
+  QUESTION20,
+  QUESTION21,
+  QUESTION22,
+  QUESTION23,
+  QUESTION24,
+  QUESTION25,
+  QUESTION26,
+  QUESTION27,
+  QUESTION28,
+  QUESTION29,
+  QUESTION30,
+  QUESTION31,
+  QUESTION32,
+  QUESTION33,
+  QUESTION34,
+  QUESTION35,
+  QUESTION36,
+  QUESTION37,
+  QUESTION38,
+  QUESTION39,
+  QUESTION40,
+  QUESTION41,
+  QUESTION42,
+  QUESTION43,
+  FIRSTNAME,
+  LASTNAME,
+  PHONENUMBER
+FROM $P!{SCHEMA_NAME} .PILOTSTUDY p INNER JOIN $P!{SCHEMA_NAME} .HEALTHWORKER h
+ON p.HEALTHWORKER_FK = h._ID_
+ORDER BY INTERVIEWDATE DESC]]>
+	</queryString>
+	<field name="INTERVIEWDATE" class="java.sql.Timestamp"/>
+	<field name="FIRSTNAME" class="java.lang.String"/>
+	<field name="LASTNAME" class="java.lang.String"/>
+	<field name="PHONENUMBER" class="java.lang.String"/>
+	<field name="IC1" class="java.lang.String"/>
+	<field name="IC2" class="java.lang.String"/>
+	<field name="IC3" class="java.lang.String"/>
+	<field name="IC4" class="java.lang.String"/>
+	<field name="IC5" class="java.lang.String"/>
+	<field name="IC6" class="java.lang.String"/>
+	<field name="IC7" class="java.lang.String"/>
+	<field name="INFORMEDCONSENT" class="java.lang.String"/>
+	<field name="DATACAPTUREMODE" class="java.lang.String"/>
+	<field name="SIGNEDBYPARTICIPANT" class="java.lang.String"/>
+	<field name="WITNESSNAME" class="java.lang.String"/>
+	<field name="PARTICIPANTID" class="java.lang.String"/>
+	<field name="PARTICIPANTNAME" class="java.lang.String"/>
+	<field name="COUNTYNAME" class="java.lang.String"/>
+	<field name="WARDNAME" class="java.lang.String"/>
+	<field name="HEALTHFACILITY" class="java.lang.String"/>
+	<field name="FACILITYLEVEL" class="java.lang.String"/>
+	<field name="FACILITYOWNERSHIP" class="java.lang.String"/>
+	<field name="QUESTION1" class="java.lang.String"/>
+	<field name="QUESTION2" class="java.lang.String"/>
+	<field name="QUESTION3" class="java.lang.String"/>
+	<field name="QUESTION4" class="java.lang.String"/>
+	<field name="QUESTION5" class="java.lang.String"/>
+	<field name="QUESTION6" class="java.lang.String"/>
+	<field name="QUESTION7" class="java.lang.String"/>
+	<field name="QUESTION8" class="java.lang.String"/>
+	<field name="QUESTION9" class="java.lang.String"/>
+	<field name="QUESTION10" class="java.lang.String"/>
+	<field name="QUESTION11" class="java.lang.String"/>
+	<field name="QUESTION12" class="java.lang.String"/>
+	<field name="QUESTION13A" class="java.lang.String"/>
+	<field name="QUESTION13B" class="java.lang.String"/>
+	<field name="QUESTION13C" class="java.lang.String"/>
+	<field name="QUESTION13D" class="java.lang.String"/>
+	<field name="QUESTION14" class="java.lang.String"/>
+	<field name="QUESTION15" class="java.lang.String"/>
+	<field name="QUESTION16" class="java.lang.String"/>
+	<field name="QUESTION17" class="java.lang.String"/>
+	<field name="QUESTION18A" class="java.lang.String"/>
+	<field name="QUESTION18B" class="java.lang.String"/>
+	<field name="QUESTION18C" class="java.lang.String"/>
+	<field name="QUESTION19" class="java.lang.String"/>
+	<field name="QUESTION20" class="java.lang.String"/>
+	<field name="QUESTION21" class="java.lang.String"/>
+	<field name="QUESTION22" class="java.lang.String"/>
+	<field name="QUESTION23" class="java.lang.String"/>
+	<field name="QUESTION24" class="java.lang.String"/>
+	<field name="QUESTION25" class="java.lang.String"/>
+	<field name="QUESTION26" class="java.lang.String"/>
+	<field name="QUESTION27" class="java.lang.String"/>
+	<field name="QUESTION28" class="java.lang.String"/>
+	<field name="QUESTION29" class="java.lang.String"/>
+	<field name="QUESTION30" class="java.lang.String"/>
+	<field name="QUESTION31" class="java.lang.String"/>
+	<field name="QUESTION32" class="java.lang.String"/>
+	<field name="QUESTION33" class="java.lang.String"/>
+	<field name="QUESTION34" class="java.lang.String"/>
+	<field name="QUESTION35" class="java.lang.String"/>
+	<field name="QUESTION36" class="java.lang.String"/>
+	<field name="QUESTION37" class="java.lang.String"/>
+	<field name="QUESTION38" class="java.lang.String"/>
+	<field name="QUESTION39" class="java.lang.String"/>
+	<field name="QUESTION40" class="java.lang.String"/>
+	<field name="QUESTION41" class="java.lang.String"/>
+	<field name="QUESTION42" class="java.lang.String"/>
+	<field name="QUESTION43" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch"/>
+	</title>
+	<pageHeader>
+		<band height="35" splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="16" splitType="Stretch">
+			<line>
+				<reportElement positionType="FixRelativeToBottom" x="0" y="15" width="7990" height="1" uuid="8d981d03-f75e-4246-ae13-72c66e0c592f"/>
+				<graphicElement>
+					<pen lineWidth="0.5" lineColor="#999999"/>
+				</graphicElement>
+			</line>
+			<staticText>
+				<reportElement x="0" y="0" width="114" height="15" forecolor="#736343" uuid="3ed751da-d267-4fb6-92d3-0b33a4e09bd5"/>
+				<text><![CDATA[INTERVIEWDATE]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="114" y="0" width="114" height="15" forecolor="#736343" uuid="d3940257-6fb5-4e74-82b2-8341dc2f5374"/>
+				<text><![CDATA[FIRSTNAME]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="228" y="0" width="114" height="15" forecolor="#736343" uuid="48050c8e-b93c-4b3e-b2b6-de09c3a8cc01"/>
+				<text><![CDATA[LASTNAME]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="342" y="0" width="114" height="15" forecolor="#736343" uuid="5e3edea8-915b-4461-b62e-3c4b8b5de28f"/>
+				<text><![CDATA[PHONENUMBER]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="456" y="0" width="114" height="15" forecolor="#736343" uuid="9c83a11e-8a8a-4c77-b071-0aa5451ffcf6"/>
+				<text><![CDATA[IC1]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="570" y="0" width="114" height="15" forecolor="#736343" uuid="63535652-3e81-409c-8954-bd4b8beb5813"/>
+				<text><![CDATA[IC2]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="684" y="0" width="114" height="15" forecolor="#736343" uuid="5ca17c46-65c2-4069-b0f2-d16a4426180b"/>
+				<text><![CDATA[IC3]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="798" y="0" width="114" height="15" forecolor="#736343" uuid="f0997c3b-3803-4cc0-859d-c38fcf4c010f"/>
+				<text><![CDATA[IC4]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="912" y="0" width="114" height="15" forecolor="#736343" uuid="ba80744d-b239-418e-af6d-6374eddc1bb0"/>
+				<text><![CDATA[IC5]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="1026" y="0" width="114" height="15" forecolor="#736343" uuid="a27884b1-eb4e-48a3-abfd-4fd089d6bd76"/>
+				<text><![CDATA[IC6]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="1140" y="0" width="114" height="15" forecolor="#736343" uuid="a6e381a2-c437-473f-a343-0598d602fde1"/>
+				<text><![CDATA[IC7]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="1254" y="0" width="114" height="15" forecolor="#736343" uuid="3c5d5c98-0fa6-4e04-90b9-b50da9d388dd"/>
+				<text><![CDATA[INFORMEDCONSENT]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="1368" y="0" width="114" height="15" forecolor="#736343" uuid="41e8032c-7843-4e8c-a588-e312ee51b440"/>
+				<text><![CDATA[DATACAPTUREMODE]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="1482" y="0" width="114" height="15" forecolor="#736343" uuid="5878a0bc-d04a-488f-aa7a-fd0e9e00fa00"/>
+				<text><![CDATA[SIGNEDBYPARTICIPANT]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="1596" y="0" width="114" height="15" forecolor="#736343" uuid="464bfdd5-d668-4a76-9bcd-c775b8594fde"/>
+				<text><![CDATA[WITNESSNAME]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="1710" y="0" width="114" height="15" forecolor="#736343" uuid="cb17be39-b9a9-4c57-b8b0-ee58f1561a95"/>
+				<text><![CDATA[PARTICIPANTID]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="1824" y="0" width="114" height="15" forecolor="#736343" uuid="cdfb3f42-4b3a-4dd1-ba42-f148a0725c22"/>
+				<text><![CDATA[PARTICIPANTNAME]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="1938" y="0" width="114" height="15" forecolor="#736343" uuid="c3c75586-b500-4fb0-8fbd-c7a9d50b3dc5"/>
+				<text><![CDATA[COUNTYNAME]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="2052" y="0" width="114" height="15" forecolor="#736343" uuid="60b83bd5-cf2c-4710-943f-6ba80b102cbc"/>
+				<text><![CDATA[WARDNAME]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="2166" y="0" width="114" height="15" forecolor="#736343" uuid="43b5af14-c9bf-44e7-b9b7-b13d5d28aba0"/>
+				<text><![CDATA[HEALTHFACILITY]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="2280" y="0" width="114" height="15" forecolor="#736343" uuid="3593c09a-d680-4561-8e9b-ae41fb1ce7e7"/>
+				<text><![CDATA[FACILITYLEVEL]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="2394" y="0" width="114" height="15" forecolor="#736343" uuid="d0983595-ab0e-48fb-9f3d-670c70e80bd4"/>
+				<text><![CDATA[FACILITYOWNERSHIP]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="2508" y="0" width="114" height="15" forecolor="#736343" uuid="8dfb3a93-b14d-416e-8236-64398b3f2d1e"/>
+				<text><![CDATA[QUESTION1]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="2622" y="0" width="114" height="15" forecolor="#736343" uuid="038dcb9e-86ec-47a5-b333-0383701ef4f2"/>
+				<text><![CDATA[QUESTION2]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="2736" y="0" width="114" height="15" forecolor="#736343" uuid="45edb06f-a47c-4236-ba40-cf639ec216fe"/>
+				<text><![CDATA[QUESTION3]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="2850" y="0" width="114" height="15" forecolor="#736343" uuid="247d0dcb-83c8-4458-86c8-65b34ad78be9"/>
+				<text><![CDATA[QUESTION4]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="2964" y="0" width="114" height="15" forecolor="#736343" uuid="b3d21805-c7fc-44cf-8fe7-b62905d28bba"/>
+				<text><![CDATA[QUESTION5]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="3078" y="0" width="114" height="15" forecolor="#736343" uuid="6b69c4ab-3f85-414c-b5df-4d3827c91aef"/>
+				<text><![CDATA[QUESTION6]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="3192" y="0" width="114" height="15" forecolor="#736343" uuid="86bba583-155b-4506-abe1-38928592d2c3"/>
+				<text><![CDATA[QUESTION7]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="3306" y="0" width="114" height="15" forecolor="#736343" uuid="5fe02b78-020b-471d-87d2-daef9308e3fa"/>
+				<text><![CDATA[QUESTION8]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="3420" y="0" width="114" height="15" forecolor="#736343" uuid="324fb31c-2f08-40a0-8ecd-aace6a1f2228"/>
+				<text><![CDATA[QUESTION9]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="3534" y="0" width="114" height="15" forecolor="#736343" uuid="48e26ddf-25e2-4eec-a725-cbd151b72634"/>
+				<text><![CDATA[QUESTION10]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="3648" y="0" width="114" height="15" forecolor="#736343" uuid="414b5364-6d3a-447e-bc64-209c16de8fe6"/>
+				<text><![CDATA[QUESTION11]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="3762" y="0" width="114" height="15" forecolor="#736343" uuid="56d84295-7e18-48e2-8923-182210357bab"/>
+				<text><![CDATA[QUESTION12]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="3876" y="0" width="114" height="15" forecolor="#736343" uuid="6f91a9e6-9cdf-418f-8420-b2bd40d85027"/>
+				<text><![CDATA[QUESTION13A]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="3990" y="0" width="114" height="15" forecolor="#736343" uuid="8d6b236e-2d16-49ba-a863-4a50c99455a9"/>
+				<text><![CDATA[QUESTION13B]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="4104" y="0" width="114" height="15" forecolor="#736343" uuid="01c5ff6e-1238-4870-a2a8-13b95c760f94"/>
+				<text><![CDATA[QUESTION13C]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="4218" y="0" width="114" height="15" forecolor="#736343" uuid="5a9460bf-2386-4935-afbd-352283dee795"/>
+				<text><![CDATA[QUESTION13D]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="4332" y="0" width="114" height="15" forecolor="#736343" uuid="8b9958f9-a623-4490-a4a7-48c7ad2f3b92"/>
+				<text><![CDATA[QUESTION14]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="4446" y="0" width="114" height="15" forecolor="#736343" uuid="49368625-4f45-40c6-adb0-4170b2343441"/>
+				<text><![CDATA[QUESTION15]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="4560" y="0" width="114" height="15" forecolor="#736343" uuid="a6c86c37-2cff-46f5-8607-eaa16ac5476c"/>
+				<text><![CDATA[QUESTION16]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="4674" y="0" width="114" height="15" forecolor="#736343" uuid="b2a5f405-4976-4fed-aca9-1e02181a879a"/>
+				<text><![CDATA[QUESTION17]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="4788" y="0" width="114" height="15" forecolor="#736343" uuid="1121cfb9-8a55-4024-b456-89b64e22cb7e"/>
+				<text><![CDATA[QUESTION18A]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="4902" y="0" width="114" height="15" forecolor="#736343" uuid="022c818d-8e75-44cf-a8cf-3c3b6986b2ce"/>
+				<text><![CDATA[QUESTION18B]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="5016" y="0" width="114" height="15" forecolor="#736343" uuid="9a18f98f-bfc9-47fe-81b8-5dae6aa319ca"/>
+				<text><![CDATA[QUESTION18C]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="5130" y="0" width="114" height="15" forecolor="#736343" uuid="d3e94432-43a1-42cd-b8c6-9f5a2f0d488d"/>
+				<text><![CDATA[QUESTION19]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="5244" y="0" width="114" height="15" forecolor="#736343" uuid="0d3e6255-0782-4571-9974-96c80bcf99e3"/>
+				<text><![CDATA[QUESTION20]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="5358" y="0" width="114" height="15" forecolor="#736343" uuid="0deda670-aee7-4ac9-800c-043d128b8c04"/>
+				<text><![CDATA[QUESTION21]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="5472" y="0" width="114" height="15" forecolor="#736343" uuid="5d042217-804b-4b5e-a20f-bde806758a6a"/>
+				<text><![CDATA[QUESTION22]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="5586" y="0" width="114" height="15" forecolor="#736343" uuid="39d86b4d-df8f-4a3d-b73f-231fa193cbbd"/>
+				<text><![CDATA[QUESTION23]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="5700" y="0" width="114" height="15" forecolor="#736343" uuid="2d4f8fad-c3f4-4734-8fd0-c98b8251ea6c"/>
+				<text><![CDATA[QUESTION24]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="5814" y="0" width="114" height="15" forecolor="#736343" uuid="6c7def54-f037-48dc-85d4-fa900cf39666"/>
+				<text><![CDATA[QUESTION25]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="5928" y="0" width="114" height="15" forecolor="#736343" uuid="dce3e2af-451e-42a5-b39a-a2a29a4bad3e"/>
+				<text><![CDATA[QUESTION26]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="6042" y="0" width="114" height="15" forecolor="#736343" uuid="7d4ace5e-3785-4280-9679-fd318285f9d9"/>
+				<text><![CDATA[QUESTION27]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="6156" y="0" width="114" height="15" forecolor="#736343" uuid="bb130137-28ea-4dca-9896-e0891b911634"/>
+				<text><![CDATA[QUESTION28]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="6270" y="0" width="114" height="15" forecolor="#736343" uuid="7109cc29-b157-4ab2-97ab-9a8017bbb1d5"/>
+				<text><![CDATA[QUESTION29]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="6384" y="0" width="114" height="15" forecolor="#736343" uuid="082f0e7a-ff19-486b-b689-4a63ec4a6888"/>
+				<text><![CDATA[QUESTION30]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="6498" y="0" width="114" height="15" forecolor="#736343" uuid="d94dc158-48dd-43c2-93a1-7503993a6171"/>
+				<text><![CDATA[QUESTION31]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="6612" y="0" width="114" height="15" forecolor="#736343" uuid="eaf41c73-c847-4f20-b59f-51c44e09a872"/>
+				<text><![CDATA[QUESTION32]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="6726" y="0" width="114" height="15" forecolor="#736343" uuid="d942152f-0b09-4a31-89b2-ac1b189f41a9"/>
+				<text><![CDATA[QUESTION33]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="6840" y="0" width="114" height="15" forecolor="#736343" uuid="c5bf721b-8464-40ae-badc-8b4600645bfe"/>
+				<text><![CDATA[QUESTION34]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="6954" y="0" width="114" height="15" forecolor="#736343" uuid="adbbb826-c0a8-4097-a25d-725ed27d100a"/>
+				<text><![CDATA[QUESTION35]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="7068" y="0" width="114" height="15" forecolor="#736343" uuid="8e5d52f6-8a0d-4027-affc-093b05d9b83b"/>
+				<text><![CDATA[QUESTION36]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="7182" y="0" width="114" height="15" forecolor="#736343" uuid="e3854cb9-d9a7-44b4-8fc7-8ca58398ed35"/>
+				<text><![CDATA[QUESTION37]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="7296" y="0" width="114" height="15" forecolor="#736343" uuid="3ed82473-a5ed-489f-baa0-76d4f825e971"/>
+				<text><![CDATA[QUESTION38]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="7410" y="0" width="114" height="15" forecolor="#736343" uuid="3d26a5c6-c831-4646-94d9-f6c7000599ac"/>
+				<text><![CDATA[QUESTION39]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="7524" y="0" width="114" height="15" forecolor="#736343" uuid="81c46e70-cce2-4bab-ac8f-6575051574e0"/>
+				<text><![CDATA[QUESTION40]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="7638" y="0" width="114" height="15" forecolor="#736343" uuid="5b7db5f8-dea2-4edf-b076-9bb6887d4634"/>
+				<text><![CDATA[QUESTION41]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="7752" y="0" width="114" height="15" forecolor="#736343" uuid="cd38a825-db0c-482e-9034-b88691f70a25"/>
+				<text><![CDATA[QUESTION42]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="7866" y="0" width="114" height="15" forecolor="#736343" uuid="2a64c104-219a-4332-b19d-bc7d0181fa50"/>
+				<text><![CDATA[QUESTION43]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="15" splitType="Stretch">
+			<frame>
+				<reportElement style="Row" mode="Opaque" x="0" y="0" width="7990" height="15" uuid="494d4cad-86f7-424b-a593-b583f24fb5e7"/>
+				<textField isStretchWithOverflow="true" pattern="dd/MM/yyyy HH:mm" isBlankWhenNull="true">
+					<reportElement x="0" y="0" width="114" height="15" uuid="19d67a86-e8f7-4d58-a4ba-9cc3728edc49"/>
+					<textFieldExpression><![CDATA[$F{INTERVIEWDATE}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+					<reportElement x="114" y="0" width="114" height="15" uuid="916447e7-cdda-4696-9a87-f25cba6db80d"/>
+					<textFieldExpression><![CDATA[$F{FIRSTNAME}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+					<reportElement x="228" y="0" width="114" height="15" uuid="ac9c48b2-539a-44f7-917d-486c7431682f"/>
+					<textFieldExpression><![CDATA[$F{LASTNAME}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+					<reportElement x="342" y="0" width="114" height="15" uuid="acd1bcba-f3c1-486b-ae0c-e13ad1b5f067"/>
+					<textFieldExpression><![CDATA[$F{PHONENUMBER}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+					<reportElement x="456" y="0" width="114" height="15" uuid="c245e178-98f4-4b2a-ac2c-62b74a0c770a"/>
+					<textFieldExpression><![CDATA[$F{IC1}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+					<reportElement x="570" y="0" width="114" height="15" uuid="5510bfc3-749c-4a67-9be7-078b4e2eec6c"/>
+					<textFieldExpression><![CDATA[$F{IC2}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+					<reportElement x="684" y="0" width="114" height="15" uuid="83580bb0-9c3f-426c-95ba-48319c4a1600"/>
+					<textFieldExpression><![CDATA[$F{IC3}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+					<reportElement x="798" y="0" width="114" height="15" uuid="73b55097-c6cc-4c0d-8992-a3aab7203f02"/>
+					<textFieldExpression><![CDATA[$F{IC4}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+					<reportElement x="912" y="0" width="114" height="15" uuid="5f930529-f7ae-49d1-852d-699b36d40eee"/>
+					<textFieldExpression><![CDATA[$F{IC5}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+					<reportElement x="1026" y="0" width="114" height="15" uuid="1b3cb42e-5b86-4a16-9d84-f748c78f7933"/>
+					<textFieldExpression><![CDATA[$F{IC6}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+					<reportElement x="1140" y="0" width="114" height="15" uuid="233b7db5-c2b8-4a0e-b385-1c66f43d09f7"/>
+					<textFieldExpression><![CDATA[$F{IC7}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+					<reportElement x="1254" y="0" width="114" height="15" uuid="f1bc5261-e2b4-475c-821d-53f148ed83a5"/>
+					<textFieldExpression><![CDATA[$F{INFORMEDCONSENT}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+					<reportElement x="1368" y="0" width="114" height="15" uuid="75b92e03-0086-48e4-81c3-9a94fa062ab1"/>
+					<textFieldExpression><![CDATA[$F{DATACAPTUREMODE}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+					<reportElement x="1482" y="0" width="114" height="15" uuid="23218a54-897a-4427-8adc-96e467028747"/>
+					<textFieldExpression><![CDATA[$F{SIGNEDBYPARTICIPANT}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+					<reportElement x="1596" y="0" width="114" height="15" uuid="f7730188-55dc-4f71-966d-051a91b6d42b"/>
+					<textFieldExpression><![CDATA[$F{WITNESSNAME}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+					<reportElement x="1710" y="0" width="114" height="15" uuid="ceb2011b-4976-41d3-af67-842d5f0985a5"/>
+					<textFieldExpression><![CDATA[$F{PARTICIPANTID}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+					<reportElement x="1824" y="0" width="114" height="15" uuid="e1d16db1-d7d7-42f5-9d2a-9990d6a553a1"/>
+					<textFieldExpression><![CDATA[$F{PARTICIPANTNAME}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+					<reportElement x="1938" y="0" width="114" height="15" uuid="922596b2-2996-42fd-a894-504393a8ee2b"/>
+					<textFieldExpression><![CDATA[$F{COUNTYNAME}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+					<reportElement x="2052" y="0" width="114" height="15" uuid="6503cf74-1a39-40b5-8cde-c4d20e5965cc"/>
+					<textFieldExpression><![CDATA[$F{WARDNAME}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+					<reportElement x="2166" y="0" width="114" height="15" uuid="07dffba3-4fe9-4cfc-983a-3101e3f886d5"/>
+					<textFieldExpression><![CDATA[$F{HEALTHFACILITY}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+					<reportElement x="2280" y="0" width="114" height="15" uuid="117a7b2d-4170-4424-9790-2bcfd2a23a95"/>
+					<textFieldExpression><![CDATA[$F{FACILITYLEVEL}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+					<reportElement x="2394" y="0" width="114" height="15" uuid="d13fc746-cf41-4e65-9036-d174106707a3"/>
+					<textFieldExpression><![CDATA[$F{FACILITYOWNERSHIP}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+					<reportElement x="2508" y="0" width="114" height="15" uuid="503478f1-1bf2-4332-a2da-b67a3a29b67c"/>
+					<textFieldExpression><![CDATA[$F{QUESTION1}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+					<reportElement x="2622" y="0" width="114" height="15" uuid="853b7083-87b6-4742-9329-d4cd73173820"/>
+					<textFieldExpression><![CDATA[$F{QUESTION2}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+					<reportElement x="2736" y="0" width="114" height="15" uuid="219d8590-9fcc-4305-8d81-905e6baa9d67"/>
+					<textFieldExpression><![CDATA[$F{QUESTION3}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+					<reportElement x="2850" y="0" width="114" height="15" uuid="87dbd821-07c5-43d2-beb6-b91e8f3a5408"/>
+					<textFieldExpression><![CDATA[$F{QUESTION4}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+					<reportElement x="2964" y="0" width="114" height="15" uuid="24dcf455-1d35-49cd-bf22-4a8290fff6f4"/>
+					<textFieldExpression><![CDATA[$F{QUESTION5}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+					<reportElement x="3078" y="0" width="114" height="15" uuid="d94c81bb-a752-4317-8142-d795e01b68eb"/>
+					<textFieldExpression><![CDATA[$F{QUESTION6}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+					<reportElement x="3192" y="0" width="114" height="15" uuid="a5595982-d6f9-4d1e-bb54-303175b40705"/>
+					<textFieldExpression><![CDATA[$F{QUESTION7}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+					<reportElement x="3306" y="0" width="114" height="15" uuid="395344cf-36a0-4889-8884-78826479b4d7"/>
+					<textFieldExpression><![CDATA[$F{QUESTION8}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+					<reportElement x="3420" y="0" width="114" height="15" uuid="3ad09da4-f2d0-4e66-8d54-5c5c86913212"/>
+					<textFieldExpression><![CDATA[$F{QUESTION9}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+					<reportElement x="3534" y="0" width="114" height="15" uuid="07cb14b9-ad30-4c3c-accb-4a591aa9a925"/>
+					<textFieldExpression><![CDATA[$F{QUESTION10}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+					<reportElement x="3648" y="0" width="114" height="15" uuid="a8213da0-a3cc-46c2-b262-f30a3293a24a"/>
+					<textFieldExpression><![CDATA[$F{QUESTION11}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+					<reportElement x="3762" y="0" width="114" height="15" uuid="856526ff-25b4-46ca-8434-1cc91386df96"/>
+					<textFieldExpression><![CDATA[$F{QUESTION12}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+					<reportElement x="3876" y="0" width="114" height="15" uuid="3bda0c0b-f0c0-4c0f-825b-b36269bbaa37"/>
+					<textFieldExpression><![CDATA[$F{QUESTION13A}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+					<reportElement x="3990" y="0" width="114" height="15" uuid="ad2a0e90-3ebf-46fd-8eac-155dd72b245d"/>
+					<textFieldExpression><![CDATA[$F{QUESTION13B}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+					<reportElement x="4104" y="0" width="114" height="15" uuid="d0e96175-05cf-47d0-b50d-e8e37ed2f07d"/>
+					<textFieldExpression><![CDATA[$F{QUESTION13C}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+					<reportElement x="4218" y="0" width="114" height="15" uuid="a09d7331-3acb-4039-b375-fb75f4b83038"/>
+					<textFieldExpression><![CDATA[$F{QUESTION13D}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+					<reportElement x="4332" y="0" width="114" height="15" uuid="2783bb5e-6d0d-4fb0-b4d5-e0a5b0181138"/>
+					<textFieldExpression><![CDATA[$F{QUESTION14}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+					<reportElement x="4446" y="0" width="114" height="15" uuid="4047e1b0-d83d-4a11-9c67-9556c70d5760"/>
+					<textFieldExpression><![CDATA[$F{QUESTION15}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+					<reportElement x="4560" y="0" width="114" height="15" uuid="fdd0eb8f-5342-406e-8b7e-025312ca4c86"/>
+					<textFieldExpression><![CDATA[$F{QUESTION16}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+					<reportElement x="4674" y="0" width="114" height="15" uuid="e4dedaac-e125-4e28-88e8-30c88b0b65ce"/>
+					<textFieldExpression><![CDATA[$F{QUESTION17}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+					<reportElement x="4788" y="0" width="114" height="15" uuid="658059e8-2be6-4f92-87b3-a1d2c5efb698"/>
+					<textFieldExpression><![CDATA[$F{QUESTION18A}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+					<reportElement x="4902" y="0" width="114" height="15" uuid="58cdea0b-49cd-40eb-977f-7ba49901ad61"/>
+					<textFieldExpression><![CDATA[$F{QUESTION18B}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+					<reportElement x="5016" y="0" width="114" height="15" uuid="3ed9d50f-c24d-4997-9644-c96c61cf6ad0"/>
+					<textFieldExpression><![CDATA[$F{QUESTION18C}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+					<reportElement x="5130" y="0" width="114" height="15" uuid="cc11a7ca-7209-4d4d-8ee2-4e75059f1608"/>
+					<textFieldExpression><![CDATA[$F{QUESTION19}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+					<reportElement x="5244" y="0" width="114" height="15" uuid="a43a8c82-f1c7-4561-ac09-2e72d3333985"/>
+					<textFieldExpression><![CDATA[$F{QUESTION20}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+					<reportElement x="5358" y="0" width="114" height="15" uuid="068204ca-3c76-43aa-8497-9b8a59e51409"/>
+					<textFieldExpression><![CDATA[$F{QUESTION21}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+					<reportElement x="5472" y="0" width="114" height="15" uuid="d8134549-afc3-4d50-b2f8-02de0fc1f259"/>
+					<textFieldExpression><![CDATA[$F{QUESTION22}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+					<reportElement x="5586" y="0" width="114" height="15" uuid="db89b2cd-a5b5-4abc-8fff-fbc70dbc00a8"/>
+					<textFieldExpression><![CDATA[$F{QUESTION23}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+					<reportElement x="5700" y="0" width="114" height="15" uuid="adeabf9d-d7ee-48a5-bd5d-a40995bce613"/>
+					<textFieldExpression><![CDATA[$F{QUESTION24}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+					<reportElement x="5814" y="0" width="114" height="15" uuid="2b1e44de-23f5-43f2-851a-5946325f5d70"/>
+					<textFieldExpression><![CDATA[$F{QUESTION25}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+					<reportElement x="5928" y="0" width="114" height="15" uuid="a1807082-7eee-48fc-8d44-e91081d0838e"/>
+					<textFieldExpression><![CDATA[$F{QUESTION26}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+					<reportElement x="6042" y="0" width="114" height="15" uuid="7af9c0c4-f5ee-4f4d-9ef2-a2cdcca57b38"/>
+					<textFieldExpression><![CDATA[$F{QUESTION27}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+					<reportElement x="6156" y="0" width="114" height="15" uuid="dda99db8-0457-4aa9-9387-5d5f2071c57a"/>
+					<textFieldExpression><![CDATA[$F{QUESTION28}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+					<reportElement x="6270" y="0" width="114" height="15" uuid="0faeb2cc-5c7c-4180-a96a-f530a79e6f3b"/>
+					<textFieldExpression><![CDATA[$F{QUESTION29}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+					<reportElement x="6384" y="0" width="114" height="15" uuid="4fc243c0-5125-4018-a234-ec53fddd0548"/>
+					<textFieldExpression><![CDATA[$F{QUESTION30}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+					<reportElement x="6498" y="0" width="114" height="15" uuid="7ec48ce5-9948-490e-9721-123d196ce6a4"/>
+					<textFieldExpression><![CDATA[$F{QUESTION31}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+					<reportElement x="6612" y="0" width="114" height="15" uuid="06154512-40b9-4840-8716-9eec2f27e9f5"/>
+					<textFieldExpression><![CDATA[$F{QUESTION32}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+					<reportElement x="6726" y="0" width="114" height="15" uuid="2718077c-1396-4030-adde-cade8e30488e"/>
+					<textFieldExpression><![CDATA[$F{QUESTION33}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+					<reportElement x="6840" y="0" width="114" height="15" uuid="11e6ac20-5119-4a43-a2f7-06ceb77f3fdd"/>
+					<textFieldExpression><![CDATA[$F{QUESTION34}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+					<reportElement x="6954" y="0" width="114" height="15" uuid="fc9603c9-b5d8-4df0-ba51-50569397c4f2"/>
+					<textFieldExpression><![CDATA[$F{QUESTION35}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+					<reportElement x="7068" y="0" width="114" height="15" uuid="096980a9-da7d-43fd-8fad-4e388d93ea21"/>
+					<textFieldExpression><![CDATA[$F{QUESTION36}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+					<reportElement x="7182" y="0" width="114" height="15" uuid="0a698552-f7f4-4c76-9479-42ff8ec344a0"/>
+					<textFieldExpression><![CDATA[$F{QUESTION37}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+					<reportElement x="7296" y="0" width="114" height="15" uuid="37608126-2e6e-4478-a335-5c2deb2c8222"/>
+					<textFieldExpression><![CDATA[$F{QUESTION38}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+					<reportElement x="7410" y="0" width="114" height="15" uuid="4010de83-f554-4fd9-b263-6941b82b4954"/>
+					<textFieldExpression><![CDATA[$F{QUESTION39}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+					<reportElement x="7524" y="0" width="114" height="15" uuid="5357a647-9563-4048-841d-99ffceee1787"/>
+					<textFieldExpression><![CDATA[$F{QUESTION40}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+					<reportElement x="7638" y="0" width="114" height="15" uuid="ea6234e2-cd3d-465c-8f79-070bf2f3cd9b"/>
+					<textFieldExpression><![CDATA[$F{QUESTION41}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+					<reportElement x="7752" y="0" width="114" height="15" uuid="296f5f26-b652-4176-9638-a04bf3a3f9a3"/>
+					<textFieldExpression><![CDATA[$F{QUESTION42}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+					<reportElement x="7866" y="0" width="114" height="15" uuid="78460c9e-8513-43c1-8e4c-f34f9d3cf3ec"/>
+					<textFieldExpression><![CDATA[$F{QUESTION43}]]></textFieldExpression>
+				</textField>
+			</frame>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>

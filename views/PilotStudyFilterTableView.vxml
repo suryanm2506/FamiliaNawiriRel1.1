@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui xmlns="http://uiprogram.mezzanine.com/View"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://uiprogram.mezzanine.com/View ../../xsd/View.xsd">
+    <view label="healthWorker.pilotStudy.filter.interview.label" unit="PilotStudyFilter">
+
+		<navigation outcome="pilotStudyFilterWard" target="PilotStudyFilterWardHFView" />
+		<navigation outcome="pilotStudyICQ1" target="PilotStudyICQ1View"/>  		
+
+		<table title="healthWorker.pilotStudy.edit.label.blanklabel">
+            <collectionSource function="getPilotStudies"/>
+			
+            <column heading="healthWorker.pilotStudy.edit.label.participantID">
+                <attributeName>participantID</attributeName>
+            </column>
+			
+            <column heading="healthWorker.pilotStudy.edit.label.countyName">
+                <attributeName>countyName</attributeName>
+            </column>
+			
+            <column heading="healthWorker.pilotStudy.edit.label.wardName">
+                <attributeName>wardName</attributeName>
+            </column>
+
+            <column heading="healthWorker.pilotStudy.edit.label.healthFacility">
+                <attributeName>healthFacility</attributeName>
+            </column>		
+			
+            <rowAction label="healthWorker.pilotStudy.edit.label.question.button.view" action="viewPilotStudy">
+                <binding variable="filterPilotStudy"/>
+            </rowAction>
+			
+        </table>		
+
+        <button label="healthWorker.pilotStudy.edit.action.back" outcome="pilotStudyFilterWard"/>
+    </view>
+</ui>

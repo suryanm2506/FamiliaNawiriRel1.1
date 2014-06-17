@@ -1,0 +1,38 @@
+unit HealthWorkerList;
+
+HealthWorker healthWorker;
+
+void init(){
+    healthWorker = HealthWorker:new();
+}
+
+HealthWorker[] getHealthWorkers(){
+    return HealthWorker:all();
+}
+
+string submitInvite(){
+
+	if(healthWorker.phoneNumber == null){
+		Mez:alert("error.admin.healthWorkerList.phoneNumber");
+		return null;
+	}
+	
+	if(healthWorker.firstName == null){
+		Mez:alert("error.admin.healthWorkerList.firstName");
+		return null;
+	}
+	
+	if(healthWorker.lastName == null){
+		Mez:alert("error.admin.healthWorkerList.lastName");
+		return null;
+	}
+	
+	
+    healthWorker.registered = Date:now();	
+    healthWorker.save();
+    healthWorker = HealthWorker:new();
+    Mez:alert("admin.healthWorkerList.submitInviteAlert");
+    return null;
+}
+
+void deleteHealthWorker(){HealthWorker:delete(healthWorker);}

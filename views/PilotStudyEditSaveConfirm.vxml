@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui xmlns="http://uiprogram.mezzanine.com/View"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://uiprogram.mezzanine.com/View ../../xsd/View.xsd">
+    <view label="healthWorker.pilotStudy.edit.label.blanklabel" unit="PilotStudyEdit">
+        <navigation outcome="pilotStudyMenu" target="PilotStudyMenu" />
+        <navigation outcome="pilotStudyQ1" target="PilotStudyQ1View" />
+        <navigation outcome="pilotStudyQ2" target="PilotStudyQ2View" />	
+        <navigation outcome="pilotStudyQ43" target="PilotStudyQ43View" />		
+		<navigation outcome="pilotStudyICQ1" target="PilotStudyICQ1View" />		
+		<navigation outcome="pilotStudyICQ2" target="PilotStudyICQ2View" />				
+		<navigation outcome="pilotStudyICQ3" target="PilotStudyICQ3View" />		
+		<navigation outcome="pilotStudyICQ4" target="PilotStudyICQ4View" />		
+		<navigation outcome="pilotStudyICQ5" target="PilotStudyICQ5View" />		
+		<navigation outcome="pilotStudyICQ6" target="PilotStudyICQ6View" />		
+		<navigation outcome="pilotStudyICQ7" target="PilotStudyICQ7View" />	
+        <navigation outcome="pilotStudyManualConsent" target="PilotStudyManualConsent" />
+		<navigation outcome="pilotStudyDigitalConsent" target="PilotStudyDigitalConsent" />		
+		
+		<info label="healthWorker.pilotStudy.edit.action.save.confirm">
+            <binding variable="temp"/>
+        </info>		
+		
+        <submit label="healthWorker.pilotStudy.edit.action.yes" action="PilotStudyEdit:saveConfirm_clicked"/>
+		<button label="healthWorker.pilotStudy.edit.action.no" action="PilotStudyEdit:backConfirm_clicked"/>
+    </view>
+</ui>

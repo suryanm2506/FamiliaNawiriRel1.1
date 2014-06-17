@@ -1,0 +1,13 @@
+unit Admin;
+
+@InviteUser
+Administrator inviteAdmin(){
+	return Administrator:new();
+}
+
+@InviteUser
+HealthWorker inviteHealthWorker(){
+	HealthWorker result = HealthWorker:new();
+	result.registered = Date:now();
+	return result;
+}

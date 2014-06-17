@@ -1,0 +1,1511 @@
+unit PilotStudyEdit;
+ 
+PilotStudy pilotStudy;
+MultiSelectObj[] optionsQ3;
+MultiSelectObj optionQ3;
+string status;
+int ageOfParticipant;
+MultiSelectObj[] optionsQ26;
+MultiSelectObj optionQ26;
+MultiSelectObj[] optionsQ28;
+MultiSelectObj optionQ28;
+MultiSelectObj[] optionsQ29;
+MultiSelectObj optionQ29;
+MultiSelectObj[] optionsQ37;
+MultiSelectObj optionQ37;
+string saveCalledForm;
+
+
+string temp;
+
+void init(){
+	if(status == null){
+    pilotStudy = PilotStudy:new();
+	pilotStudy.interviewDate = Date:now();
+	HealthWorker currentHW = HealthWorker:user();
+	pilotStudy.healthWorker = currentHW;
+	optionsQ3 = computeOptionsQ3();
+	optionsQ26 = computeOptionsQ26();
+	optionsQ28 = computeOptionsQ28();
+	optionsQ29 = computeOptionsQ29();	
+	optionsQ37 = computeOptionsQ37();	
+	status = "New";
+	ageOfParticipant = 0;
+	saveCalledForm = null;
+	pilotStudy.dobParticipantYear = Date:extract(Date:now(),"year");
+	pilotStudy.dobGaurdianYear = Date:extract(Date:now(),"year");	
+	}
+}
+
+void setViewObject(PilotStudy viewPilotStudy){
+	
+	pilotStudy = viewPilotStudy;
+	status = "View";
+	optionsQ3 = computeOptionsQ3();
+	optionsQ26 = computeOptionsQ26();
+	optionsQ28 = computeOptionsQ28();
+	optionsQ29 = computeOptionsQ29();	
+	optionsQ37 = computeOptionsQ37();	
+	ageOfParticipant = 0;
+	saveCalledForm = null;
+
+}
+
+string cancel_clicked(){
+	status = null;
+	return "pilotStudyMenu";
+}
+
+
+MultiSelectObj[] getOptionsQ37(){	
+	return optionsQ37;
+}
+MultiSelectObj[] getOptionsQ29(){
+	return optionsQ29;
+}
+MultiSelectObj[] getOptionsQ28(){
+	return optionsQ28;
+}
+
+MultiSelectObj[] getOptionsQ26(){
+	return optionsQ26;
+}
+
+MultiSelectObj[] getOptionsQ3(){
+	return optionsQ3;
+}
+
+string[] getOptionsYears(){
+	string[] tmpObj;
+	string a = "1900";
+	for (int i =1; i < 132; i++){
+		 a = a + "01";
+		tmpObj.append(a);
+	}
+	return tmpObj;	
+}
+
+
+MultiSelectObj[] computeOptionsQ37(){
+	string[] tempOptions = CodeValueList:getOptionsQ37();
+	MultiSelectObj[] resMultiSelectObj;
+	string[] tmpresult;
+	if(status == "View"){
+		tmpresult = String:split(pilotStudy.question37,",");
+	}
+	
+	
+	for(int i = 0; i < tempOptions.length(); i++){
+        MultiSelectObj tempOption = MultiSelectObj:new();
+		string tempStr = tempOptions.get(i);
+        tempOption.value = tempStr;
+		tempOption.checked = false;
+		if(status == "View"){
+			for(int j=0; j< tmpresult.length(); j++){
+				if(tempStr == tmpresult.get(j)){
+					tempOption.checked = true;
+				}
+			}
+		}
+        resMultiSelectObj.append(tempOption);
+    }	
+	return resMultiSelectObj;
+}
+
+MultiSelectObj[] computeOptionsQ29(){
+	string[] tempOptions = CodeValueList:getOptionsQ29();
+	MultiSelectObj[] resMultiSelectObj;
+	string[] tmpresult;
+	if(status == "View"){
+		tmpresult = String:split(pilotStudy.question29,",");
+	}
+	
+	for(int i = 0; i < tempOptions.length(); i++){
+        MultiSelectObj tempOption = MultiSelectObj:new();
+		string tempStr = tempOptions.get(i);
+        tempOption.value = tempStr;
+		tempOption.checked = false;
+		if(status == "View"){
+			for(int j=0; j< tmpresult.length(); j++){
+				if(tempStr == tmpresult.get(j)){
+					tempOption.checked = true;
+				}
+			}
+		}		
+        resMultiSelectObj.append(tempOption);
+    }	
+	return resMultiSelectObj;
+}
+
+
+MultiSelectObj[] computeOptionsQ28(){
+	string[] tempOptions = CodeValueList:getOptionsQ28();
+	MultiSelectObj[] resMultiSelectObj;
+	string[] tmpresult;
+	if(status == "View"){
+		tmpresult = String:split(pilotStudy.question28,",");
+	}
+
+	
+	for(int i = 0; i < tempOptions.length(); i++){
+        MultiSelectObj tempOption = MultiSelectObj:new();
+		string tempStr = tempOptions.get(i);
+        tempOption.value = tempStr;
+		tempOption.checked = false;
+		if(status == "View"){
+			for(int j=0; j< tmpresult.length(); j++){
+				if(tempStr == tmpresult.get(j)){
+					tempOption.checked = true;
+				}
+			}
+		}		
+        resMultiSelectObj.append(tempOption);
+    }	
+	return resMultiSelectObj;
+}
+
+
+MultiSelectObj[] computeOptionsQ26(){
+	string[] tempOptions = CodeValueList:getOptionsQ26();
+	MultiSelectObj[] resMultiSelectObj;
+	string[] tmpresult;
+	if(status == "View"){
+		tmpresult = String:split(pilotStudy.question26,",");
+	}
+
+	
+	for(int i = 0; i < tempOptions.length(); i++){
+        MultiSelectObj tempOption = MultiSelectObj:new();
+		string tempStr = tempOptions.get(i);
+        tempOption.value = tempStr;
+		tempOption.checked = false;
+		if(status == "View"){
+			for(int j=0; j< tmpresult.length(); j++){
+				if(tempStr == tmpresult.get(j)){
+					tempOption.checked = true;
+				}
+			}
+		}		
+        resMultiSelectObj.append(tempOption);
+    }	
+	return resMultiSelectObj;
+}
+
+MultiSelectObj[] computeOptionsQ3(){
+	string[] tempOptions = CodeValueList:getOptionsQ3();
+	MultiSelectObj[] resMultiSelectObj;
+	string[] tmpresult;
+	if(status == "View"){
+		tmpresult = String:split(pilotStudy.question3,",");
+	}
+
+
+	for(int i = 0; i < tempOptions.length(); i++){
+        MultiSelectObj tempOption = MultiSelectObj:new();
+		string tempStr = tempOptions.get(i);
+        tempOption.value = tempStr;
+		tempOption.checked = false;
+		if(status == "View"){
+			for(int j=0; j< tmpresult.length(); j++){
+				string tmpStr = tmpresult.get(j); 
+				if(tempStr == tmpStr ){					
+					tempOption.checked = true;
+				}
+			}
+		}		
+        resMultiSelectObj.append(tempOption);
+    }	
+	return resMultiSelectObj;
+}
+
+void toggleConditionQ37() {
+    
+    for(int i = optionsQ37.length() - 1; i >= 0; i--) {
+        MultiSelectObj tempObj = optionsQ37.get(i);
+        if(tempObj == optionQ37) {
+            if(tempObj.checked == true) {
+				optionQ37.checked = false;
+				tempObj.checked = false;
+            } else {
+				optionQ37.checked = true;
+				tempObj.checked = true;
+            }			
+        }
+    }
+}
+
+
+void toggleConditionQ29() {
+    
+    for(int i = optionsQ29.length() - 1; i >= 0; i--) {
+        MultiSelectObj tempObj = optionsQ29.get(i);
+        if(tempObj == optionQ29) {
+            if(tempObj.checked == true) {
+				optionQ29.checked = false;
+				tempObj.checked = false;
+            } else {
+				optionQ29.checked = true;
+				tempObj.checked = true;
+            }			
+        }
+    }
+}
+
+void toggleConditionQ28() {
+    
+    for(int i = optionsQ28.length() - 1; i >= 0; i--) {
+        MultiSelectObj tempObj = optionsQ28.get(i);
+        if(tempObj == optionQ28) {
+            if(tempObj.checked == true) {
+				optionQ28.checked = false;
+				tempObj.checked = false;
+            } else {
+				optionQ28.checked = true;
+				tempObj.checked = true;
+            }			
+        }
+    }
+}
+
+void toggleConditionQ26() {
+    
+    for(int i = optionsQ26.length() - 1; i >= 0; i--) {
+        MultiSelectObj tempObj = optionsQ26.get(i);
+        if(tempObj == optionQ26) {
+            if(tempObj.checked == true) {
+				optionQ26.checked = false;
+				tempObj.checked = false;
+            } else {
+				optionQ26.checked = true;
+				tempObj.checked = true;
+            }			
+        }
+    }
+}
+
+void toggleCondition() {
+    
+    for(int i = optionsQ3.length() - 1; i >= 0; i--) {
+        MultiSelectObj tempObj = optionsQ3.get(i);
+        if(tempObj == optionQ3) {
+            if(tempObj.checked == true) {
+				optionQ3.checked = false;
+				tempObj.checked = false;
+            } else {
+				optionQ3.checked = true;
+				tempObj.checked = true;
+            }			
+        }
+    }
+}
+
+string selectedOptionQ37(){
+
+	string returnString = "";
+    for(int i = optionsQ37.length() - 1; i >= 0; i--) {
+        MultiSelectObj tempObj = optionsQ37.get(i);
+		if(tempObj.checked == true) {
+			if(returnString == ""){
+				returnString = tempObj.value;
+			}else{
+					returnString = String:concat(returnString,",");
+					returnString = String:concat(returnString,tempObj.value);
+			}
+		} 
+    }
+	return returnString;
+}
+
+string selectedOptionQ29(){
+
+	string returnString = "";
+    for(int i = optionsQ29.length() - 1; i >= 0; i--) {
+        MultiSelectObj tempObj = optionsQ29.get(i);
+		if(tempObj.checked == true) {
+			if(returnString == ""){
+				returnString = tempObj.value;
+			}else{
+					returnString = String:concat(returnString,",");
+					returnString = String:concat(returnString,tempObj.value);
+			}
+		} 
+    }
+	return returnString;
+}
+
+string selectedOptionQ28(){
+
+	string returnString = "";
+    for(int i = optionsQ28.length() - 1; i >= 0; i--) {
+        MultiSelectObj tempObj = optionsQ28.get(i);
+		if(tempObj.checked == true) {
+			if(returnString == ""){
+				returnString = tempObj.value;
+			}else{
+					returnString = String:concat(returnString,",");
+					returnString = String:concat(returnString,tempObj.value);
+			}
+		} 
+    }
+	return returnString;
+}
+
+
+string selectedOptionQ26(){
+
+	string returnString = "";
+    for(int i = optionsQ26.length() - 1; i >= 0; i--) {
+        MultiSelectObj tempObj = optionsQ26.get(i);
+		if(tempObj.checked == true) {
+			if(returnString == ""){
+				returnString = tempObj.value;
+			}else{
+					returnString = String:concat(returnString,",");
+					returnString = String:concat(returnString,tempObj.value);
+			}
+		} 
+    }
+	return returnString;
+}
+
+
+string selectedOptionQ3(){
+
+	string returnString = "";
+    for(int i = optionsQ3.length() - 1; i >= 0; i--) {
+        MultiSelectObj tempObj = optionsQ3.get(i);
+		if(tempObj.checked == true) {
+			if(returnString == ""){
+				returnString = tempObj.value;
+			}else{
+					returnString = String:concat(returnString,",");
+					returnString = String:concat(returnString,tempObj.value);
+			}
+		} 
+    }
+	return returnString;
+}
+
+string[] getWardNamesForCounty(){	
+	return CodeValueList:getWardNamesForCounty(pilotStudy.countyName);
+}
+
+
+string icnext1_clicked(){
+	
+	if(pilotStudy.ic1 == null){
+		Mez:alert("error.select_value");		
+		return null;
+	}
+		
+	if(pilotStudy.ic1 == "No") {	
+		saveCalledForm="pilotStudyICQ1";
+		return "pilotStudySaveConfirm";
+	}
+
+    return "pilotStudyICQ2";
+}
+
+string icnext2_clicked(){
+
+	if(pilotStudy.ic2 == null){
+		Mez:alert("error.select_value");		
+		return null;
+	}
+		
+	if(pilotStudy.ic2 == "No") {	
+		saveCalledForm="pilotStudyICQ2";
+		return "pilotStudySaveConfirm";
+	}
+
+    return "pilotStudyICQ3";
+}
+
+
+string icnext3_clicked(){
+
+	if(pilotStudy.ic3 == null){
+		Mez:alert("error.select_value");		
+		return null;
+	}
+		
+	if(pilotStudy.ic3 == "No") {	
+		saveCalledForm="pilotStudyICQ3";
+		return "pilotStudySaveConfirm";
+	}
+
+    return "pilotStudyICQ4";
+}
+
+string icnext4_clicked(){
+
+	if(pilotStudy.ic4 == null){
+		Mez:alert("error.select_value");		
+		return null;
+	}
+		
+	if(pilotStudy.ic4 == "No") {	
+		saveCalledForm="pilotStudyICQ4";
+		return "pilotStudySaveConfirm";
+	}
+
+    return "pilotStudyICQ5";
+}
+
+string icnext5_clicked(){
+
+	if(pilotStudy.ic5 == null){
+		Mez:alert("error.select_value");		
+		return null;
+	}
+		
+	if(pilotStudy.ic5 == "No") {	
+		saveCalledForm="pilotStudyICQ5";
+		return "pilotStudySaveConfirm";
+	}
+
+    return "pilotStudyICQ6";
+}
+
+string icnext6_clicked(){
+
+	if(pilotStudy.ic6 == null){
+		Mez:alert("error.select_value");		
+		return null;
+	}
+		
+	if(pilotStudy.ic6 == "No") {	
+		saveCalledForm="pilotStudyICQ6";
+		return "pilotStudySaveConfirm";
+	}
+
+    return "pilotStudyICQ7";
+}
+
+string icnext7_clicked(){
+
+	if(pilotStudy.ic7 == null){
+		Mez:alert("error.select_value");		
+		return null;
+	}
+
+	if(pilotStudy.dataCaptureMode == null){
+		Mez:alert("error.select_value");		
+		return null;
+	}
+
+	if(pilotStudy.signedByParticipant == null){
+		Mez:alert("error.select_value");		
+		return null;
+	}
+	
+	if(pilotStudy.ic7 == "No") {	
+		saveCalledForm="pilotStudyICQ7";
+		return "pilotStudySaveConfirm";
+	}
+
+	if(pilotStudy.dataCaptureMode == "Yes") {	
+		return "pilotStudyManualConsent";
+	}else{
+		if(pilotStudy.signedByParticipant == "Yes"){
+			return "pilotStudyDigitalConsent";
+		}else{
+			return "pilotStudyWitnessName";
+		}
+	}
+	
+    return "pilotStudyICQ7";
+}
+
+string manualconsent_clicked(){
+
+	if(pilotStudy.informedConsent == null){
+		Mez:alert("error.select_value");		
+		return null;
+	}
+
+	if(pilotStudy.informedConsent == "No") {	
+		saveCalledForm="pilotStudyManualConsent";
+		return "pilotStudySaveConfirm";
+	}
+		
+    return "pilotStudyCountyView";
+}
+
+string digitalconsent_clicked(){
+	
+    return "pilotStudyCountyView";
+}
+
+string witnessname_clicked(){
+		
+	if(pilotStudy.witnessName == null){
+		Mez:alert("error.select_value");		
+		return null;
+	}
+	
+    return "pilotStudyDigitalConsentWitness";
+}
+
+
+string digitalconsentwitness_clicked(){
+		
+    return "pilotStudyCountyView";
+}
+
+
+string next0_clicked(){
+
+	if(pilotStudy.countyName == null){		
+		Mez:alert("error.required_field.countyName");
+		return null;
+	}
+		
+	if(pilotStudy.participantID == null){
+		Mez:alert("error.required_field.participantID");		
+		return null;
+	}
+
+	if(pilotStudy.participantName == null){
+		Mez:alert("error.required_field.participantName");		
+		return null;
+	}	
+	
+	if(status == "New"){
+		if(checkForDuplicateParticipantID(pilotStudy.participantID) == 1){
+			Mez:alert("error.duplicate.participantID");		
+			return null;
+		}
+	}
+	return "pilotStudyWardHF";
+}
+
+
+string back0_clicked(){
+
+	if(pilotStudy.dataCaptureMode == "Yes") {	
+		return "pilotStudyManualConsent";
+	}else if(pilotStudy.signedByParticipant == "Yes"){
+		return "pilotStudyDigitalConsent";	
+	}else{
+		return "pilotStudyDigitalConsentWitness";	
+	}
+}
+
+
+int checkForDuplicateParticipantID(string participantID){
+	PilotStudy[] tempResult = PilotStudy:equals(participantID, participantID);
+	if(tempResult.length() > 0){
+		return 1;
+	}
+	return 0;
+}
+
+
+string savePilotStudy(){
+
+	if(status == "New"){
+		pilotStudy.save();
+		Mez:alert("healthWorker.pilotStudy.edit.action.saved");
+		status = null;
+		saveCalledForm=null;
+		return "pilotStudyMenu";
+	}else{
+		Mez:alert("healthWorker.pilotStudy.edit.action.viewSaved");
+		status = null;
+		saveCalledForm=null;
+		return "pilotStudyMenu";		
+	}
+	
+
+}
+
+
+string nextWardHF_clicked(){
+
+	if(pilotStudy.wardName == null){
+		Mez:alert("error.required_field.wardName");		
+		return null;
+	}
+	
+	if(pilotStudy.healthFacility == null){
+		Mez:alert("error.required_field.healthFacility");		
+		return null;
+	}
+	
+	if(pilotStudy.facilityLevel == null){
+		Mez:alert("error.required_field.facilityLevel");		
+		return null;
+	}
+
+	if(pilotStudy.facilityOwnership == null){
+		Mez:alert("error.required_field.facilityOwnership");		
+		return null;
+	}
+
+	return "pilotStudyQ1";
+}
+
+
+string next1_clicked(){
+
+	if(pilotStudy.question1 == null){
+		Mez:alert("error.select_value");		
+		return null;
+	}
+		
+	if(pilotStudy.question1 == "No") {	
+		saveCalledForm="pilotStudyQ1";
+		return "pilotStudySaveConfirm";
+	}
+
+    return "pilotStudyQ2";
+}
+
+string next2_clicked(){
+
+	if(pilotStudy.question2 == null){
+		Mez:alert("error.select_value");		
+		return null;
+	}
+	
+	if(pilotStudy.question2 == "No") {
+		saveCalledForm="pilotStudyQ2";
+		return "pilotStudySaveConfirm";
+	}
+	
+    return "pilotStudyQ3";
+}
+
+string next3_clicked(){
+
+	pilotStudy.question3 = selectedOptionQ3();
+
+	if(pilotStudy.question3 == null || pilotStudy.question3 == ""){
+		Mez:alert("error.select_value");		
+		return null;
+	}	
+    return "pilotStudyQ4";
+}
+
+
+string next4_clicked(){
+
+	if(pilotStudy.question4 == null){
+		Mez:alert("error.select_value");		
+		return null;
+	}
+	
+	if(pilotStudy.question4 == "No"){
+		pilotStudy.question5 = null;
+		return "pilotStudyQ6";
+	}
+		
+    return "pilotStudyQ5";
+}
+
+
+string next5_clicked(){
+
+	if(pilotStudy.question5 == null){
+		Mez:alert("error.select_value");		
+		return null;
+	}
+    return "pilotStudyQ6";
+}
+
+string back6_clicked(){
+
+	if(pilotStudy.question4 == "No"){
+		return "pilotStudyQ4";
+	}else{
+		return "pilotStudyQ5";
+	}
+    
+}
+
+string next6_clicked(){
+
+	if(pilotStudy.question6 == null){
+		Mez:alert("error.select_value");		
+		return null;
+	}
+    return "pilotStudyQ7";
+}
+
+string next7_clicked(){
+
+	if(pilotStudy.question7 == null){
+		Mez:alert("error.select_value");		
+		return null;
+	}
+    return "pilotStudyQ8";
+}
+
+string next8_clicked(){
+
+	if(pilotStudy.question8 == null){
+		Mez:alert("error.select_value");		
+		return null;
+	}
+    return "pilotStudyQ9";
+}
+
+string next9_clicked(){
+
+
+	if(pilotStudy.dobParticipantDay == null){
+		Mez:alert("error.required_field.day");		
+		return null;
+	}
+	
+	if(pilotStudy.dobParticipantMonth == null){
+		Mez:alert("error.required_field.month");		
+		return null;
+	}
+
+	if(pilotStudy.dobParticipantYear == null){
+		Mez:alert("error.required_field.year");		
+		return null;
+	}
+	
+	pilotStudy.question9 = String:concat(String:concat(String:concat(String:concat(pilotStudy.dobParticipantYear,"-"),pilotStudy.dobParticipantMonth),"-"),pilotStudy.dobParticipantDay);
+		
+	date d1 =  Date:fromString(pilotStudy.question9);	
+	
+	if(d1 > Date:today()){
+		Mez:alert("error.required_field.participantAge");		
+		return null;	
+	}
+
+	date d2 = Date:today();
+
+	int noOfMonths = Date:monthsBetween(d1, d2);
+		
+	ageOfParticipant = noOfMonths /12;
+	
+	if(ageOfParticipant>=18){		
+		pilotStudy.question10 = null;
+		pilotStudy.question11 = null;
+		pilotStudy.question12 = null;
+		pilotStudy.question13a = null;
+		pilotStudy.question13b = null;
+		pilotStudy.question13c = null;
+		pilotStudy.question13d = null;
+		pilotStudy.question14 = null;
+		return "pilotStudyQ15";
+		
+	}else{
+		pilotStudy.question15 = null;
+		pilotStudy.question16 = null;
+		return "pilotStudyQ10";
+	}
+	
+}
+
+string next10_clicked(){
+
+	if(pilotStudy.dobGaurdianDay == null){
+		Mez:alert("error.required_field.day");		
+		return null;
+	}
+	
+	if(pilotStudy.dobGaurdianMonth == null){
+		Mez:alert("error.required_field.month");		
+		return null;
+	}
+
+	if(pilotStudy.dobGaurdianYear == null){
+		Mez:alert("error.required_field.year");		
+		return null;
+	}
+	
+	pilotStudy.question10 = String:concat(String:concat(String:concat(String:concat(pilotStudy.dobGaurdianYear,"-"),pilotStudy.dobGaurdianMonth),"-"),pilotStudy.dobGaurdianDay);
+		
+	date d1 =  Date:fromString(pilotStudy.question10);	
+	
+	if(d1 > Date:today()){
+		Mez:alert("error.required_field.participantAge");		
+		return null;	
+	}
+
+	date d2 = Date:today();
+
+	int noOfMonths = Date:monthsBetween(d1, d2);
+
+	if(noOfMonths<180){		
+		Mez:alert("error.validation.dobMother");
+		return null;
+	}else{
+		return "pilotStudyQ11";
+	}
+	
+}
+
+string next11_clicked(){
+
+	if(pilotStudy.question11 == null){
+		Mez:alert("error.select_value");		
+		return null;
+	}
+	
+	if(pilotStudy.question11 == "No"){
+		pilotStudy.question12 = null;
+		if(ageOfParticipant < 5){
+			return "pilotStudyQ13";
+		}else if(ageOfParticipant <= 15){
+			pilotStudy.question13a = null;
+			pilotStudy.question13b = null;
+			pilotStudy.question13c = null;
+			pilotStudy.question13d = null;
+			pilotStudy.question14 = null;
+			pilotStudy.question17 = "3. Not at all";
+			return "pilotStudyQ18C";
+		} else{
+			pilotStudy.question13a = null;
+			pilotStudy.question13b = null;
+			pilotStudy.question13c = null;
+			pilotStudy.question13d = null;
+			pilotStudy.question14 = null;
+			return "pilotStudyQ17";
+		}		
+	}else{	
+		return "pilotStudyQ12";
+	}
+}
+
+string next12_clicked(){
+
+	if(pilotStudy.question12 == null){
+		Mez:alert("error.select_value");		
+		return null;
+	}
+	
+	if(ageOfParticipant < 5){
+		return "pilotStudyQ13";
+	}else if(ageOfParticipant <= 15){
+			pilotStudy.question13a = null;
+			pilotStudy.question13b = null;
+			pilotStudy.question13c = null;
+			pilotStudy.question13d = null;
+			pilotStudy.question14 = null;
+			pilotStudy.question17 = "3. Not at all";
+			return "pilotStudyQ18C";
+		} else{
+			pilotStudy.question13a = null;
+			pilotStudy.question13b = null;
+			pilotStudy.question13c = null;
+			pilotStudy.question13d = null;
+			pilotStudy.question14 = null;
+			return "pilotStudyQ17";
+		}	
+}
+
+
+string next13a_clicked(){
+
+	if(pilotStudy.question13a == null){
+		Mez:alert("error.required_field.13a");		
+		return null;
+	}
+	
+	if(pilotStudy.question13a == "Yes"){
+		return "pilotStudyQ13B";
+	}else{
+		pilotStudy.question13b = null;
+		return "pilotStudyQ13C";
+	}
+	
+}
+
+string back13a_clicked(){
+
+	if(pilotStudy.question11 == "No"){
+		return "pilotStudyQ11";
+	}else{
+		return "pilotStudyQ12";
+	}    
+}
+
+
+string next13b_clicked(){
+
+	if(pilotStudy.question13b == null){
+		Mez:alert("error.required_field.13b");		
+		return null;
+	}
+	
+	return "pilotStudyQ13C";
+	
+}
+
+
+string next13c_clicked(){
+
+	if(pilotStudy.question13c == null){
+		Mez:alert("error.required_field.13c");		
+		return null;
+	}
+	
+	if(pilotStudy.question13c == "Yes"){
+		return "pilotStudyQ13D";
+	}else{
+		pilotStudy.question13d = null;
+		if(ageOfParticipant < 2){
+			return "pilotStudyQ14";
+		}else{
+			pilotStudy.question14 = null;
+			pilotStudy.question17 = "3. Not at all";
+			return "pilotStudyQ18C";				
+		}
+	}
+	
+}
+
+string back13c_clicked(){
+
+	if(pilotStudy.question13a == "No"){
+		return "pilotStudyQ13A";
+	}else{
+		return "pilotStudyQ13B";
+	}    
+}
+
+
+string next13d_clicked(){
+
+	if(pilotStudy.question13d == null){
+		Mez:alert("error.required_field.13d");		
+		return null;
+	}
+	
+	if(ageOfParticipant < 2){
+		return "pilotStudyQ14";
+	}else{
+		pilotStudy.question14 = null;
+		pilotStudy.question17 = "3. Not at all";
+		return "pilotStudyQ18C";				
+	}
+	
+}
+
+
+
+string next14_clicked(){
+
+	if(pilotStudy.question14 == null){
+		Mez:alert("error.select_value");		
+		return null;
+	}
+	
+	pilotStudy.question17 = "3. Not at all";
+	return "pilotStudyQ18C";				
+
+	
+}
+
+string back14_clicked(){
+
+	if(pilotStudy.question13c == "No"){
+		return "pilotStudyQ13C";
+	}else{
+		return "pilotStudyQ13D";
+	}    
+}
+
+
+string next15_clicked(){
+
+	if(pilotStudy.question15 == null){
+		Mez:alert("error.select_value");		
+		return null;
+	}
+	
+	if(pilotStudy.question15 == "Yes"){
+		return "pilotStudyQ16";
+	}else{
+		pilotStudy.question16 = null;
+		return "pilotStudyQ17";
+	}
+	
+}
+
+string next16_clicked(){
+
+	if(pilotStudy.question16 == null){
+		Mez:alert("error.select_value");		
+		return null;
+	}
+	
+	return "pilotStudyQ17";
+	
+}
+
+string next17_clicked(){
+
+	if(pilotStudy.question17 == null){
+		Mez:alert("error.select_value");		
+		return null;
+	}
+	
+	if(pilotStudy.question17== "1. Daily"){
+		pilotStudy.question18b = null;
+		pilotStudy.question18c = null;
+		return "pilotStudyQ18A";		
+	}
+	if (pilotStudy.question17== "2. Yes but not daily"){
+		pilotStudy.question18a = null;
+		pilotStudy.question18c = null;
+		return "pilotStudyQ18B";	
+	}
+
+	if (pilotStudy.question17== "3. Not at all"){
+		pilotStudy.question18a = null;
+		pilotStudy.question18b = null;
+		return "pilotStudyQ18C";	
+	}
+	
+}
+
+string back17_clicked(){
+
+	if(ageOfParticipant>=18){	
+		if(pilotStudy.question15 == "Yes"){
+			return "pilotStudyQ16";
+		}else if(pilotStudy.question15 == "No"){
+			return "pilotStudyQ15";			
+		}
+	}
+	
+	if(ageOfParticipant>5){
+
+		if(pilotStudy.question11 == "No"){
+			return "pilotStudyQ11";
+		}else{
+			return "pilotStudyQ12";
+		}  	
+	}
+	
+	if(ageOfParticipant>2){		
+		if(pilotStudy.question13c == "No"){
+			return "pilotStudyQ13C";
+		}else{
+			return "pilotStudyQ13D";
+		}    
+	}else{
+		return "pilotStudyQ14";
+	}	
+}
+
+string next18a_clicked(){
+
+	if(pilotStudy.question18a == null){
+		Mez:alert("error.select_value");		
+		return null;
+	}
+	
+	return "pilotStudyQ19";
+		
+}
+
+string next18b_clicked(){
+
+	if(pilotStudy.question18b == null){
+		Mez:alert("error.select_value");		
+		return null;
+	}
+	
+	return "pilotStudyQ19";
+		
+}
+
+string next18c_clicked(){
+
+	if(pilotStudy.question18c == null){
+		Mez:alert("error.select_value");		
+		return null;
+	}
+	
+	return "pilotStudyQ19";
+		
+}
+
+string back18c_clicked(){
+
+	if(ageOfParticipant>15){		
+		return "pilotStudyQ17";
+	}
+
+	if(ageOfParticipant>5){	
+		if(pilotStudy.question11 == "No"){
+		return "pilotStudyQ11";
+		}else{
+		return "pilotStudyQ12";
+		}  
+	}
+  		
+	if(ageOfParticipant>2){		
+		if(pilotStudy.question13c == "No"){
+			return "pilotStudyQ13C";
+		}else{
+			return "pilotStudyQ13D";
+		}    
+	}else{
+		return "pilotStudyQ14";
+	}	
+}
+
+string next19_clicked(){
+
+	if(pilotStudy.question19 == null){
+		Mez:alert("error.select_value");		
+		return null;
+	}
+	
+	return "pilotStudyQ20";
+		
+}
+
+string back19_clicked(){
+
+	if(pilotStudy.question17== "1. Daily"){
+		return "pilotStudyQ18A";
+	}else if(pilotStudy.question17== "2. Yes but not daily"){
+		return "pilotStudyQ18B";
+	}else if(pilotStudy.question17== "3. Not at all"){
+		return "pilotStudyQ18C";
+	}
+	
+}
+
+string next20_clicked(){
+
+	if(pilotStudy.question20 == null){
+		Mez:alert("error.select_value");		
+		return null;
+	}
+	
+	return "pilotStudyQ21";
+		
+}
+
+string next21_clicked(){
+
+	if(pilotStudy.question21 == null){
+		Mez:alert("error.select_value");		
+		return null;
+	}
+	
+	return "pilotStudyQ22";
+		
+}
+
+string next22_clicked(){
+
+	if(pilotStudy.question22 == null){
+		Mez:alert("error.select_value");		
+		return null;
+	}
+	
+	return "pilotStudyQ23";
+		
+}
+
+string next23_clicked(){
+
+	if(pilotStudy.question23 == null){
+		Mez:alert("error.select_value");		
+		return null;
+	}
+	
+	return "pilotStudyQ24";
+		
+}
+
+string next24_clicked(){
+
+	if(pilotStudy.question24 == null){
+		Mez:alert("error.select_value");		
+		return null;
+	}
+	
+	return "pilotStudyQ25";
+		
+}
+
+string next25_clicked(){
+
+	if(pilotStudy.question25 == null){
+		Mez:alert("error.select_value");		
+		return null;
+	}
+	
+	return "pilotStudyQ26";
+		
+}
+
+string next26_clicked(){
+
+	pilotStudy.question26 = selectedOptionQ26();
+	
+	if(pilotStudy.question26 == null || pilotStudy.question26 == ""){
+		Mez:alert("error.select_value");		
+		return null;
+	}	
+    return "pilotStudyQ27";
+}
+
+string next27_clicked(){
+
+	if(pilotStudy.question27 == null){
+		Mez:alert("error.select_value");		
+		return null;
+	}
+	
+	return "pilotStudyQ28";
+		
+}
+
+string next28_clicked(){
+
+	pilotStudy.question28 = selectedOptionQ28();
+	
+	if(pilotStudy.question28 == null || pilotStudy.question28 == ""){
+		Mez:alert("error.select_value");		
+		return null;
+	}	
+    return "pilotStudyQ29";
+}
+
+
+string next29_clicked(){
+
+	pilotStudy.question29 = selectedOptionQ29();
+	
+	if(pilotStudy.question29 == null || pilotStudy.question29 == ""){
+		Mez:alert("error.select_value");		
+		return null;
+	}	
+    return "pilotStudyQ30";
+}
+
+string next30_clicked(){
+
+	if(pilotStudy.question30 == null){
+		Mez:alert("error.select_value");		
+		return null;
+	}
+	
+	return "pilotStudyQ31";
+		
+}
+
+string next31_clicked(){
+
+	if(pilotStudy.question31 == null){
+		Mez:alert("error.select_value");		
+		return null;
+	}
+	
+	return "pilotStudyQ32";
+		
+}
+
+string next32_clicked(){
+
+	if(pilotStudy.question32 == null){
+		Mez:alert("error.select_value");		
+		return null;
+	}
+	
+	return "pilotStudyQ33";
+		
+}
+
+string next33_clicked(){
+
+	if(pilotStudy.question33 == null){
+		Mez:alert("error.select_value");		
+		return null;
+	}
+	
+	if(pilotStudy.question33 == "Yes"){
+		return "pilotStudyQ34";
+	}else{
+		pilotStudy.question34 = null;
+		return "pilotStudyQ35";
+	}
+		
+}
+
+string next34_clicked(){
+
+	if(pilotStudy.question34 == null){
+		Mez:alert("error.select_value");		
+		return null;
+	}
+	
+	return "pilotStudyQ35";
+		
+}
+
+string next35_clicked(){
+
+	if(pilotStudy.question35 == null){
+		Mez:alert("error.select_value");		
+		return null;
+	}
+	if(pilotStudy.question35 == "Yes"){	
+		return "pilotStudyQ36";
+	}else{
+		pilotStudy.question36 = null; 
+		return "pilotStudyQ37";
+	}
+		
+		
+}
+
+string back35_clicked(){
+
+	if(pilotStudy.question33 == "Yes"){
+		return "pilotStudyQ34";
+	}else{	
+		return "pilotStudyQ33";
+	}
+		
+}
+
+string next36_clicked(){
+
+	if(pilotStudy.question36 == null){
+		Mez:alert("error.select_value");		
+		return null;
+	}
+	
+	return "pilotStudyQ37";
+		
+}
+
+string next37_clicked(){
+
+
+	pilotStudy.question37 = selectedOptionQ37();
+	
+	if(pilotStudy.question37 == null || pilotStudy.question37 == ""){
+		Mez:alert("error.select_value");		
+		return null;
+	}	
+    return "pilotStudyQ38";
+		
+}
+
+string back37_clicked(){
+
+	if(pilotStudy.question35 == "Yes"){
+		return "pilotStudyQ36";
+	}else{	
+		return "pilotStudyQ35";
+	}
+
+}
+
+
+string next38_clicked(){
+
+	if(pilotStudy.question38 == null){
+		Mez:alert("error.select_value");		
+		return null;
+	}
+	
+	return "pilotStudyQ39";
+		
+}
+
+string next39_clicked(){
+
+	if(pilotStudy.question39 == null){
+		Mez:alert("error.select_value");		
+		return null;
+	}
+	
+	if(pilotStudy.question39 == "No"){
+		Mez:alert("Msg.Q39");	
+	}
+	return "pilotStudyQ40";
+		
+}
+
+
+string next40_clicked(){
+
+	if(pilotStudy.question40 == null){
+		Mez:alert("error.select_value");		
+		return null;
+	}
+	
+	if(pilotStudy.question40 == "Yes"){
+		return "pilotStudyQ41";
+	}else{
+		pilotStudy.question41 = null;
+		return "pilotStudyQ42";
+	}
+		
+}
+
+string next41_clicked(){
+
+	if(pilotStudy.question41 == null){
+		Mez:alert("error.select_value");		
+		return null;
+	}
+	
+	return "pilotStudyQ42";
+		
+}
+
+string next42_clicked(){
+
+	if(pilotStudy.question42 == null){
+		Mez:alert("error.select_value");		
+		return null;
+	}
+	
+	return "pilotStudyQ43";
+		
+}
+
+string back42_clicked(){
+
+	if(pilotStudy.question40 == "Yes"){
+		return "pilotStudyQ41";
+	}else{
+		return "pilotStudyQ40";
+	}
+
+}
+
+string next43_clicked(){
+
+	if(pilotStudy.question43 == null){
+		Mez:alert("error.select_value");		
+		return null;
+	}
+	
+	saveCalledForm="pilotStudyQ43";
+	return "pilotStudySaveConfirm";
+		
+}
+
+string backConfirm_clicked(){
+
+	if(saveCalledForm != null){
+		return saveCalledForm;	
+	}else{
+		return "pilotStudyQ1";
+	}	
+}
+
+string saveConfirm_clicked(){
+	return savePilotStudy();
+}
+

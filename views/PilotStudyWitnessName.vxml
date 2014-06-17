@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui xmlns="http://uiprogram.mezzanine.com/View"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://uiprogram.mezzanine.com/View ../../xsd/View.xsd">
+    <view label="healthWorker.pilotStudy.edit.label.digitalconsentwitness" unit="PilotStudyEdit">
+	
+		<navigation outcome="pilotStudyICQ7" target="PilotStudyICQ7View" />
+		<navigation outcome="pilotStudyDigitalConsentWitness" target="PilotStudyDigitalConsentWitness" />		
+		<navigation outcome="pilotStudySaveConfirm" target="PilotStudyEditSaveConfirm" />		
+
+        <textfield label="healthWorker.pilotStudy.edit.label.witnessName">
+            <binding variable="pilotStudy"><attribute name="witnessName"/></binding>
+        </textfield>
+		
+        <button label="healthWorker.pilotStudy.edit.action.back" outcome="pilotStudyICQ7"/>
+		<submit label="healthWorker.pilotStudy.edit.action.next" action="PilotStudyEdit:witnessname_clicked"/>
+    </view>
+</ui>

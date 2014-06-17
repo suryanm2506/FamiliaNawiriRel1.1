@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui xmlns="http://uiprogram.mezzanine.com/View" 
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://uiprogram.mezzanine.com/View ../views/xsd/View.xsd">
+    <view label="healthWorker.pilotStudyMenu.title">
+	
+		<navigation outcome="mainMenu" target="MainMenu"/>  
+		<navigation outcome="pilotStudyFilter" target="PilotStudyFilterCountyView"/>  		
+		<navigation outcome="pilotStudyEditView" target="PilotStudyICQ1View"/>  
+
+		<button label="healthWorker.pilotStudyMenu.option1" outcome="pilotStudyEditView"/>		
+
+		<button label="healthWorker.pilotStudyMenu.option2" outcome="pilotStudyFilter"/>	
+
+		<button label="healthWorker.pilotStudyMenu.option3" outcome="mainMenu" />			
+
+    </view>
+</ui>

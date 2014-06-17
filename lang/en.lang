@@ -1,0 +1,223 @@
+firstNames=First Name
+surname=Last Name
+mobileNo=Mobile Number
+
+Option1_clicked=Option-1 Clicked
+Option2_clicked=This option is under construction
+
+
+Msg_Success=Message Success
+Msg.Q39=Community health worker to provide information on what Familia Nawiri
+error.required_field=Mandatory Field
+error.select_value=Please select a value
+error.required_field.countyName=Please Select County Name
+error.required_field.wardName=Ward Name is Mandatory. Please enter a value
+error.required_field.healthFacility=Health Facility is Mandatory. Please enter a value
+error.required_field.facilityLevel=Health Facility Level is Mandatory. Please enter a value
+error.required_field.facilityOwnership=Health Facility Ownership is Mandatory. Please enter a value
+error.required_field.participantID=Participant ID is Mandatory. Please enter a value
+error.required_field.participantName=Participant Name is Mandatory. Please enter a value
+error.required_field.participantAge=Age of the Participant/Gaurdian cannot be greater than current date
+error.duplicate.participantID=This Participant ID is already in use. Please enter a new value.
+error.required_field.informedConsent=Informed Consent is Mandatory. Please select a value.
+error.no.informedConsent=Participant signing Informed Consent is Mandatory. Please get the Informed Consent signed before proceeding.
+error.validation.dobMother=Mothers Age cannot be below 15 years.
+error.required_field.13a=Please Select a Value for Rotavirus Vaccination Information.
+error.required_field.13b=Please Select a Value for option b.
+error.required_field.13c=Please Select a Value for Pneumococcal Vaccination.
+error.required_field.13d=Please Select a Value for option d.
+error.required_field.day=Day is Mandatory. Please enter a value.
+error.required_field.month=Month is Mandatory. Please enter a value.
+error.required_field.year=Year is Mandatory. Please enter a value.
+error.admin.healthWorkerList.phoneNumber=Re-Enter Mobile Number is Mandatory. Please enter a value.
+error.admin.healthWorkerList.firstName=First Name is Mandatory. Please enter a value.
+error.admin.healthWorkerList.lastName=Last Name is Mandatory. Please enter a value.
+
+
+healthWorker.registered=First Registered
+healthWorker.mobileNumber=Mobile Number
+
+admin.healthWorkerList.menu=Administrator
+admin.healthWorkerList.title=Manage Health Workers
+admin.healthWorkerList.invite=Mobile Number
+admin.healthWorkerList.invite.confirm=Re-Enter Mobile Number
+admin.healthWorkerList.submitInvite=Invite Health Worker
+admin.healthWorkerList.submitInviteAlert=The Health Worker has been invited
+admin.healthWorkerList.list.title=Health Workers
+admin.healthWorkerList.initializeMasters=Initialize Masters
+admin.healthWorkerList.ClearAll=Clear All Master Data
+admin.healthWorkerList.phoneNumber=Re-Enter Mobile Number
+admin.healthWorkerList.invite.firstName=First Name
+admin.healthWorkerList.invite.lastName=Last Name
+
+admin.healthWorkerList.list.table.rowAction.delete = Delete
+
+healthWorker.mainMenu.menu=Health Worker
+healthWorker.mainMenu.title=Main Menu
+healthWorker.mainMenu.option1=Pilot Study Questionnaire
+healthWorker.mainMenu.option2=Family Questionnaire
+
+healthWorker.pilotStudyMenu.title=Pilot Study Menu
+healthWorker.pilotStudyMenu.option1=New Interview
+healthWorker.pilotStudyMenu.option2=View Interview
+healthWorker.pilotStudyMenu.option3=Main Menu
+
+
+healthWorker.pilotStudy.edit.view.label=New Pilot Study
+healthWorker.pilotStudy.edit.view.facility.label=Health Facility Details
+healthWorker.pilotStudy.edit.label.countyName=County Name
+healthWorker.pilotStudy.edit.label.wardName=Ward Name
+healthWorker.pilotStudy.edit.label.healthFacility=Health Facility Name
+healthWorker.pilotStudy.edit.label.facilitylevel=Facility Level
+healthWorker.pilotStudy.edit.label.facilitywonership=Facility Ownership
+healthWorker.pilotStudy.edit.label.participantID=Participant ID
+healthWorker.pilotStudy.edit.label.participantName=Participant Name
+healthWorker.pilotStudy.edit.label.witnessName=Witness Name
+healthWorker.pilotStudy.edit.label.dobParticipant=Date of Birth of Participant
+healthWorker.pilotStudy.edit.label.informedConsent=Has the participant signed the Informed Consent form?
+healthWorker.pilotStudy.edit.action.reviewed=Reviewed and Accepted >>
+healthWorker.pilotStudy.edit.action.next=Next >>
+healthWorker.pilotStudy.edit.action.back=<<  Back
+healthWorker.pilotStudy.edit.action.filter=Filter
+healthWorker.pilotStudy.edit.action.cancel=Cancel
+healthWorker.pilotStudy.edit.action.yes=Yes
+healthWorker.pilotStudy.edit.action.no=No
+healthWorker.pilotStudy.edit.action.saved=Interview Completed and Saved Successfully.
+healthWorker.pilotStudy.edit.action.viewSaved=This is View only and hence modifications if any are not saved.
+healthWorker.pilotStudy.edit.action.save.confirm=This completes the Interview. Do you want to save this Interview?
+healthWorker.pilotStudy.edit.label.blanklabel=.
+healthWorker.pilotStudy.edit.label.visitReason=Reason for Visiting the Health Facility
+
+
+healthWorker.pilotStudy.filter.view.label=Filter Criteria
+healthWorker.pilotStudy.filter.view.ward.label=Filter Criteria-Ward Name
+healthWorker.pilotStudy.filter.interview.label=Select Pilot Study to View
+healthWorker.pilotStudy.edit.label.question.button.view=View
+
+healthWorker.pilotStudy.edit.action.cancel.confirm=Changes will be lost. Do you want to continue?
+healthWorker.pilotStudy.edit.action.cancel.subject=Deleting the Interview
+
+healthWorker.pilotStudy.edit.label.question.label=Select Options from below
+healthWorker.pilotStudy.edit.label.question.checked=Selected?
+healthWorker.pilotStudy.edit.label.question.button.toggle=Toggle
+
+healthWorker.pilotStudy.edit.ic.view.label=Informed Consent
+healthWorker.pilotStudy.edit.label.icquestion_select=.
+
+healthWorker.pilotStudy.edit.label.icquestion1=I have been told about the purpose of the research study
+healthWorker.pilotStudy.edit.label.icquestion2=I have been made aware of any possible risks and benefits associated with taking part in the study
+healthWorker.pilotStudy.edit.label.icquestion3=I have had time to ask questions about the Research
+healthWorker.pilotStudy.edit.label.icquestion4=I know that the decision about the research will not affect my access to care or treatment in any way
+healthWorker.pilotStudy.edit.label.icquestion5=I know that the information used for the research will not identify me, or members of my household, in any way
+healthWorker.pilotStudy.edit.label.icquestion6=I give my permission for the information I give here to be used for the research study
+healthWorker.pilotStudy.edit.label.icquestion7=I agree to take part in the study
+healthWorker.pilotStudy.edit.label.dataCaptureMode=Data Capture using Web Browser (Yes/No)?
+healthWorker.pilotStudy.edit.label.consent=I agree to the terms and conditions of this study.
+healthWorker.pilotStudy.edit.label.digitalconsent=Paticipants Signature
+healthWorker.pilotStudy.edit.label.digitalconsentwitness=Witness Signature
+healthWorker.pilotStudy.edit.label.manualSignature=Scan Image of the Paper based Signature.
+healthWorker.pilotStudy.edit.label.participantconsent=Participant Consent
+healthWorker.pilotStudy.edit.label.signedByParticipant=Can Participant sign Digitally?
+
+healthWorker.pilotStudy.edit.sect.view.label=Review Data Input 
+
+healthWorker.pilotStudy.edit.label.question1=Q1. Is participant, parent/guardian willing to take part in study?
+healthWorker.pilotStudy.edit.label.question2=Q2. Has participant lived in same village for the last 6 months?
+healthWorker.pilotStudy.edit.label.question3=Q3. Reason for attending health facility (Medical condition or service)
+healthWorker.pilotStudy.edit.label.question4=Q4. Do you know your HIV status? (i.e., study participant)
+healthWorker.pilotStudy.edit.label.question5=Q5. If yes, what is your HIV status?
+healthWorker.pilotStudy.edit.label.question6=Q6. Have you suffered from diarrhea in the last two weeks?
+healthWorker.pilotStudy.edit.label.question7=Q7. Have you suffered from any respiratory infection or symptom such as (pneumonia, bronchitis, cold/cough difficulty breathing, chest pain, sore throat, sneezing, or runny nose) in the last 2 weeks
+healthWorker.pilotStudy.edit.label.question8=Q8. Gender
+healthWorker.pilotStudy.edit.label.question9=Q9. Age of participant (DOB). If date not known pick 15, if month not known pick June.
+healthWorker.pilotStudy.edit.label.question10=Q10. Age of mother or guardian (DOB). If date not known pick 15, if month not known pick June
+healthWorker.pilotStudy.edit.label.question11=Q11. Mother or guardian level of education: Have you ever attended school?
+healthWorker.pilotStudy.edit.label.question12=Q12. What is the highest level of school you have attended?
+healthWorker.pilotStudy.edit.label.question13=Q13. Did they receive the following vaccines?
+healthWorker.pilotStudy.edit.label.question13a=Q13a. Did you receive Rotavirus Vaccination?
+healthWorker.pilotStudy.edit.label.question13b=Q13b. Is there a vaccination card to verify Rotavirus Vaccination?
+healthWorker.pilotStudy.edit.label.question13c=Q13c. Did you receive Pneumococcal Vaccination?
+healthWorker.pilotStudy.edit.label.question13d=Q13d. Is there a vaccination card to verify Pneumococcal Vaccination?
+healthWorker.pilotStudy.edit.label.question14=Q14. Is the child breastfeeding?
+healthWorker.pilotStudy.edit.label.question15=Q15. Have you ever attended school?
+healthWorker.pilotStudy.edit.label.question16=Q16. What is the highest level of school you have attended?
+healthWorker.pilotStudy.edit.label.question17=Q17. Do you currently smoke any tobacco products such as cigarettes or hand-rolled cigarettes
+healthWorker.pilotStudy.edit.label.question18a=Q18. How many cigarettes per day do you smoke?
+healthWorker.pilotStudy.edit.label.question18b=Q18. How many cigarettes per week do you smoke?
+healthWorker.pilotStudy.edit.label.question18c=Q18. Do you live with a family member who smokes?
+healthWorker.pilotStudy.edit.label.question19=Q19. What is the main material of the exterior wall? 
+healthWorker.pilotStudy.edit.label.question20=Q20. What is the main material of the floor? 
+healthWorker.pilotStudy.edit.label.question21=Q21. What is the main material of the roof? 
+healthWorker.pilotStudy.edit.label.question22=Q22. How many rooms for sleeping do you have in your house?
+healthWorker.pilotStudy.edit.label.question23=Q23. How many people live regularly in your house?
+healthWorker.pilotStudy.edit.label.question24=Q24. What mode of transport do you use to get to your nearest health facility
+healthWorker.pilotStudy.edit.label.question25=Q25. How long does it take to get to the health facility from your house?
+healthWorker.pilotStudy.edit.label.question26=Q26. Do you know what causes diarrhea? (More than one answers possible)
+healthWorker.pilotStudy.edit.label.question27=Q27. Does maintaining personal hygiene help in preventing respiratory infection
+healthWorker.pilotStudy.edit.label.question28=Q28. When should a person suffering from diarrhea go to a health facility or health worker? (More than one answer possible)
+healthWorker.pilotStudy.edit.label.question29=Q29. When should a person suffering from a cough go to a health facility or health worker? (More than one answer possible)
+healthWorker.pilotStudy.edit.label.question30=Q30. What is your main source of water?
+healthWorker.pilotStudy.edit.label.question31=Q31. How far do you travel to get to your main source of water?
+healthWorker.pilotStudy.edit.label.question32=Q32. Where do you usually store drinking water?
+healthWorker.pilotStudy.edit.label.question33=Q33. Do you usually do anything to the water to make it safer to drink?
+healthWorker.pilotStudy.edit.label.question34=Q34. What do you usually do to make water safer to drink?
+healthWorker.pilotStudy.edit.label.question35=Q35. Do you have toilet facilities at home?
+healthWorker.pilotStudy.edit.label.question36=Q36. What kind of toilet facilities does your household use?
+healthWorker.pilotStudy.edit.label.question37=Q37. When do you wash your hands? (More than 1 answers possible)
+healthWorker.pilotStudy.edit.label.question38=Q38. How do you wash your hands?
+healthWorker.pilotStudy.edit.label.question39=Q39. Have you heard of Familia Nawiri?
+healthWorker.pilotStudy.edit.label.question40=Q40. Have you ever attended a Familia Nawiri health education meeting on hygiene?
+healthWorker.pilotStudy.edit.label.question41=Q41. Number of sessions attended?
+healthWorker.pilotStudy.edit.label.question42=Q42. Have you attended any other hygiene education training apart from Familia Nawiri?
+healthWorker.pilotStudy.edit.label.question43=Q43. Are you aware of any water improvement projects in your community in the last one year?
+
+
+healthWorker.pilotStudy.edit.q1.view.label=Section A: Participants Recruitment
+healthWorker.pilotStudy.edit.q2.view.label=Section A: Participants Recruitment
+healthWorker.pilotStudy.edit.q3.view.label=Section A: Participants Recruitment
+healthWorker.pilotStudy.edit.q4.view.label=Section A: Participants Recruitment
+healthWorker.pilotStudy.edit.q5.view.label=Section A: Participants Recruitment
+healthWorker.pilotStudy.edit.q6.view.label=Section A: Participants Recruitment
+healthWorker.pilotStudy.edit.q7.view.label=Section A: Participants Recruitment
+healthWorker.pilotStudy.edit.q8.view.label=Section B: Sociodemographic Data
+healthWorker.pilotStudy.edit.q9.view.label=Section B: Sociodemographic Data
+healthWorker.pilotStudy.edit.q10.view.label=Section B: Sociodemographic Data
+healthWorker.pilotStudy.edit.q11.view.label=Section B: Sociodemographic Data
+healthWorker.pilotStudy.edit.q12.view.label=Section B: Sociodemographic Data
+healthWorker.pilotStudy.edit.q13.view.label=Section B: Sociodemographic Data
+healthWorker.pilotStudy.edit.q14.view.label=Section B: Sociodemographic Data
+healthWorker.pilotStudy.edit.q15.view.label=Section B: Sociodemographic Data
+healthWorker.pilotStudy.edit.q16.view.label=Section B: Sociodemographic Data
+healthWorker.pilotStudy.edit.q17.view.label=Section B: Sociodemographic Data
+healthWorker.pilotStudy.edit.q18.view.label=Section B: Sociodemographic Data
+healthWorker.pilotStudy.edit.q19.view.label=Section B: Sociodemographic Data
+healthWorker.pilotStudy.edit.q20.view.label=Section B: Sociodemographic Data
+healthWorker.pilotStudy.edit.q21.view.label=Section B: Sociodemographic Data
+healthWorker.pilotStudy.edit.q22.view.label=Section B: Sociodemographic Data
+healthWorker.pilotStudy.edit.q23.view.label=Section B: Sociodemographic Data
+healthWorker.pilotStudy.edit.q24.view.label=Section B: Sociodemographic Data
+healthWorker.pilotStudy.edit.q25.view.label=Section B: Sociodemographic Data
+healthWorker.pilotStudy.edit.q26.view.label=Section C: Knowledge
+healthWorker.pilotStudy.edit.q27.view.label=Section C: Knowledge
+healthWorker.pilotStudy.edit.q28.view.label=Section C: Knowledge
+healthWorker.pilotStudy.edit.q29.view.label=Section C: Knowledge
+healthWorker.pilotStudy.edit.q30.view.label=Section D: Sanitation and Hygiene Practices
+healthWorker.pilotStudy.edit.q31.view.label=Section D: Sanitation and Hygiene Practices
+healthWorker.pilotStudy.edit.q32.view.label=Section D: Sanitation and Hygiene Practices
+healthWorker.pilotStudy.edit.q33.view.label=Section D: Sanitation and Hygiene Practices
+healthWorker.pilotStudy.edit.q34.view.label=Section D: Sanitation and Hygiene Practices
+healthWorker.pilotStudy.edit.q35.view.label=Section D: Sanitation and Hygiene Practices
+healthWorker.pilotStudy.edit.q36.view.label=Section D: Sanitation and Hygiene Practices
+healthWorker.pilotStudy.edit.q37.view.label=Section D: Sanitation and Hygiene Practices
+healthWorker.pilotStudy.edit.q38.view.label=Section D: Sanitation and Hygiene Practices
+healthWorker.pilotStudy.edit.q39.view.label=Section E: Community Health Education Awareness Programs
+healthWorker.pilotStudy.edit.q40.view.label=Section E: Community Health Education Awareness Programs
+healthWorker.pilotStudy.edit.q41.view.label=Section E: Community Health Education Awareness Programs
+healthWorker.pilotStudy.edit.q42.view.label=Section E: Community Health Education Awareness Programs
+healthWorker.pilotStudy.edit.q43.view.label=Section E: Community Health Education Awareness Programs
+
+
+healthWorker.pilotStudy.edit.label.day=Day
+healthWorker.pilotStudy.edit.label.month=Month
+healthWorker.pilotStudy.edit.label.year=Year
+

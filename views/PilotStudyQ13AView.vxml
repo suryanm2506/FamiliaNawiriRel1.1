@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui xmlns="http://uiprogram.mezzanine.com/View"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://uiprogram.mezzanine.com/View ../../xsd/View.xsd">
+    <view label="healthWorker.pilotStudy.edit.q13.view.label" unit="PilotStudyEdit">
+
+		<navigation outcome="pilotStudyQ11" target="PilotStudyQ11View" />	
+		<navigation outcome="pilotStudyQ12" target="PilotStudyQ12View" />
+        <navigation outcome="pilotStudyQ13B" target="PilotStudyQ13BView" />
+        <navigation outcome="pilotStudyQ13C" target="PilotStudyQ13CView" />		
+		
+        <select label="healthWorker.pilotStudy.edit.label.question13a">
+            <binding variable="pilotStudy"><attribute name="question13a"/></binding>
+			<collectionSource function="CodeValueList:getYesNo"/>
+        </select>
+		
+        <button label="healthWorker.pilotStudy.edit.action.back" action="PilotStudyEdit:back13a_clicked"/>
+		<submit label="healthWorker.pilotStudy.edit.action.next" action="PilotStudyEdit:next13a_clicked"/>
+    </view>
+</ui>

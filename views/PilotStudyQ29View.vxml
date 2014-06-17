@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui xmlns="http://uiprogram.mezzanine.com/View"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://uiprogram.mezzanine.com/View ../../xsd/View.xsd">
+    <view label="healthWorker.pilotStudy.edit.q29.view.label" unit="PilotStudyEdit">
+	
+		<navigation outcome="pilotStudyQ28" target="PilotStudyQ28View" />
+        <navigation outcome="pilotStudyQ30" target="PilotStudySectCView" />
+
+		<info label="healthWorker.pilotStudy.edit.label.question29">
+            <binding variable="temp"/>
+        </info>		
+				
+		<table title="healthWorker.pilotStudy.edit.label.blanklabel">
+            <collectionSource function="getOptionsQ29"/>
+			
+            <column heading="healthWorker.pilotStudy.edit.label.question.label">
+                <attributeName>value</attributeName>
+            </column>
+			
+            <column heading="healthWorker.pilotStudy.edit.label.question.checked">
+                <attributeName>checked</attributeName>
+            </column>
+			
+            <rowAction label="healthWorker.pilotStudy.edit.label.question.button.toggle" action="toggleConditionQ29">
+                <binding variable="optionQ29"/>
+            </rowAction>
+			
+        </table>
+		
+        <button label="healthWorker.pilotStudy.edit.action.back" outcome="pilotStudyQ28"/>
+		<submit label="healthWorker.pilotStudy.edit.action.next" action="PilotStudyEdit:next29_clicked"/>
+    </view>
+</ui>

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui xmlns="http://uiprogram.mezzanine.com/View"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://uiprogram.mezzanine.com/View ../../xsd/View.xsd">
+    <view label="healthWorker.pilotStudy.edit.view.facility.label" unit="PilotStudyEdit">
+
+        <navigation outcome="pilotStudyCounty" target="PilotStudyCountyView" />		
+		<navigation outcome="pilotStudyQ1" target="PilotStudyQ1View" />
+ 
+         <select label="healthWorker.pilotStudy.edit.label.wardName">
+            <binding variable="pilotStudy"><attribute name="wardName"/></binding>
+			<collectionSource function="PilotStudyEdit:getWardNamesForCounty"/>
+        </select>
+	
+        <textfield label="healthWorker.pilotStudy.edit.label.healthFacility">
+            <binding variable="pilotStudy"><attribute name="healthFacility"/></binding>
+        </textfield>		
+
+         <select label="healthWorker.pilotStudy.edit.label.facilitylevel">
+            <binding variable="pilotStudy"><attribute name="facilityLevel"/></binding>
+			<collectionSource function="CodeValueList:getFacilityLevels"/>
+        </select>
+
+        <select label="healthWorker.pilotStudy.edit.label.facilitywonership">
+            <binding variable="pilotStudy"><attribute name="facilityOwnership"/></binding>
+			<collectionSource function="CodeValueList:getFacilityOwnerships"/>
+        </select>
+
+
+        <button label="healthWorker.pilotStudy.edit.action.back" outcome="pilotStudyCounty"/>
+		<submit label="healthWorker.pilotStudy.edit.action.next" action="PilotStudyEdit:nextWardHF_clicked"/>
+    </view>
+</ui>

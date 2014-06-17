@@ -1,0 +1,571 @@
+unit CodeValueList;
+
+CodeValue codeValue;
+
+CodeValue[] getCodeValues(){
+    return CodeValue:all();
+}
+
+void clearAllRecords(){
+   /* CodeValue[] tempResult = CodeValue:all();
+	tempResult clear()
+	
+	for(int i = 0; i < tempResult.length(); i++){
+        CodeValue tempCodeValue;
+        tempCodeValue = tempResult.get(i);
+        tempResult.get(i).remove();
+		tempResult.get(i).save();
+    }
+	tempResult.save();
+	//tmp.clear();
+	
+	
+	
+	tmp.save();
+	CodeValue tmpCodeValue = CodeValue:new();   
+	return tmpCodeValue;
+	*/
+	return;
+}
+
+void createCodeValue(string code, string value){
+	
+	if(checkForDuplicates(code, value) > 0 ){
+		return null;
+	}	
+	CodeValue codeValue = CodeValue:new();    
+    codeValue.code = code;
+    codeValue.value = value;
+    codeValue.save();
+	Mez:alert("Msg_Success");
+}
+
+int checkForDuplicates(string code, string value){
+	CodeValue[] tempResult = CodeValue:and(equals(code, code), equals(value, value));
+	if(tempResult.length() > 0){
+		return 1;
+	}
+	return 0;
+}
+
+
+string[] getFilteredCodeValues(string code){    
+	
+	CodeValue[] tempResult = CodeValue:equals(code, code);
+	string[] resultValue;	
+	for(int i = 0; i < tempResult.length(); i++){
+        CodeValue tempCodeValue;
+		string tempValue;
+        tempCodeValue = tempResult.get(i);
+        resultValue.append(tempCodeValue.value);
+    }
+	
+	if (resultValue.length() == 0){
+		resultValue.append("No Data Found");
+	}
+    return resultValue;
+	
+}
+
+void createAllCodeValues(){
+
+
+	createCodeValue("YESNO","Yes");
+	createCodeValue("YESNO","No");
+
+	createCodeValue("COUNTYNAMES","Kirinyaga");
+	createCodeValue("COUNTYNAMES","Embu");
+	createCodeValue("COUNTYNAMES","Nakuru");
+
+	createCodeValue("HIVSTATUS","1. Positive");
+	createCodeValue("HIVSTATUS","2. Negative");
+	createCodeValue("HIVSTATUS","3. No Response");
+	createCodeValue("HIVSTATUS","4. Dont Know");	
+
+	createCodeValue("GENDER","1. Male");
+	createCodeValue("GENDER","2. Female");
+
+	createCodeValue("OPTIONSQ3","01. Diarrhea");
+	createCodeValue("OPTIONSQ3","02. Respiratory infection");
+	createCodeValue("OPTIONSQ3","03. Accident/Injury");
+	createCodeValue("OPTIONSQ3","04. Burn");
+	createCodeValue("OPTIONSQ3","05. Diabetes");
+	createCodeValue("OPTIONSQ3","06. Hypertension");
+	createCodeValue("OPTIONSQ3","07. Cancer");
+	createCodeValue("OPTIONSQ3","08. Dental problems");
+	createCodeValue("OPTIONSQ3","09. Family planning");
+	createCodeValue("OPTIONSQ3","10. HIV/AIDS");
+	createCodeValue("OPTIONSQ3","11. Skin conditions");
+	createCodeValue("OPTIONSQ3","12. Family planning");
+	createCodeValue("OPTIONSQ3","13. Pneumonia");
+	createCodeValue("OPTIONSQ3","14. Fever/Malaria");
+	createCodeValue("OPTIONSQ3","15. TB");
+	createCodeValue("OPTIONSQ3","16. STI");
+	createCodeValue("OPTIONSQ3","17. Others");
+		
+	createCodeValue("SCHOOLING","1. Nursery or kindergarten");
+	createCodeValue("SCHOOLING","2. Post-primary/vocational");
+	createCodeValue("SCHOOLING","3. Primary level");
+	createCodeValue("SCHOOLING","4. Secondary/A level");
+	createCodeValue("SCHOOLING","5. College (middle level)");
+	createCodeValue("SCHOOLING","6. University");
+
+	createCodeValue("OPTIONSQ14","1.Exclusively");
+	createCodeValue("OPTIONSQ14","2.Not at all");
+	createCodeValue("OPTIONSQ14","3.Partially");
+	createCodeValue("OPTIONSQ14","4.Dont know");
+
+	
+	createCodeValue("OPTIONSQ17","1. Daily");
+	createCodeValue("OPTIONSQ17","2. Yes but not daily");
+	createCodeValue("OPTIONSQ17","3. Not at all");
+	
+	
+	createCodeValue("OPTIONSQ18","1. 1 to 4");
+	createCodeValue("OPTIONSQ18","2. 5 to 9");
+	createCodeValue("OPTIONSQ18","3. 10 to 14");
+	createCodeValue("OPTIONSQ18","4. 15 to 19");
+	createCodeValue("OPTIONSQ18","5. 20 to 24");
+	createCodeValue("OPTIONSQ18","6. 25+");
+	
+	createCodeValue("OPTIONSQ19","01. Natural walls - No walls");
+	createCodeValue("OPTIONSQ19","02. Natural walls - Cane/palm/trunks");
+	createCodeValue("OPTIONSQ19","03. Natural walls - Mud/dung");
+	createCodeValue("OPTIONSQ19","04. Rudimentary walls - Bamboo with mud");
+	createCodeValue("OPTIONSQ19","05. Rudimentary walls - Stone with mud/cement with mud");
+	createCodeValue("OPTIONSQ19","06. Rudimentary walls - Plywood/cardboard");
+	createCodeValue("OPTIONSQ19","07. Rudimentary walls - Reused wood");
+	createCodeValue("OPTIONSQ19","08. Rudimentary walls - Carton");
+	createCodeValue("OPTIONSQ19","09. Finished walls - Cement");
+	createCodeValue("OPTIONSQ19","10. Finished walls - Stone with lime/cement");
+	createCodeValue("OPTIONSQ19","11. Finished walls - Bricks");
+	createCodeValue("OPTIONSQ19","12. Finished walls - Cement blocks");
+	createCodeValue("OPTIONSQ19","13. Finished walls - Wood planks/shingles");
+	createCodeValue("OPTIONSQ19","14. Finished walls - Others");
+	
+	createCodeValue("OPTIONSQ20","01. Natural floor - Earth/sand");
+	createCodeValue("OPTIONSQ20","02. Natural walls - Dung");
+	createCodeValue("OPTIONSQ20","03. Rudimentary floor - Wood planks");
+	createCodeValue("OPTIONSQ20","04. Rudimentary floor - Palm/bamboo");
+	createCodeValue("OPTIONSQ20","05. Finished floor - Parquet or polished");
+	createCodeValue("OPTIONSQ20","06. Finished floor - Wood");
+	createCodeValue("OPTIONSQ20","07. Finished floor - Vinyl or asphalt strips");
+	createCodeValue("OPTIONSQ20","08. Finished floor - Ceramic tiles");
+	createCodeValue("OPTIONSQ20","09. Finished floor - Cement/terrazzo");
+	createCodeValue("OPTIONSQ20","10. Finished floor - Carpet");
+	createCodeValue("OPTIONSQ20","11. Finished floor - Others");
+	
+	
+	createCodeValue("OPTIONSQ21","1. Natural roofing - No roof");
+	createCodeValue("OPTIONSQ21","2. Natural roofing - Thatch / palm leaf (makuti)");
+	createCodeValue("OPTIONSQ21","3. Natural roofing - Dung / mud");
+	createCodeValue("OPTIONSQ21","4. Rudimentary roofing - Corrugated iron (mabati)");
+	createCodeValue("OPTIONSQ21","5. Rudimentary roofing - Parquet or polished");
+	createCodeValue("OPTIONSQ21","6. Finished roofing - Asbestos sheet");
+	createCodeValue("OPTIONSQ21","7. Finished roofing - Concrete");
+	createCodeValue("OPTIONSQ21","8. Finished roofing - Tiles");
+	createCodeValue("OPTIONSQ21","9. Finished roofing - Others");	
+	
+	createCodeValue("OPTIONSQ22","1");
+	createCodeValue("OPTIONSQ22","2");
+	createCodeValue("OPTIONSQ22","3");
+	createCodeValue("OPTIONSQ22","4");
+	createCodeValue("OPTIONSQ22","5 or more");	
+
+	createCodeValue("OPTIONSQ23","1 to 3");
+	createCodeValue("OPTIONSQ23","4 to 6");
+	createCodeValue("OPTIONSQ23","7 to 9");
+	createCodeValue("OPTIONSQ23","Ten or More");
+
+	createCodeValue("OPTIONSQ24","1. Public transport e.g. bus or matatu");
+	createCodeValue("OPTIONSQ24","2. Boda boda");
+	createCodeValue("OPTIONSQ24","3. Bicycle");
+	createCodeValue("OPTIONSQ24","4. Animal e.g. donkey");
+	createCodeValue("OPTIONSQ24","5. Walk");	
+
+	createCodeValue("OPTIONSQ25","1. Less than 10 minutes");
+	createCodeValue("OPTIONSQ25","2. 30 minutes");
+	createCodeValue("OPTIONSQ25","3. 1 hr");
+	createCodeValue("OPTIONSQ25","4. 2hrs");
+	createCodeValue("OPTIONSQ25","5. 3hrs");	
+	createCodeValue("OPTIONSQ25","6. More than 3hrs");		
+	
+	
+	createCodeValue("OPTIONSQ26","01. Unbalanced diet");
+	createCodeValue("OPTIONSQ26","02. Old food/unwashed food");
+	createCodeValue("OPTIONSQ26","03. Mothers milk");
+	createCodeValue("OPTIONSQ26","04. Bottle feeding");
+	createCodeValue("OPTIONSQ26","05. Flies");	
+	createCodeValue("OPTIONSQ26","06. Dirt");		
+	createCodeValue("OPTIONSQ26","07. Germs/bacteria");
+	createCodeValue("OPTIONSQ26","08. Open defecation");
+	createCodeValue("OPTIONSQ26","09. Unclean environment");
+	createCodeValue("OPTIONSQ26","10. Unclean hands");
+	createCodeValue("OPTIONSQ26","11. Weather");	
+	createCodeValue("OPTIONSQ26","12. Outside our control");	
+	createCodeValue("OPTIONSQ26","13. Dirty Water");	
+	createCodeValue("OPTIONSQ26","14. Teething");	
+	
+	
+	createCodeValue("OPTIONSQ28","00. No need, it will resolve itself");
+	createCodeValue("OPTIONSQ28","01. Many watery stools");
+	createCodeValue("OPTIONSQ28","02. Marked thirst");
+	createCodeValue("OPTIONSQ28","03. Not eating/drinking well");
+	createCodeValue("OPTIONSQ28","04. Not getting better/very sick");
+	createCodeValue("OPTIONSQ28","05. Repeated vomiting");	
+	createCodeValue("OPTIONSQ28","06. Fever");		
+	createCodeValue("OPTIONSQ28","07. Blood in stool");
+	createCodeValue("OPTIONSQ28","08. Does not know");
+	createCodeValue("OPTIONSQ28","09. Immediately");	
+	createCodeValue("OPTIONSQ28","10. Others");
+
+
+	createCodeValue("OPTIONSQ29","00. No need, it will resolve itself");
+	createCodeValue("OPTIONSQ29","01. Fast breathing");
+	createCodeValue("OPTIONSQ29","02. Difficult breathing");
+	createCodeValue("OPTIONSQ29","03. Not eating/drinking well");
+	createCodeValue("OPTIONSQ29","04. Not getting better/very sick");
+	createCodeValue("OPTIONSQ29","05. Noisy breathing");	
+	createCodeValue("OPTIONSQ29","06. Fever");		
+	createCodeValue("OPTIONSQ29","07. Has a blocked nose");
+	createCodeValue("OPTIONSQ29","08. Does not know");
+	createCodeValue("OPTIONSQ29","09. Immediately");		
+	createCodeValue("OPTIONSQ29","10. Others");
+
+	
+	createCodeValue("OPTIONSQ30","01. Piped water in the compound");
+	createCodeValue("OPTIONSQ30","02. Public tap");
+	createCodeValue("OPTIONSQ30","03. Borehole");
+	createCodeValue("OPTIONSQ30","04. Rain");
+	createCodeValue("OPTIONSQ30","05. Open well in the compound");	
+	createCodeValue("OPTIONSQ30","06. Pond");		
+	createCodeValue("OPTIONSQ30","07. Stream");
+	createCodeValue("OPTIONSQ30","08. Covered well in the compound");
+	createCodeValue("OPTIONSQ30","09. Canal");
+	createCodeValue("OPTIONSQ30","10. Open public well");
+	createCodeValue("OPTIONSQ30","11. Covered public well");
+	createCodeValue("OPTIONSQ30","12. River");	
+	createCodeValue("OPTIONSQ30","13. Dam");		
+	createCodeValue("OPTIONSQ30","14. Irrigation Channel");
+	
+	createCodeValue("OPTIONSQ32","1. Water tank inside the home");
+	createCodeValue("OPTIONSQ32","2. Bucket");
+	createCodeValue("OPTIONSQ32","3. Jerry can");
+	createCodeValue("OPTIONSQ32","4. Bottles");
+	createCodeValue("OPTIONSQ32","5. Dont know/No Response");	
+
+	createCodeValue("OPTIONSQ34","1. Boil");
+	createCodeValue("OPTIONSQ34","2. Add bleach/chlorine");
+	createCodeValue("OPTIONSQ34","3. Use water filter");
+	createCodeValue("OPTIONSQ34","4. Solar disinfection");
+	createCodeValue("OPTIONSQ34","5. Strain through a cloth");	
+	createCodeValue("OPTIONSQ34","6. Let it stand and settle");
+	createCodeValue("OPTIONSQ34","7. Others");		
+	
+	createCodeValue("OPTIONSQ36","1. Flush toilet");
+	createCodeValue("OPTIONSQ36","2. Traditional pit latrine");
+	createCodeValue("OPTIONSQ36","3. Ventilated improved pit toilet");
+	createCodeValue("OPTIONSQ36","4. Bush/Field");	
+	createCodeValue("OPTIONSQ36","5. Others");	
+
+	createCodeValue("OPTIONSQ37","1. Before eating");
+	createCodeValue("OPTIONSQ37","2. After handling animals");
+	createCodeValue("OPTIONSQ37","3. After visiting the toilet");
+	createCodeValue("OPTIONSQ37","4. After handling childs stool");
+	createCodeValue("OPTIONSQ37","5. Before preparing food");	
+	createCodeValue("OPTIONSQ37","6. When hands are dirty");
+	createCodeValue("OPTIONSQ37","7. After handling manure");			
+
+	createCodeValue("OPTIONSQ38","1. Wash with water");
+	createCodeValue("OPTIONSQ38","2. Wash with water and sometimes soap");
+	createCodeValue("OPTIONSQ38","3. Wash with water and usually soap ");
+	createCodeValue("OPTIONSQ38","4. Wash with water and ashes");
+	createCodeValue("OPTIONSQ38","5. Wash with water and sand");	
+	createCodeValue("OPTIONSQ38","6. Others");	
+	
+	createCodeValue("OPTIONSQ41","1");
+	createCodeValue("OPTIONSQ41","2");
+	createCodeValue("OPTIONSQ41","3");
+	createCodeValue("OPTIONSQ41","4 or more");	
+
+	
+	createCodeValue("FACILITYLEVEL","1. Dispensary");	
+	createCodeValue("FACILITYLEVEL","2. Clinic");	
+	createCodeValue("FACILITYLEVEL","3. Health Center");	
+	createCodeValue("FACILITYLEVEL","4. Sub-district Hospital");	
+	
+	createCodeValue("FACILITYOWNERSHIP","1. Government/Public");	
+	createCodeValue("FACILITYOWNERSHIP","2. Private");	
+	createCodeValue("FACILITYOWNERSHIP","3. Mission/Faith based");	
+	
+	createCodeValue("Embu","Rugur-Ngandori");
+	createCodeValue("Embu","Gaturi South");
+	createCodeValue("Embu","Nginda");
+	createCodeValue("Embu","Kithimu");
+	createCodeValue("Embu","Mbeti North");
+	createCodeValue("Embu","Kirimari");
+	createCodeValue("Embu","Gaturi North");
+	createCodeValue("Embu","Kagaari South");
+	createCodeValue("Embu","Central");
+	createCodeValue("Embu","Kagaari North");
+	createCodeValue("Embu","Kyeni North");
+	createCodeValue("Embu","Kyeni South");
+	
+	createCodeValue("Kirinyaga","Kabare");
+	createCodeValue("Kirinyaga","Baragwi");
+	createCodeValue("Kirinyaga","Njukiine");
+	createCodeValue("Kirinyaga","Ngariama");
+	createCodeValue("Kirinyaga","Karumandi");
+	createCodeValue("Kirinyaga","Nthawa");
+	createCodeValue("Kirinyaga","Muminji");
+	createCodeValue("Kirinyaga","Evurore");
+	createCodeValue("Kirinyaga","Thiba");
+	createCodeValue("Kirinyaga","Gathigiriri");
+	createCodeValue("Kirinyaga","Wamumu");
+	createCodeValue("Kirinyaga","Mutithi");
+	createCodeValue("Kirinyaga","Kangai");
+	createCodeValue("Kirinyaga","Mukure");
+	createCodeValue("Kirinyaga","Kiine");
+	createCodeValue("Kirinyaga","Kariti");
+	createCodeValue("Kirinyaga","Mutira");
+	createCodeValue("Kirinyaga","Kanyekini");
+	createCodeValue("Kirinyaga","Mwea");
+	createCodeValue("Kirinyaga","Makima");
+	createCodeValue("Kirinyaga","Mbeti South");
+	createCodeValue("Kirinyaga","Mavuria");
+	createCodeValue("Kirinyaga","Kiambere");
+	createCodeValue("Kirinyaga","Nyangati");
+	createCodeValue("Kirinyaga","Murinduko");
+	createCodeValue("Kirinyaga","Tebere");
+	createCodeValue("Kirinyaga","Kerugoya");
+	createCodeValue("Kirinyaga","Inoi");
+
+	createCodeValue("Nakuru","Gilgil");
+	createCodeValue("Nakuru","Elementaita");
+	createCodeValue("Nakuru","Mbaruk/Eburu");
+	createCodeValue("Nakuru","Malewa West");
+	createCodeValue("Nakuru","Murindat");
+	createCodeValue("Nakuru","Mau narok");
+	createCodeValue("Nakuru","Mauche");
+	createCodeValue("Nakuru","Kihingo");
+	createCodeValue("Nakuru","Nesuit");
+	createCodeValue("Nakuru","Lare");
+	createCodeValue("Nakuru","Njoro");
+	createCodeValue("Nakuru","Mariashoni");
+	createCodeValue("Nakuru","Turi");
+	createCodeValue("Nakuru","Molo");
+	createCodeValue("Nakuru","Biashara");
+	createCodeValue("Nakuru","Hellsgate");
+	createCodeValue("Nakuru","Lake View");
+	createCodeValue("Nakuru","Mai Mahiu");
+	createCodeValue("Nakuru","Maeilla");
+	createCodeValue("Nakuru","Olkaria");
+	createCodeValue("Nakuru","Naivasha East");
+	createCodeValue("Nakuru","Viwanda");
+	createCodeValue("Nakuru","Amalo");
+	createCodeValue("Nakuru","Keringet");
+	createCodeValue("Nakuru","Kiptagich");
+	createCodeValue("Nakuru","Tinet");
+	createCodeValue("Nakuru","Kiptororo");
+	createCodeValue("Nakuru","Nyota");
+	createCodeValue("Nakuru","Sirikwa");
+	createCodeValue("Nakuru","Kamara");
+	createCodeValue("Nakuru","Subukia");
+	createCodeValue("Nakuru","Waseges");
+	createCodeValue("Nakuru","Kabazi");
+	createCodeValue("Nakuru","Menengai West");
+	createCodeValue("Nakuru","Soin");
+	createCodeValue("Nakuru","Visoi");
+	createCodeValue("Nakuru","Mosop");
+	createCodeValue("Nakuru","Solai");
+	createCodeValue("Nakuru","Dundori");
+	createCodeValue("Nakuru","Kabatini");
+	createCodeValue("Nakuru","Kiamaina");
+	createCodeValue("Nakuru","Lanet/Umoja");
+	createCodeValue("Nakuru","Bahati");
+	createCodeValue("Nakuru","Barut");
+	createCodeValue("Nakuru","London");
+	createCodeValue("Nakuru","Kaptembwo");
+	createCodeValue("Nakuru","Kapkures");
+	createCodeValue("Nakuru","Rhoda");
+	createCodeValue("Nakuru","Shaabab");
+	createCodeValue("Nakuru","Biashara");
+	createCodeValue("Nakuru","Kivumbini");
+	createCodeValue("Nakuru","Flamingo");
+	createCodeValue("Nakuru","Menengai");
+	createCodeValue("Nakuru","Nakuru East");
+	
+	
+	createCodeValue("DAYS","01");
+	createCodeValue("DAYS","02");
+	createCodeValue("DAYS","03");
+	createCodeValue("DAYS","04");
+	createCodeValue("DAYS","05");	
+	createCodeValue("DAYS","06");
+	createCodeValue("DAYS","07");
+	createCodeValue("DAYS","08");
+	createCodeValue("DAYS","09");
+	createCodeValue("DAYS","10");
+	createCodeValue("DAYS","11");
+	createCodeValue("DAYS","12");
+	createCodeValue("DAYS","13");
+	createCodeValue("DAYS","14");
+	createCodeValue("DAYS","15");
+	createCodeValue("DAYS","16");
+	createCodeValue("DAYS","17");	
+	createCodeValue("DAYS","18");	
+	createCodeValue("DAYS","19");
+	createCodeValue("DAYS","20");
+	createCodeValue("DAYS","21");
+	createCodeValue("DAYS","22");
+	createCodeValue("DAYS","23");
+	createCodeValue("DAYS","24");
+	createCodeValue("DAYS","25");
+	createCodeValue("DAYS","26");
+	createCodeValue("DAYS","27");
+	createCodeValue("DAYS","28");
+	createCodeValue("DAYS","29");
+	createCodeValue("DAYS","30");
+	createCodeValue("DAYS","31");	
+	
+	createCodeValue("MONTHS","01");
+	createCodeValue("MONTHS","02");
+	createCodeValue("MONTHS","03");
+	createCodeValue("MONTHS","04");
+	createCodeValue("MONTHS","05");	
+	createCodeValue("MONTHS","06");
+	createCodeValue("MONTHS","07");
+	createCodeValue("MONTHS","08");
+	createCodeValue("MONTHS","09");
+	createCodeValue("MONTHS","10");
+	createCodeValue("MONTHS","11");
+	createCodeValue("MONTHS","12");
+	
+	
+	return;
+	
+}	
+
+string[] getDays(){
+	return getFilteredCodeValues("DAYS");
+}
+
+string[] getMonths(){
+	return getFilteredCodeValues("MONTHS");
+}
+
+string[] getYesNo(){
+	return getFilteredCodeValues("YESNO");
+}
+
+string[] getCountyNames(){
+	return getFilteredCodeValues("COUNTYNAMES");
+}
+
+string[] getHIVStatus(){
+	return getFilteredCodeValues("HIVSTATUS");
+}
+
+string[] getOptionsQ3(){
+	return getFilteredCodeValues("OPTIONSQ3");
+}
+
+string[] getGender(){
+	return getFilteredCodeValues("GENDER");
+}
+
+string[] getSchooling(){
+	return getFilteredCodeValues("SCHOOLING");
+}
+
+string[] getOptionsQ14(){
+	return getFilteredCodeValues("OPTIONSQ14");
+}
+
+string[] getOptionsQ17(){
+	return getFilteredCodeValues("OPTIONSQ17");
+}
+
+string[] getOptionsQ18(){
+	return getFilteredCodeValues("OPTIONSQ18");
+}
+
+string[] getOptionsQ19(){
+	return getFilteredCodeValues("OPTIONSQ19");
+}
+
+string[] getOptionsQ20(){
+	return getFilteredCodeValues("OPTIONSQ20");
+}
+
+string[] getOptionsQ21(){
+	return getFilteredCodeValues("OPTIONSQ21");
+}
+
+string[] getOptionsQ22(){
+	return getFilteredCodeValues("OPTIONSQ22");
+}
+
+string[] getOptionsQ23(){
+	return getFilteredCodeValues("OPTIONSQ23");
+}
+
+string[] getOptionsQ24(){
+	return getFilteredCodeValues("OPTIONSQ24");
+}
+
+string[] getOptionsQ25(){
+	return getFilteredCodeValues("OPTIONSQ25");
+}
+
+string[] getOptionsQ26(){
+	return getFilteredCodeValues("OPTIONSQ26");
+}
+
+string[] getOptionsQ28(){
+	return getFilteredCodeValues("OPTIONSQ28");
+}
+
+string[] getOptionsQ29(){
+	return getFilteredCodeValues("OPTIONSQ29");
+}
+
+string[] getOptionsQ30(){
+	return getFilteredCodeValues("OPTIONSQ30");
+}
+
+string[] getOptionsQ32(){
+	return getFilteredCodeValues("OPTIONSQ32");
+}
+
+string[] getOptionsQ34(){
+	return getFilteredCodeValues("OPTIONSQ34");
+}
+
+string[] getOptionsQ36(){
+	return getFilteredCodeValues("OPTIONSQ36");
+}
+
+string[] getOptionsQ37(){
+	return getFilteredCodeValues("OPTIONSQ37");
+}
+
+string[] getOptionsQ38(){
+	return getFilteredCodeValues("OPTIONSQ38");
+}
+
+string[] getFacilityLevels(){
+	return getFilteredCodeValues("FACILITYLEVEL");
+}
+
+string[] getFacilityOwnerships(){
+	return getFilteredCodeValues("FACILITYOWNERSHIP");
+}
+
+string[] getWardNamesForCounty(string wardName){
+	return getFilteredCodeValues(wardName);
+}
+
+string[] getOptionsQ41(){
+	return getFilteredCodeValues("OPTIONSQ41");
+}

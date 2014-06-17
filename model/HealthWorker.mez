@@ -1,0 +1,9 @@
+@Role("HealthWorker")
+@Restrict("Administrator", all())
+@Restrict("HealthWorker", all())
+persistent object HealthWorker {
+	datetime registered;
+	string phoneNumber;
+	string firstName;
+	string lastName;
+}

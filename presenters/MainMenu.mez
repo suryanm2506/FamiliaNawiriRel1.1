@@ -1,0 +1,11 @@
+unit MainMenu;
+
+string option1_clicked(){
+    Mez:alert("Option1_clicked");
+    return null;
+}
+
+string option2_clicked(){
+    Mez:alert("Option2_clicked");
+    return null;
+}

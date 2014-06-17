@@ -1,0 +1,4 @@
+object MultiSelectObj{
+string value;
+bool checked;
+}

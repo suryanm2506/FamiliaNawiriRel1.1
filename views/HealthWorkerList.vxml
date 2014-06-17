@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui xmlns="http://uiprogram.mezzanine.com/View" 
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://uiprogram.mezzanine.com/View ../views/xsd/View.xsd">
+    <view label="admin.healthWorkerList.title" unit="HealthWorkerList" init="init">
+
+        <menuitem label="admin.healthWorkerList.menu" icon="Users" order="1">
+            <userRole>Administrator</userRole>
+        </menuitem>
+
+        <invite label="admin.healthWorkerList.invite">
+            <binding variable="healthWorker"/>
+            <role>HealthWorker</role>
+        </invite>
+		
+		<textfield label="admin.healthWorkerList.invite.confirm">
+            <binding variable="healthWorker"><attribute name="phoneNumber"/></binding>
+        </textfield>
+
+		<textfield label="admin.healthWorkerList.invite.firstName">
+            <binding variable="healthWorker"><attribute name="firstName"/></binding>
+        </textfield>
+
+		<textfield label="admin.healthWorkerList.invite.lastName">
+            <binding variable="healthWorker"><attribute name="lastName"/></binding>
+        </textfield>		
+		
+        <submit label="admin.healthWorkerList.submitInvite" action="submitInvite"/>
+		<button label="admin.healthWorkerList.initializeMasters" action="CodeValueList:createAllCodeValues"/>
+		<button label="admin.healthWorkerList.ClearAll" action="CodeValueList:clearAllRecords"/>		
+
+        <table title="admin.healthWorkerList.list.title">
+            <collectionSource function="getHealthWorkers"/>
+            <column heading="firstNames">
+                <attributeName>firstName</attributeName>
+            </column>
+            <column heading="surname">
+                <attributeName>lastName</attributeName>
+            </column>
+            <column heading="healthWorker.mobileNumber">
+                <attributeName>phoneNumber</attributeName>
+            </column>
+			<column heading="healthWorker.registered">
+                <attributeName>registered</attributeName>
+            </column>
+            <rowAction label="admin.healthWorkerList.list.table.rowAction.delete" action="deleteHealthWorker">
+                <binding variable="healthWorker" />
+            </rowAction>			
+        </table>
+
+    </view>
+</ui>

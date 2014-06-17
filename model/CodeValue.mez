@@ -1,0 +1,6 @@
+@Restrict("Administrator", all())
+@Restrict("HealthWorker", all()) 
+persistent object CodeValue{
+    string code;
+	string value;	
+}

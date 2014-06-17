@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui xmlns="http://uiprogram.mezzanine.com/View"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://uiprogram.mezzanine.com/View ../../xsd/View.xsd">
+    <view label="healthWorker.pilotStudy.edit.q9.view.label" unit="PilotStudyEdit">
+	
+		<navigation outcome="pilotStudyQ8" target="PilotStudyQ8View" />
+        <navigation outcome="pilotStudyQ10" target="PilotStudyQ10View" />
+		<navigation outcome="pilotStudyQ15" target="PilotStudyQ15View" />
+		
+		<info  label="healthWorker.pilotStudy.edit.label.question9">
+			<binding variable="temp"/>
+		</info>
+		
+        <select label="healthWorker.pilotStudy.edit.label.day">
+            <binding variable="pilotStudy"><attribute name="dobParticipantDay"/></binding>
+			<collectionSource function="CodeValueList:getDays"/>
+        </select>
+		
+        <select label="healthWorker.pilotStudy.edit.label.month">
+            <binding variable="pilotStudy"><attribute name="dobParticipantMonth"/></binding>
+			<collectionSource function="CodeValueList:getMonths"/>
+        </select>
+		
+        <select label="healthWorker.pilotStudy.edit.label.year">
+            <binding variable="pilotStudy"><attribute name="dobParticipantYear"/></binding>
+			<collectionSource function="getOptionsYears"/>
+        </select>
+		 
+        <button label="healthWorker.pilotStudy.edit.action.back" outcome="pilotStudyQ8"/>
+		<submit label="healthWorker.pilotStudy.edit.action.next" action="PilotStudyEdit:next9_clicked"/>
+    </view>
+</ui>

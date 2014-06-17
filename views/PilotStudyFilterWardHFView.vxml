@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui xmlns="http://uiprogram.mezzanine.com/View"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://uiprogram.mezzanine.com/View ../../xsd/View.xsd">
+    <view label="healthWorker.pilotStudy.filter.view.ward.label" unit="PilotStudyFilter">
+
+        <navigation outcome="pilotStudyFilterCounty" target="PilotStudyFilterCountyView" />		
+		<navigation outcome="pilotStudyFilterTable" target="PilotStudyFilterTableView"/>  
+ 
+         <select label="healthWorker.pilotStudy.edit.label.wardName">
+            <binding variable="wardName"/>
+			<collectionSource function="PilotStudyFilter:getWardNamesForCounty"/>
+        </select>
+
+        <button label="healthWorker.pilotStudy.edit.action.back" outcome="pilotStudyFilterCounty"/>
+		<submit label="healthWorker.pilotStudy.edit.action.filter" action="PilotStudyFilter:filterWardHF_clicked"/>
+    </view>
+</ui>

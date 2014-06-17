@@ -1,0 +1,5 @@
+@Role("Administrator")
+@Restrict("Administrator", all())
+@Restrict("HealthWorker", all())
+persistent object Administrator {
+}

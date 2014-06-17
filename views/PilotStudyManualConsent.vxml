@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui xmlns="http://uiprogram.mezzanine.com/View"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://uiprogram.mezzanine.com/View ../../xsd/View.xsd">
+    <view label="healthWorker.pilotStudy.edit.ic.view.label" unit="PilotStudyEdit">
+	
+		<navigation outcome="pilotStudyICQ7" target="PilotStudyICQ7View" />
+		<navigation outcome="pilotStudyCountyView" target="PilotStudyCountyView" />
+		<navigation outcome="pilotStudySaveConfirm" target="PilotStudyEditSaveConfirm" />		
+						
+        <select label="healthWorker.pilotStudy.edit.label.consent">
+            <binding variable="pilotStudy"><attribute name="informedConsent"/></binding>
+			<collectionSource function="CodeValueList:getYesNo"/>
+        </select>
+
+		<fileupload label="healthWorker.pilotStudy.edit.label.manualSignature">
+			<binding variable="pilotStudy"><attribute name="digitalSignature"/></binding>
+		</fileupload>
+		
+        <button label="healthWorker.pilotStudy.edit.action.back" outcome="pilotStudyICQ7"/>
+		<submit label="healthWorker.pilotStudy.edit.action.next" action="PilotStudyEdit:manualconsent_clicked"/>
+    </view>
+</ui>

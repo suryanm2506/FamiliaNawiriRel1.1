@@ -1,0 +1,114 @@
+unit PilotStudyFilter;
+
+string countyName;
+string wardName;
+string visitReason;
+string participantID;
+
+PilotStudy filterPilotStudy;
+
+string[] getCountyNames(){	
+	string[] tempResult;
+	tempResult = CodeValueList:getCountyNames();		
+	tempResult.append(" All");	
+	return tempResult;
+}
+
+
+string[] getWardNamesForCounty(){	
+	string[] tempResult;
+	string[] tempResultAll;
+	
+	if(countyName == " All"){
+		tempResult = CodeValueList:getWardNamesForCounty("Embu");		
+		tempResultAll =  CodeValueList:getWardNamesForCounty("Kirinyaga");
+		for (int i=0; i<tempResultAll.length();i++){
+			tempResult.append(tempResultAll.get(i));
+		}
+		tempResultAll =  CodeValueList:getWardNamesForCounty("Nakuru");		
+		for (int i=0; i<tempResultAll.length();i++){
+			tempResult.append(tempResultAll.get(i));
+		}		
+	}else{
+		tempResult = CodeValueList:getWardNamesForCounty(countyName);		
+	}
+	tempResult.append(" All");	
+	return tempResult;	
+}
+
+
+string[]  getVisitReasons(){		
+	string[] tempResult;
+	tempResult = CodeValueList:getOptionsQ3();		
+	tempResult.append(" All");	
+	return tempResult;	
+}
+
+string filterCounty_clicked(){
+	if(countyName == null){
+		countyName = " All";
+	}
+	
+	if(participantID == null){
+		participantID = "All";
+	}
+
+	if(visitReason == null){
+		visitReason = " All";
+	}
+
+	return "pilotStudyFilterWard";
+	
+}
+
+string filterWardHF_clicked(){
+	if(wardName == null){
+		wardName = " All";
+	}
+	return "pilotStudyFilterTable";
+}
+
+PilotStudy[] getPilotStudies(){
+	
+	PilotStudy[] tempResult;
+	
+	if((participantID == "All")  && (countyName == " All") && (wardName == " All")){
+		tempResult = PilotStudy:notEmpty(participantID);
+	}else if((participantID != "All") && (countyName == " All") && (wardName == " All")){
+		tempResult = PilotStudy:and(equals(participantID, participantID),notEmpty(participantID));		
+	}else if((participantID != "All") && (countyName != " All") && (wardName == " All")){
+		tempResult = PilotStudy:and(notEmpty(participantID),equals(participantID, participantID),equals(countyName,countyName));		
+	}else if((participantID != "All") && (countyName == " All") && (wardName != " All")){
+		tempResult = PilotStudy:and(notEmpty(participantID),equals(participantID, participantID),equals(wardName,wardName));		
+	}else if((participantID != "All") && (countyName != " All") && (wardName != " All")){
+		tempResult = PilotStudy:and(notEmpty(participantID),equals(participantID, participantID),equals(countyName,countyName),equals(wardName,wardName));		
+	}else if((participantID == "All") && (countyName != " All") && (wardName != " All")){
+		tempResult = PilotStudy:and(notEmpty(participantID),equals(countyName,countyName),equals(wardName,wardName));		
+	}else if((participantID == "All") && (countyName == " All") && (wardName != " All")){
+		tempResult = PilotStudy:and(notEmpty(participantID),equals(wardName,wardName));		
+	}else if((participantID == "All") && (countyName != " All") && (wardName == " All")){
+		tempResult = PilotStudy:and(notEmpty(participantID),equals(countyName,countyName));		
+	}
+	
+	return tempResult;
+}
+
+string viewPilotStudy(){
+
+	PilotStudyEdit:setViewObject(filterPilotStudy);
+	return "pilotStudyICQ1";
+}
+
+string filterCancel_clicked(){
+	
+	
+	if(filterPilotStudy != null){
+		return PilotStudyEdit:cancel_clicked();
+	}
+	
+	return "pilotStudyMenu";
+}
+
+
+
+
