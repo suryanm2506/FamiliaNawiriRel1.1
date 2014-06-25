@@ -2,32 +2,15 @@
 <ui xmlns="http://uiprogram.mezzanine.com/View"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xsi:schemaLocation="http://uiprogram.mezzanine.com/View ../../xsd/View.xsd">
-    <view label="healthWorker.pilotStudy.edit.q26.view.label" unit="PilotStudyEdit">
-	
-		<navigation outcome="pilotStudyQ25" target="PilotStudySectBView" />
-        <navigation outcome="pilotStudyQ27" target="PilotStudyQ27View" />
-
-		<info label="healthWorker.pilotStudy.edit.label.question26">
-            <binding variable="temp"/>
-        </info>		
+    <view label="healthWorker.pilotStudy.edit.q26.view.label" unit="PilotStudyEdit">	
+		<navigation outcome="pilotStudyQ25" target="PilotStudyQ25View" />
+		<navigation outcome="pilotStudySectCView" target="PilotStudySectCView" />
 		
-		<table title="healthWorker.pilotStudy.edit.label.blanklabel">
-            <collectionSource function="getOptionsQ26"/>
-			
-            <column heading="healthWorker.pilotStudy.edit.label.question.label">
-                <attributeName>value</attributeName>
-            </column>
-			
-            <column heading="healthWorker.pilotStudy.edit.label.question.checked">
-                <attributeName>checked</attributeName>
-            </column>
-			
-            <rowAction label="healthWorker.pilotStudy.edit.label.question.button.toggle" action="toggleConditionQ26">
-                <binding variable="optionQ26"/>
-            </rowAction>
-			
-        </table>
-		
+        <select label="healthWorker.pilotStudy.edit.label.question26">
+            <binding variable="pilotStudy"><attribute name="question26"/></binding>
+			<collectionSource function="CodeValueList:getOptionsQ25"/>
+        </select>
+ 
         <button label="healthWorker.pilotStudy.edit.action.back" outcome="pilotStudyQ25"/>
 		<submit label="healthWorker.pilotStudy.edit.action.next" action="PilotStudyEdit:next26_clicked"/>
     </view>

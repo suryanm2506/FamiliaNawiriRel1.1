@@ -4,15 +4,31 @@
     xsi:schemaLocation="http://uiprogram.mezzanine.com/View ../../xsd/View.xsd">
     <view label="healthWorker.pilotStudy.edit.q8.view.label" unit="PilotStudyEdit">
 	
-		<navigation outcome="pilotStudyQ7" target="PilotStudySectAView" />
+		<navigation outcome="pilotStudySectAView" target="PilotStudySectAView" />
         <navigation outcome="pilotStudyQ9" target="PilotStudyQ9View" />
 		
-        <select label="healthWorker.pilotStudy.edit.label.question8">
-            <binding variable="pilotStudy"><attribute name="question8"/></binding>
-			<collectionSource function="CodeValueList:getGender"/>
-        </select>
- 
-        <button label="healthWorker.pilotStudy.edit.action.back" outcome="pilotStudyQ7"/>
+		<info label="healthWorker.pilotStudy.edit.label.question8">
+            <binding variable="temp"/>
+        </info>		
+		
+		<table title="healthWorker.pilotStudy.edit.label.blanklabel">
+            <collectionSource function="getOptionsQ8"/>
+			
+            <column heading="healthWorker.pilotStudy.edit.label.question.label">
+                <attributeName>value</attributeName>
+            </column>
+			
+            <column heading="healthWorker.pilotStudy.edit.label.question.checked">
+                <attributeName>checked</attributeName>
+            </column>
+			
+            <rowAction label="healthWorker.pilotStudy.edit.label.question.button.toggle" action="toggleCondition">
+                <binding variable="optionQ8"/>
+            </rowAction>
+			
+        </table>
+		
+        <button label="healthWorker.pilotStudy.edit.action.back" outcome="pilotStudySectAView"/>
 		<submit label="healthWorker.pilotStudy.edit.action.next" action="PilotStudyEdit:next8_clicked"/>
     </view>
 </ui>

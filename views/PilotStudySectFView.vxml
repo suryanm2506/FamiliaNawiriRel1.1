@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui xmlns="http://uiprogram.mezzanine.com/View"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://uiprogram.mezzanine.com/View ../../xsd/View.xsd">
+    <view label="healthWorker.pilotStudy.edit.sect.view.label" unit="PilotStudyEdit">
+	
+		<navigation outcome="pilotStudyQ43" target="PilotStudyQ43View" />
+		<navigation outcome="pilotStudySaveConfirm" target="PilotStudyEditSaveConfirm" />				
+        		
+		<info label="healthWorker.pilotStudy.edit.q39.view.label">
+            <binding variable="temp"/>
+        </info>		
+
+		<info label="healthWorker.pilotStudy.edit.label.question39">
+            <binding variable="pilotStudy"><attribute name="question39"/></binding>
+        </info>		
+ 
+		<info label="healthWorker.pilotStudy.edit.label.question40">
+            <binding variable="pilotStudy"><attribute name="question40"/></binding>
+        </info>		
+
+		<info label="healthWorker.pilotStudy.edit.label.question41">
+            <binding variable="pilotStudy"><attribute name="question41"/></binding>
+        </info>		
+
+		<info label="healthWorker.pilotStudy.edit.label.question42">
+            <binding variable="pilotStudy"><attribute name="question42"/></binding>
+        </info>		
+		
+		<info label="healthWorker.pilotStudy.edit.label.question43">
+            <binding variable="pilotStudy"><attribute name="question43"/></binding>
+        </info>		
+		
+		<button label="healthWorker.pilotStudy.edit.action.back" outcome="pilotStudyQ43"/>
+		<button label="healthWorker.pilotStudy.edit.action.reviewed" outcome="pilotStudySaveConfirm"/>
+    </view>
+</ui>

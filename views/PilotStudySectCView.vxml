@@ -4,31 +4,46 @@
     xsi:schemaLocation="http://uiprogram.mezzanine.com/View ../../xsd/View.xsd">
     <view label="healthWorker.pilotStudy.edit.sect.view.label" unit="PilotStudyEdit">
 	
-		<navigation outcome="pilotStudyQ29" target="PilotStudyQ29View" />
-        <navigation outcome="pilotStudyQ30" target="PilotStudyQ30View" />
+		<navigation outcome="pilotStudyQ26" target="PilotStudyQ26View" />
+        <navigation outcome="pilotStudyQ27" target="PilotStudyQ27View" />
 		
 		<info label="healthWorker.pilotStudy.edit.q26.view.label">
             <binding variable="temp"/>
         </info>		
 
+		<info label="healthWorker.pilotStudy.edit.label.question19">
+            <binding variable="pilotStudy"><attribute name="question19"/></binding>
+        </info>		
+
+		<info label="healthWorker.pilotStudy.edit.label.question20">
+            <binding variable="pilotStudy"><attribute name="question20"/></binding>
+        </info>		
+
+		<info label="healthWorker.pilotStudy.edit.label.question21">
+            <binding variable="pilotStudy"><attribute name="question21"/></binding>
+        </info>		
+
+		<info label="healthWorker.pilotStudy.edit.label.question22">
+            <binding variable="pilotStudy"><attribute name="question22"/></binding>
+        </info>		
+
+		<info label="healthWorker.pilotStudy.edit.label.question23">
+            <binding variable="pilotStudy"><attribute name="question23"/></binding>
+        </info>		
+
+		<info label="healthWorker.pilotStudy.edit.label.question24">
+            <binding variable="pilotStudy"><attribute name="question24"/></binding>
+        </info>		
+
+		<info label="healthWorker.pilotStudy.edit.label.question25">
+            <binding variable="pilotStudy"><attribute name="question25"/></binding>
+        </info>		
+
 		<info label="healthWorker.pilotStudy.edit.label.question26">
             <binding variable="pilotStudy"><attribute name="question26"/></binding>
         </info>		
- 
-		<info label="healthWorker.pilotStudy.edit.label.question27">
-            <binding variable="pilotStudy"><attribute name="question27"/></binding>
-        </info>		
-
-		<info label="healthWorker.pilotStudy.edit.label.question28">
-            <binding variable="pilotStudy"><attribute name="question28"/></binding>
-        </info>		
-
-		<info label="healthWorker.pilotStudy.edit.label.question29">
-            <binding variable="pilotStudy"><attribute name="question29"/></binding>
-        </info>		
 		
-		
-		<button label="healthWorker.pilotStudy.edit.action.back" outcome="pilotStudyQ29"/>
-		<button label="healthWorker.pilotStudy.edit.action.reviewed" outcome="pilotStudyQ30"/>
+		<button label="healthWorker.pilotStudy.edit.action.back" outcome="pilotStudyQ26"/>
+		<button label="healthWorker.pilotStudy.edit.action.reviewed" outcome="pilotStudyQ27"/>
     </view>
 </ui>

@@ -2,32 +2,16 @@
 <ui xmlns="http://uiprogram.mezzanine.com/View"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xsi:schemaLocation="http://uiprogram.mezzanine.com/View ../../xsd/View.xsd">
-    <view label="healthWorker.pilotStudy.edit.q3.view.label" unit="PilotStudyEdit">
+    <view label="healthWorker.pilotStudy.edit.q8.view.label" unit="PilotStudyEdit">
 	
 		<navigation outcome="pilotStudyQ2" target="PilotStudyQ2View" />
-        <navigation outcome="pilotStudyQ4" target="PilotStudyQ4View" />
+        <navigation outcome="pilotStudyQ4" target="PilotStudyQ4View" />	
 		
-		<info label="healthWorker.pilotStudy.edit.label.question3">
-            <binding variable="temp"/>
-        </info>		
-		
-		<table title="healthWorker.pilotStudy.edit.label.blanklabel">
-            <collectionSource function="getOptionsQ3"/>
-			
-            <column heading="healthWorker.pilotStudy.edit.label.question.label">
-                <attributeName>value</attributeName>
-            </column>
-			
-            <column heading="healthWorker.pilotStudy.edit.label.question.checked">
-                <attributeName>checked</attributeName>
-            </column>
-			
-            <rowAction label="healthWorker.pilotStudy.edit.label.question.button.toggle" action="toggleCondition">
-                <binding variable="optionQ3"/>
-            </rowAction>
-			
-        </table>
-		
+        <select label="healthWorker.pilotStudy.edit.label.question3">
+            <binding variable="pilotStudy"><attribute name="question3"/></binding>
+			<collectionSource function="CodeValueList:getGender"/>
+        </select>
+ 
         <button label="healthWorker.pilotStudy.edit.action.back" outcome="pilotStudyQ2"/>
 		<submit label="healthWorker.pilotStudy.edit.action.next" action="PilotStudyEdit:next3_clicked"/>
     </view>

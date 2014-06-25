@@ -4,7 +4,7 @@
     xsi:schemaLocation="http://uiprogram.mezzanine.com/View ../../xsd/View.xsd">
     <view label="healthWorker.pilotStudy.edit.q25.view.label" unit="PilotStudyEdit">	
 		<navigation outcome="pilotStudyQ24" target="PilotStudyQ24View" />
-		<navigation outcome="pilotStudyQ26" target="PilotStudySectBView" />
+		<navigation outcome="pilotStudyQ26" target="PilotStudyQ26View" />
 		
         <select label="healthWorker.pilotStudy.edit.label.question25">
             <binding variable="pilotStudy"><attribute name="question25"/></binding>

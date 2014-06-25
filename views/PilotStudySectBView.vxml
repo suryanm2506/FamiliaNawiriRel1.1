@@ -4,8 +4,11 @@
     xsi:schemaLocation="http://uiprogram.mezzanine.com/View ../../xsd/View.xsd">
     <view label="healthWorker.pilotStudy.edit.sect.view.label" unit="PilotStudyEdit">
 	
-		<navigation outcome="pilotStudyQ25" target="PilotStudyQ25View" />
-        <navigation outcome="pilotStudyQ26" target="PilotStudyQ26View" />
+		<navigation outcome="pilotStudyQ17" target="PilotStudyQ16View" />		
+		<navigation outcome="pilotStudyQ18A" target="PilotStudyQ18AView" />		
+		<navigation outcome="pilotStudyQ18B" target="PilotStudyQ18BView" />		
+		
+        <navigation outcome="pilotStudyQ19" target="PilotStudyQ19View" />
 		
 		<info label="healthWorker.pilotStudy.edit.q8.view.label">
             <binding variable="temp"/>
@@ -31,24 +34,20 @@
             <binding variable="pilotStudy"><attribute name="question12"/></binding>
         </info>		
 
+		<info label="healthWorker.pilotStudy.edit.label.question13">
+            <binding variable="pilotStudy"><attribute name="question13"/></binding>
+        </info>		
+
 		<info label="healthWorker.pilotStudy.edit.label.question13a">
             <binding variable="pilotStudy"><attribute name="question13a"/></binding>
         </info>		
-
-		<info label="healthWorker.pilotStudy.edit.label.question13b">
-            <binding variable="pilotStudy"><attribute name="question13b"/></binding>
-        </info>		
 		
-		<info label="healthWorker.pilotStudy.edit.label.question13c">
-            <binding variable="pilotStudy"><attribute name="question13c"/></binding>
-        </info>		
-
-		<info label="healthWorker.pilotStudy.edit.label.question13d">
-            <binding variable="pilotStudy"><attribute name="question13d"/></binding>
-        </info>		
-
 		<info label="healthWorker.pilotStudy.edit.label.question14">
             <binding variable="pilotStudy"><attribute name="question14"/></binding>
+        </info>		
+
+		<info label="healthWorker.pilotStudy.edit.label.question14a">
+            <binding variable="pilotStudy"><attribute name="question14a"/></binding>
         </info>		
 
 		<info label="healthWorker.pilotStudy.edit.label.question15">
@@ -69,42 +68,9 @@
 
 		<info label="healthWorker.pilotStudy.edit.label.question18b">
             <binding variable="pilotStudy"><attribute name="question18b"/></binding>
-        </info>		
+        </info>				
 		
-		<info label="healthWorker.pilotStudy.edit.label.question18c">
-            <binding variable="pilotStudy"><attribute name="question18c"/></binding>
-        </info>		
-		
-		<info label="healthWorker.pilotStudy.edit.label.question19">
-            <binding variable="pilotStudy"><attribute name="question19"/></binding>
-        </info>		
-
-		<info label="healthWorker.pilotStudy.edit.label.question20">
-            <binding variable="pilotStudy"><attribute name="question20"/></binding>
-        </info>		
-
-		<info label="healthWorker.pilotStudy.edit.label.question21">
-            <binding variable="pilotStudy"><attribute name="question21"/></binding>
-        </info>		
-
-		<info label="healthWorker.pilotStudy.edit.label.question22">
-            <binding variable="pilotStudy"><attribute name="question22"/></binding>
-        </info>		
-
-		<info label="healthWorker.pilotStudy.edit.label.question23">
-            <binding variable="pilotStudy"><attribute name="question23"/></binding>
-        </info>		
-
-		<info label="healthWorker.pilotStudy.edit.label.question24">
-            <binding variable="pilotStudy"><attribute name="question24"/></binding>
-        </info>		
-
-		<info label="healthWorker.pilotStudy.edit.label.question25">
-            <binding variable="pilotStudy"><attribute name="question25"/></binding>
-        </info>		
-		
-		
-		<button label="healthWorker.pilotStudy.edit.action.back" outcome="pilotStudyQ25"/>
-		<button label="healthWorker.pilotStudy.edit.action.reviewed" outcome="pilotStudyQ26"/>
+		<button label="healthWorker.pilotStudy.edit.action.back" action="PilotStudyEdit:backSectB_clicked"/>
+		<button label="healthWorker.pilotStudy.edit.action.reviewed" outcome="pilotStudyQ19"/>
     </view>
 </ui>

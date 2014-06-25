@@ -4,6 +4,7 @@
     xsi:schemaLocation="http://uiprogram.mezzanine.com/View ../../xsd/View.xsd">
     <view label="healthWorker.pilotStudy.edit.sect.view.label" unit="PilotStudyEdit">
 	
+		<navigation outcome="pilotStudyQ6" target="PilotStudyQ6View" />
 		<navigation outcome="pilotStudyQ7" target="PilotStudyQ7View" />
         <navigation outcome="pilotStudyQ8" target="PilotStudyQ8View" />
 		
@@ -40,7 +41,7 @@
         </info>		
 		
 
-		<button label="healthWorker.pilotStudy.edit.action.back" outcome="pilotStudyQ7"/>
+		<button label="healthWorker.pilotStudy.edit.action.back" action="PilotStudyEdit:backSectA_clicked"/>
 		<button label="healthWorker.pilotStudy.edit.action.reviewed" outcome="pilotStudyQ8"/>
     </view>
 </ui>

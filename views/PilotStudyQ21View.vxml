@@ -8,7 +8,7 @@
 		
         <select label="healthWorker.pilotStudy.edit.label.question21">
             <binding variable="pilotStudy"><attribute name="question21"/></binding>
-			<collectionSource function="CodeValueList:getOptionsQ21"/>
+			<collectionSource function="CodeValueList:getOptionsQ19"/>
         </select>
  
         <button label="healthWorker.pilotStudy.edit.action.back" outcome="pilotStudyQ20"/>

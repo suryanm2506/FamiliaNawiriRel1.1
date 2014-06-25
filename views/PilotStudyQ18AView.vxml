@@ -4,15 +4,15 @@
     xsi:schemaLocation="http://uiprogram.mezzanine.com/View ../../xsd/View.xsd">
     <view label="healthWorker.pilotStudy.edit.q18.view.label" unit="PilotStudyEdit">
 	
-		<navigation outcome="pilotStudyQ17" target="PilotStudyQ17View" />
-		<navigation outcome="pilotStudyQ19" target="PilotStudyQ19View" />
+		<navigation outcome="pilotStudyQ16" target="PilotStudyQ16View" />
+		<navigation outcome="pilotStudySectBView" target="PilotStudySectBView" />
 		
         <select label="healthWorker.pilotStudy.edit.label.question18a">
             <binding variable="pilotStudy"><attribute name="question18a"/></binding>
 			<collectionSource function="CodeValueList:getOptionsQ18"/>
         </select>
  
-        <button label="healthWorker.pilotStudy.edit.action.back" outcome="pilotStudyQ17"/>
+        <button label="healthWorker.pilotStudy.edit.action.back" outcome="pilotStudyQ16"/>
 		<submit label="healthWorker.pilotStudy.edit.action.next" action="PilotStudyEdit:next18a_clicked"/>
     </view>
 </ui>

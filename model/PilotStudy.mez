@@ -44,19 +44,18 @@ persistent object PilotStudy{
 	string question11;
 	string question12;
 	
-	string question13a;
+	string question13;
 	string question13b;
-	string question13c;
-	string question13d;
-	
+
 	string question14;
+	string question14a;
+	
 	string question15;
 	string question16;
 	string question17;
 	
 	string question18a;
 	string question18b;
-	string question18c;
 	
 	string question19;
 	string question20;

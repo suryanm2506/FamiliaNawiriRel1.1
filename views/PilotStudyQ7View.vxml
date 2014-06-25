@@ -5,11 +5,11 @@
     <view label="healthWorker.pilotStudy.edit.q7.view.label" unit="PilotStudyEdit">
 	
 		<navigation outcome="pilotStudyQ6" target="PilotStudyQ6View" />
-        <navigation outcome="pilotStudyQ8" target="PilotStudySectAView" />
+        <navigation outcome="pilotStudySectAView" target="PilotStudySectAView" />
 		
-        <select label="healthWorker.pilotStudy.edit.label.question7">
-            <binding variable="pilotStudy"><attribute name="question7"/></binding>
-			<collectionSource function="CodeValueList:getYesNo"/>
+        <select label="healthWorker.pilotStudy.edit.label.question6">
+            <binding variable="pilotStudy"><attribute name="question6"/></binding>
+			<collectionSource function="CodeValueList:getSchooling"/>
         </select>
  
         <button label="healthWorker.pilotStudy.edit.action.back" outcome="pilotStudyQ6"/>

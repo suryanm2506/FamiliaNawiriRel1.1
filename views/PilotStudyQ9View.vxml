@@ -6,27 +6,13 @@
 	
 		<navigation outcome="pilotStudyQ8" target="PilotStudyQ8View" />
         <navigation outcome="pilotStudyQ10" target="PilotStudyQ10View" />
-		<navigation outcome="pilotStudyQ15" target="PilotStudyQ15View" />
+		<navigation outcome="pilotStudyQ11" target="PilotStudyQ11View" />
 		
-		<info  label="healthWorker.pilotStudy.edit.label.question9">
-			<binding variable="temp"/>
-		</info>
-		
-        <select label="healthWorker.pilotStudy.edit.label.day">
-            <binding variable="pilotStudy"><attribute name="dobParticipantDay"/></binding>
-			<collectionSource function="CodeValueList:getDays"/>
+        <select label="healthWorker.pilotStudy.edit.label.question4">
+            <binding variable="pilotStudy"><attribute name="question4"/></binding>
+			<collectionSource function="CodeValueList:getYesNo"/>
         </select>
-		
-        <select label="healthWorker.pilotStudy.edit.label.month">
-            <binding variable="pilotStudy"><attribute name="dobParticipantMonth"/></binding>
-			<collectionSource function="CodeValueList:getMonths"/>
-        </select>
-		
-        <select label="healthWorker.pilotStudy.edit.label.year">
-            <binding variable="pilotStudy"><attribute name="dobParticipantYear"/></binding>
-			<collectionSource function="getOptionsYears"/>
-        </select>
-		 
+ 
         <button label="healthWorker.pilotStudy.edit.action.back" outcome="pilotStudyQ8"/>
 		<submit label="healthWorker.pilotStudy.edit.action.next" action="PilotStudyEdit:next9_clicked"/>
     </view>

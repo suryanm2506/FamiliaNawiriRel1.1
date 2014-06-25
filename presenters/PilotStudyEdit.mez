@@ -1,16 +1,16 @@
 unit PilotStudyEdit;
  
 PilotStudy pilotStudy;
-MultiSelectObj[] optionsQ3;
-MultiSelectObj optionQ3;
+MultiSelectObj[] optionsQ8;
+MultiSelectObj optionQ8;
 string status;
 int ageOfParticipant;
-MultiSelectObj[] optionsQ26;
-MultiSelectObj optionQ26;
-MultiSelectObj[] optionsQ28;
-MultiSelectObj optionQ28;
+MultiSelectObj[] optionsQ27;
+MultiSelectObj optionQ27;
 MultiSelectObj[] optionsQ29;
 MultiSelectObj optionQ29;
+MultiSelectObj[] optionsQ30;
+MultiSelectObj optionQ30;
 MultiSelectObj[] optionsQ37;
 MultiSelectObj optionQ37;
 string saveCalledForm;
@@ -24,10 +24,10 @@ void init(){
 	pilotStudy.interviewDate = Date:now();
 	HealthWorker currentHW = HealthWorker:user();
 	pilotStudy.healthWorker = currentHW;
-	optionsQ3 = computeOptionsQ3();
-	optionsQ26 = computeOptionsQ26();
-	optionsQ28 = computeOptionsQ28();
-	optionsQ29 = computeOptionsQ29();	
+	optionsQ8 = computeOptionsQ8();
+	optionsQ27 = computeOptionsQ27();
+	optionsQ29 = computeOptionsQ29();
+	optionsQ30 = computeOptionsQ30();	
 	optionsQ37 = computeOptionsQ37();	
 	status = "New";
 	ageOfParticipant = 0;
@@ -41,10 +41,10 @@ void setViewObject(PilotStudy viewPilotStudy){
 	
 	pilotStudy = viewPilotStudy;
 	status = "View";
-	optionsQ3 = computeOptionsQ3();
-	optionsQ26 = computeOptionsQ26();
-	optionsQ28 = computeOptionsQ28();
-	optionsQ29 = computeOptionsQ29();	
+	optionsQ8 = computeOptionsQ8();
+	optionsQ27 = computeOptionsQ27();
+	optionsQ29 = computeOptionsQ29();
+	optionsQ30 = computeOptionsQ30();	
 	optionsQ37 = computeOptionsQ37();	
 	ageOfParticipant = 0;
 	saveCalledForm = null;
@@ -60,19 +60,19 @@ string cancel_clicked(){
 MultiSelectObj[] getOptionsQ37(){	
 	return optionsQ37;
 }
+MultiSelectObj[] getOptionsQ30(){
+	return optionsQ30;
+}
 MultiSelectObj[] getOptionsQ29(){
 	return optionsQ29;
 }
-MultiSelectObj[] getOptionsQ28(){
-	return optionsQ28;
+
+MultiSelectObj[] getOptionsQ27(){
+	return optionsQ27;
 }
 
-MultiSelectObj[] getOptionsQ26(){
-	return optionsQ26;
-}
-
-MultiSelectObj[] getOptionsQ3(){
-	return optionsQ3;
+MultiSelectObj[] getOptionsQ8(){
+	return optionsQ8;
 }
 
 string[] getOptionsYears(){
@@ -112,6 +112,32 @@ MultiSelectObj[] computeOptionsQ37(){
 	return resMultiSelectObj;
 }
 
+MultiSelectObj[] computeOptionsQ30(){
+	string[] tempOptions = CodeValueList:getOptionsQ30();
+	MultiSelectObj[] resMultiSelectObj;
+	string[] tmpresult;
+	if(status == "View"){
+		tmpresult = String:split(pilotStudy.question30,",");
+	}
+	
+	for(int i = 0; i < tempOptions.length(); i++){
+        MultiSelectObj tempOption = MultiSelectObj:new();
+		string tempStr = tempOptions.get(i);
+        tempOption.value = tempStr;
+		tempOption.checked = false;
+		if(status == "View"){
+			for(int j=0; j< tmpresult.length(); j++){
+				if(tempStr == tmpresult.get(j)){
+					tempOption.checked = true;
+				}
+			}
+		}		
+        resMultiSelectObj.append(tempOption);
+    }	
+	return resMultiSelectObj;
+}
+
+
 MultiSelectObj[] computeOptionsQ29(){
 	string[] tempOptions = CodeValueList:getOptionsQ29();
 	MultiSelectObj[] resMultiSelectObj;
@@ -119,6 +145,7 @@ MultiSelectObj[] computeOptionsQ29(){
 	if(status == "View"){
 		tmpresult = String:split(pilotStudy.question29,",");
 	}
+
 	
 	for(int i = 0; i < tempOptions.length(); i++){
         MultiSelectObj tempOption = MultiSelectObj:new();
@@ -138,12 +165,12 @@ MultiSelectObj[] computeOptionsQ29(){
 }
 
 
-MultiSelectObj[] computeOptionsQ28(){
-	string[] tempOptions = CodeValueList:getOptionsQ28();
+MultiSelectObj[] computeOptionsQ27(){
+	string[] tempOptions = CodeValueList:getOptionsQ27();
 	MultiSelectObj[] resMultiSelectObj;
 	string[] tmpresult;
 	if(status == "View"){
-		tmpresult = String:split(pilotStudy.question28,",");
+		tmpresult = String:split(pilotStudy.question27,",");
 	}
 
 	
@@ -164,39 +191,12 @@ MultiSelectObj[] computeOptionsQ28(){
 	return resMultiSelectObj;
 }
 
-
-MultiSelectObj[] computeOptionsQ26(){
-	string[] tempOptions = CodeValueList:getOptionsQ26();
-	MultiSelectObj[] resMultiSelectObj;
-	string[] tmpresult;
-	if(status == "View"){
-		tmpresult = String:split(pilotStudy.question26,",");
-	}
-
-	
-	for(int i = 0; i < tempOptions.length(); i++){
-        MultiSelectObj tempOption = MultiSelectObj:new();
-		string tempStr = tempOptions.get(i);
-        tempOption.value = tempStr;
-		tempOption.checked = false;
-		if(status == "View"){
-			for(int j=0; j< tmpresult.length(); j++){
-				if(tempStr == tmpresult.get(j)){
-					tempOption.checked = true;
-				}
-			}
-		}		
-        resMultiSelectObj.append(tempOption);
-    }	
-	return resMultiSelectObj;
-}
-
-MultiSelectObj[] computeOptionsQ3(){
+MultiSelectObj[] computeOptionsQ8(){
 	string[] tempOptions = CodeValueList:getOptionsQ3();
 	MultiSelectObj[] resMultiSelectObj;
 	string[] tmpresult;
 	if(status == "View"){
-		tmpresult = String:split(pilotStudy.question3,",");
+		tmpresult = String:split(pilotStudy.question8,",");
 	}
 
 
@@ -235,6 +235,22 @@ void toggleConditionQ37() {
 }
 
 
+void toggleConditionQ30() {
+    
+    for(int i = optionsQ30.length() - 1; i >= 0; i--) {
+        MultiSelectObj tempObj = optionsQ30.get(i);
+        if(tempObj == optionQ30) {
+            if(tempObj.checked == true) {
+				optionQ30.checked = false;
+				tempObj.checked = false;
+            } else {
+				optionQ30.checked = true;
+				tempObj.checked = true;
+            }			
+        }
+    }
+}
+
 void toggleConditionQ29() {
     
     for(int i = optionsQ29.length() - 1; i >= 0; i--) {
@@ -251,32 +267,16 @@ void toggleConditionQ29() {
     }
 }
 
-void toggleConditionQ28() {
+void toggleConditionQ27() {
     
-    for(int i = optionsQ28.length() - 1; i >= 0; i--) {
-        MultiSelectObj tempObj = optionsQ28.get(i);
-        if(tempObj == optionQ28) {
+    for(int i = optionsQ27.length() - 1; i >= 0; i--) {
+        MultiSelectObj tempObj = optionsQ27.get(i);
+        if(tempObj == optionQ27) {
             if(tempObj.checked == true) {
-				optionQ28.checked = false;
+				optionQ27.checked = false;
 				tempObj.checked = false;
             } else {
-				optionQ28.checked = true;
-				tempObj.checked = true;
-            }			
-        }
-    }
-}
-
-void toggleConditionQ26() {
-    
-    for(int i = optionsQ26.length() - 1; i >= 0; i--) {
-        MultiSelectObj tempObj = optionsQ26.get(i);
-        if(tempObj == optionQ26) {
-            if(tempObj.checked == true) {
-				optionQ26.checked = false;
-				tempObj.checked = false;
-            } else {
-				optionQ26.checked = true;
+				optionQ27.checked = true;
 				tempObj.checked = true;
             }			
         }
@@ -316,6 +316,23 @@ string selectedOptionQ37(){
 	return returnString;
 }
 
+string selectedOptionQ30(){
+
+	string returnString = "";
+    for(int i = optionsQ30.length() - 1; i >= 0; i--) {
+        MultiSelectObj tempObj = optionsQ30.get(i);
+		if(tempObj.checked == true) {
+			if(returnString == ""){
+				returnString = tempObj.value;
+			}else{
+					returnString = String:concat(returnString,",");
+					returnString = String:concat(returnString,tempObj.value);
+			}
+		} 
+    }
+	return returnString;
+}
+
 string selectedOptionQ29(){
 
 	string returnString = "";
@@ -333,29 +350,12 @@ string selectedOptionQ29(){
 	return returnString;
 }
 
-string selectedOptionQ28(){
-
-	string returnString = "";
-    for(int i = optionsQ28.length() - 1; i >= 0; i--) {
-        MultiSelectObj tempObj = optionsQ28.get(i);
-		if(tempObj.checked == true) {
-			if(returnString == ""){
-				returnString = tempObj.value;
-			}else{
-					returnString = String:concat(returnString,",");
-					returnString = String:concat(returnString,tempObj.value);
-			}
-		} 
-    }
-	return returnString;
-}
-
 
 string selectedOptionQ26(){
 
 	string returnString = "";
-    for(int i = optionsQ26.length() - 1; i >= 0; i--) {
-        MultiSelectObj tempObj = optionsQ26.get(i);
+    for(int i = optionsQ27.length() - 1; i >= 0; i--) {
+        MultiSelectObj tempObj = optionsQ27.get(i);
 		if(tempObj.checked == true) {
 			if(returnString == ""){
 				returnString = tempObj.value;
@@ -369,11 +369,11 @@ string selectedOptionQ26(){
 }
 
 
-string selectedOptionQ3(){
+string selectedOptionQ8(){
 
 	string returnString = "";
-    for(int i = optionsQ3.length() - 1; i >= 0; i--) {
-        MultiSelectObj tempObj = optionsQ3.get(i);
+    for(int i = optionsQ8.length() - 1; i >= 0; i--) {
+        MultiSelectObj tempObj = optionsQ8.get(i);
 		if(tempObj.checked == true) {
 			if(returnString == ""){
 				returnString = tempObj.value;
@@ -679,79 +679,14 @@ string next2_clicked(){
 
 string next3_clicked(){
 
-	pilotStudy.question3 = selectedOptionQ3();
-
-	if(pilotStudy.question3 == null || pilotStudy.question3 == ""){
+	if(pilotStudy.question3 == null){
 		Mez:alert("error.select_value");		
 		return null;
-	}	
+	}
     return "pilotStudyQ4";
 }
 
-
 string next4_clicked(){
-
-	if(pilotStudy.question4 == null){
-		Mez:alert("error.select_value");		
-		return null;
-	}
-	
-	if(pilotStudy.question4 == "No"){
-		pilotStudy.question5 = null;
-		return "pilotStudyQ6";
-	}
-		
-    return "pilotStudyQ5";
-}
-
-
-string next5_clicked(){
-
-	if(pilotStudy.question5 == null){
-		Mez:alert("error.select_value");		
-		return null;
-	}
-    return "pilotStudyQ6";
-}
-
-string back6_clicked(){
-
-	if(pilotStudy.question4 == "No"){
-		return "pilotStudyQ4";
-	}else{
-		return "pilotStudyQ5";
-	}
-    
-}
-
-string next6_clicked(){
-
-	if(pilotStudy.question6 == null){
-		Mez:alert("error.select_value");		
-		return null;
-	}
-    return "pilotStudyQ7";
-}
-
-string next7_clicked(){
-
-	if(pilotStudy.question7 == null){
-		Mez:alert("error.select_value");		
-		return null;
-	}
-    return "pilotStudyQ8";
-}
-
-string next8_clicked(){
-
-	if(pilotStudy.question8 == null){
-		Mez:alert("error.select_value");		
-		return null;
-	}
-    return "pilotStudyQ9";
-}
-
-string next9_clicked(){
 
 
 	if(pilotStudy.dobParticipantDay == null){
@@ -769,9 +704,9 @@ string next9_clicked(){
 		return null;
 	}
 	
-	pilotStudy.question9 = String:concat(String:concat(String:concat(String:concat(pilotStudy.dobParticipantYear,"-"),pilotStudy.dobParticipantMonth),"-"),pilotStudy.dobParticipantDay);
+	pilotStudy.question4 = String:concat(String:concat(String:concat(String:concat(pilotStudy.dobParticipantYear,"-"),pilotStudy.dobParticipantMonth),"-"),pilotStudy.dobParticipantDay);
 		
-	date d1 =  Date:fromString(pilotStudy.question9);	
+	date d1 =  Date:fromString(pilotStudy.question4);	
 	
 	if(d1 > Date:today()){
 		Mez:alert("error.required_field.participantAge");		
@@ -785,25 +720,21 @@ string next9_clicked(){
 	ageOfParticipant = noOfMonths /12;
 	
 	if(ageOfParticipant>=18){		
-		pilotStudy.question10 = null;
-		pilotStudy.question11 = null;
-		pilotStudy.question12 = null;
+		pilotStudy.question5 = null;
+		pilotStudy.question13 = null;
 		pilotStudy.question13a = null;
-		pilotStudy.question13b = null;
-		pilotStudy.question13c = null;
-		pilotStudy.question13d = null;
 		pilotStudy.question14 = null;
-		return "pilotStudyQ15";
+		pilotStudy.question14a = null;
+		pilotStudy.question15 = null;
+		return "pilotStudyQ6";
 		
 	}else{
-		pilotStudy.question15 = null;
-		pilotStudy.question16 = null;
-		return "pilotStudyQ10";
-	}
-	
+		return "pilotStudyQ5";
+	}	
 }
 
-string next10_clicked(){
+
+string next5_clicked(){
 
 	if(pilotStudy.dobGaurdianDay == null){
 		Mez:alert("error.required_field.day");		
@@ -820,9 +751,9 @@ string next10_clicked(){
 		return null;
 	}
 	
-	pilotStudy.question10 = String:concat(String:concat(String:concat(String:concat(pilotStudy.dobGaurdianYear,"-"),pilotStudy.dobGaurdianMonth),"-"),pilotStudy.dobGaurdianDay);
+	pilotStudy.question5 = String:concat(String:concat(String:concat(String:concat(pilotStudy.dobGaurdianYear,"-"),pilotStudy.dobGaurdianMonth),"-"),pilotStudy.dobGaurdianDay);
 		
-	date d1 =  Date:fromString(pilotStudy.question10);	
+	date d1 =  Date:fromString(pilotStudy.question5);	
 	
 	if(d1 > Date:today()){
 		Mez:alert("error.required_field.participantAge");		
@@ -837,9 +768,106 @@ string next10_clicked(){
 		Mez:alert("error.validation.dobMother");
 		return null;
 	}else{
-		return "pilotStudyQ11";
+		return "pilotStudyQ6";
 	}
 	
+}
+
+
+string back6_clicked(){
+
+	if(pilotStudy.question6 == null){
+		Mez:alert("error.select_value");		
+		return null;
+	}
+	
+	if(pilotStudy.question5 == null){
+		return "pilotStudyQ4";
+	}else{
+		return "pilotStudyQ5";
+	}
+	
+}
+
+string next6_clicked(){
+
+	if(pilotStudy.question6 == null){
+		Mez:alert("error.select_value");		
+		return null;
+	}
+	
+	if(pilotStudy.question6 == "Yes"){
+		return "pilotStudyQ7";
+	}else{
+		pilotStudy.question7 = null;
+		return "pilotStudySectAView";
+	}
+	
+}
+
+
+string next7_clicked(){
+
+	if(pilotStudy.question7 == null){
+		Mez:alert("error.select_value");		
+		return null;
+	}
+	
+	return "pilotStudySectAView";
+}
+
+string backSectA_clicked(){
+
+	if(pilotStudy.question7 == null){
+		return "pilotStudyQ6";
+	}else{
+		return "pilotStudyQ7";
+	}
+}
+
+string next8_clicked(){
+
+	pilotStudy.question8 = selectedOptionQ8();
+
+	if(pilotStudy.question8 == null || pilotStudy.question8 == ""){
+		Mez:alert("error.select_value");		
+		return null;
+	}	
+    return "pilotStudyQ9";
+}
+
+string next9_clicked(){
+
+	if(pilotStudy.question9 == null){
+		Mez:alert("error.select_value");		
+		return null;
+	}
+	
+	if(pilotStudy.question9 == "No"){
+		pilotStudy.question10 = null;
+		return "pilotStudyQ11";
+	}
+		
+    return "pilotStudyQ10";
+}
+
+string next10_clicked(){
+
+	if(pilotStudy.question10 == null){
+		Mez:alert("error.select_value");		
+		return null;
+	}
+    return "pilotStudyQ11";
+}
+
+string back11_clicked(){
+
+	if(pilotStudy.question10 == "No"){
+		return "pilotStudyQ9";
+	}else{
+		return "pilotStudyQ10";
+	}
+    
 }
 
 string next11_clicked(){
@@ -848,30 +876,7 @@ string next11_clicked(){
 		Mez:alert("error.select_value");		
 		return null;
 	}
-	
-	if(pilotStudy.question11 == "No"){
-		pilotStudy.question12 = null;
-		if(ageOfParticipant < 5){
-			return "pilotStudyQ13";
-		}else if(ageOfParticipant <= 15){
-			pilotStudy.question13a = null;
-			pilotStudy.question13b = null;
-			pilotStudy.question13c = null;
-			pilotStudy.question13d = null;
-			pilotStudy.question14 = null;
-			pilotStudy.question17 = "3. Not at all";
-			return "pilotStudyQ18C";
-		} else{
-			pilotStudy.question13a = null;
-			pilotStudy.question13b = null;
-			pilotStudy.question13c = null;
-			pilotStudy.question13d = null;
-			pilotStudy.question14 = null;
-			return "pilotStudyQ17";
-		}		
-	}else{	
-		return "pilotStudyQ12";
-	}
+    return "pilotStudyQ12";
 }
 
 string next12_clicked(){
@@ -880,115 +885,52 @@ string next12_clicked(){
 		Mez:alert("error.select_value");		
 		return null;
 	}
-	
-	if(ageOfParticipant < 5){
+	if(ageOfParticipant>=15){
+		return "pilotStudyQ16";
+	}else if(ageOfParticipant>=5){
+		return "pilotStudyQ18B";
+	}else{
 		return "pilotStudyQ13";
-	}else if(ageOfParticipant <= 15){
-			pilotStudy.question13a = null;
-			pilotStudy.question13b = null;
-			pilotStudy.question13c = null;
-			pilotStudy.question13d = null;
-			pilotStudy.question14 = null;
-			pilotStudy.question17 = "3. Not at all";
-			return "pilotStudyQ18C";
-		} else{
-			pilotStudy.question13a = null;
-			pilotStudy.question13b = null;
-			pilotStudy.question13c = null;
-			pilotStudy.question13d = null;
-			pilotStudy.question14 = null;
-			return "pilotStudyQ17";
-		}	
+	}
+
 }
 
+string next13_clicked(){
+
+	if(pilotStudy.question13 == null){
+		Mez:alert("error.select_value");		
+		return null;
+	}
+	
+	if(pilotStudy.question13 == "Yes"){
+		return "pilotStudyQ13A";
+	}else{
+		pilotStudy.question13a = null;
+		return "pilotStudyQ14";
+	}
+	
+}
 
 string next13a_clicked(){
 
 	if(pilotStudy.question13a == null){
-		Mez:alert("error.required_field.13a");		
+		Mez:alert("error.select_value");		
 		return null;
 	}
 	
-	if(pilotStudy.question13a == "Yes"){
-		return "pilotStudyQ13B";
+	return "pilotStudyQ14";
+	
+}
+
+
+string back14_clicked(){
+
+	if(pilotStudy.question13 == "No"){
+		return "pilotStudyQ13";
 	}else{
-		pilotStudy.question13b = null;
-		return "pilotStudyQ13C";
-	}
-	
-}
-
-string back13a_clicked(){
-
-	if(pilotStudy.question11 == "No"){
-		return "pilotStudyQ11";
-	}else{
-		return "pilotStudyQ12";
-	}    
-}
-
-
-string next13b_clicked(){
-
-	if(pilotStudy.question13b == null){
-		Mez:alert("error.required_field.13b");		
-		return null;
-	}
-	
-	return "pilotStudyQ13C";
-	
-}
-
-
-string next13c_clicked(){
-
-	if(pilotStudy.question13c == null){
-		Mez:alert("error.required_field.13c");		
-		return null;
-	}
-	
-	if(pilotStudy.question13c == "Yes"){
-		return "pilotStudyQ13D";
-	}else{
-		pilotStudy.question13d = null;
-		if(ageOfParticipant < 2){
-			return "pilotStudyQ14";
-		}else{
-			pilotStudy.question14 = null;
-			pilotStudy.question17 = "3. Not at all";
-			return "pilotStudyQ18C";				
-		}
-	}
-	
-}
-
-string back13c_clicked(){
-
-	if(pilotStudy.question13a == "No"){
 		return "pilotStudyQ13A";
-	}else{
-		return "pilotStudyQ13B";
 	}    
 }
-
-
-string next13d_clicked(){
-
-	if(pilotStudy.question13d == null){
-		Mez:alert("error.required_field.13d");		
-		return null;
-	}
-	
-	if(ageOfParticipant < 2){
-		return "pilotStudyQ14";
-	}else{
-		pilotStudy.question14 = null;
-		pilotStudy.question17 = "3. Not at all";
-		return "pilotStudyQ18C";				
-	}
-	
-}
-
 
 
 string next14_clicked(){
@@ -998,21 +940,44 @@ string next14_clicked(){
 		return null;
 	}
 	
-	pilotStudy.question17 = "3. Not at all";
-	return "pilotStudyQ18C";				
-
-	
+	if(pilotStudy.question14 == "Yes"){
+		return "pilotStudyQ14A";
+	}else{
+		pilotStudy.question14a = null;
+		if(ageOfParticipant<2){
+			return "pilotStudyQ15";
+		}else{
+			pilotStudy.question15 = null;
+			return "pilotStudyQ18B";
+		}
+	}	
 }
 
-string back14_clicked(){
 
-	if(pilotStudy.question13c == "No"){
-		return "pilotStudyQ13C";
+string next14a_clicked(){
+
+	if(pilotStudy.question14a == null){
+		Mez:alert("error.select_value");		
+		return null;
+	}
+	
+	if(ageOfParticipant<2){
+		return "pilotStudyQ15";
 	}else{
-		return "pilotStudyQ13D";
+		pilotStudy.question15 = null;
+		return "pilotStudyQ18B";
+	}
+		
+}
+
+string back15_clicked(){
+
+	if(pilotStudy.question14 == "No"){
+		return "pilotStudyQ14";
+	}else{
+		return "pilotStudyQ14A";
 	}    
 }
-
 
 string next15_clicked(){
 
@@ -1021,13 +986,26 @@ string next15_clicked(){
 		return null;
 	}
 	
-	if(pilotStudy.question15 == "Yes"){
-		return "pilotStudyQ16";
-	}else{
-		pilotStudy.question16 = null;
-		return "pilotStudyQ17";
-	}
+	return "pilotStudyQ18B";
 	
+}
+
+string back16_clicked(){
+
+	if(ageOfParticipant<2){			
+		return "pilotStudyQ15";	
+	}else if (ageOfParticipant<5){
+		
+		if(pilotStudy.question14 == "No"){
+			return "pilotStudyQ14";
+		}else{
+			return "pilotStudyQ14A";
+		}    
+	}else{		
+		return "pilotStudyQ12";					
+	}
+
+		
 }
 
 string next16_clicked(){
@@ -1037,7 +1015,22 @@ string next16_clicked(){
 		return null;
 	}
 	
-	return "pilotStudyQ17";
+	if(pilotStudy.question16== "1. Daily"){
+		pilotStudy.question18a = null;
+		pilotStudy.question18b = null;
+		return "pilotStudyQ17";		
+	}
+	if (pilotStudy.question16== "2. Yes but not daily"){
+		pilotStudy.question17 = null;
+		pilotStudy.question18b = null;
+		return "pilotStudyQ18A";	
+	}
+
+	if (pilotStudy.question16== "3. Not at all"){
+		pilotStudy.question17 = null;	
+		pilotStudy.question18a = null;
+		return "pilotStudyQ18B";	
+	}
 	
 }
 
@@ -1048,54 +1041,10 @@ string next17_clicked(){
 		return null;
 	}
 	
-	if(pilotStudy.question17== "1. Daily"){
-		pilotStudy.question18b = null;
-		pilotStudy.question18c = null;
-		return "pilotStudyQ18A";		
-	}
-	if (pilotStudy.question17== "2. Yes but not daily"){
-		pilotStudy.question18a = null;
-		pilotStudy.question18c = null;
-		return "pilotStudyQ18B";	
-	}
-
-	if (pilotStudy.question17== "3. Not at all"){
-		pilotStudy.question18a = null;
-		pilotStudy.question18b = null;
-		return "pilotStudyQ18C";	
-	}
-	
+	return "pilotStudySectBView";
+		
 }
 
-string back17_clicked(){
-
-	if(ageOfParticipant>=18){	
-		if(pilotStudy.question15 == "Yes"){
-			return "pilotStudyQ16";
-		}else if(pilotStudy.question15 == "No"){
-			return "pilotStudyQ15";			
-		}
-	}
-	
-	if(ageOfParticipant>5){
-
-		if(pilotStudy.question11 == "No"){
-			return "pilotStudyQ11";
-		}else{
-			return "pilotStudyQ12";
-		}  	
-	}
-	
-	if(ageOfParticipant>2){		
-		if(pilotStudy.question13c == "No"){
-			return "pilotStudyQ13C";
-		}else{
-			return "pilotStudyQ13D";
-		}    
-	}else{
-		return "pilotStudyQ14";
-	}	
-}
 
 string next18a_clicked(){
 
@@ -1104,8 +1053,30 @@ string next18a_clicked(){
 		return null;
 	}
 	
-	return "pilotStudyQ19";
+	return "pilotStudySectBView";
 		
+}
+
+string back18b_clicked(){
+
+	if(pilotStudy.question16 != null){
+		return "pilotStudyQ16";
+	}else {
+		if(ageOfParticipant<2){			
+			return "pilotStudyQ15";	
+		}else if (ageOfParticipant<5){
+			
+			if(pilotStudy.question14 == "No"){
+				return "pilotStudyQ14";
+			}else{
+				return "pilotStudyQ14A";
+			}    
+		}else{		
+			return "pilotStudyQ12";					
+		}
+		
+	} 
+	
 }
 
 string next18b_clicked(){
@@ -1115,45 +1086,22 @@ string next18b_clicked(){
 		return null;
 	}
 	
-	return "pilotStudyQ19";
+	return "pilotStudySectBView";
 		
 }
 
-string next18c_clicked(){
-
-	if(pilotStudy.question18c == null){
-		Mez:alert("error.select_value");		
-		return null;
-	}
+string backSectB_clicked(){
 	
-	return "pilotStudyQ19";
-		
-}
-
-string back18c_clicked(){
-
-	if(ageOfParticipant>15){		
+	if(pilotStudy.question17 != null){
 		return "pilotStudyQ17";
-	}
+	}else if(pilotStudy.question18a != null){
+		return "pilotStudyQ18A";
+	}else if(pilotStudy.question18b != null){
+		return "pilotStudyQ18B";
+	} 
 
-	if(ageOfParticipant>5){	
-		if(pilotStudy.question11 == "No"){
-		return "pilotStudyQ11";
-		}else{
-		return "pilotStudyQ12";
-		}  
-	}
-  		
-	if(ageOfParticipant>2){		
-		if(pilotStudy.question13c == "No"){
-			return "pilotStudyQ13C";
-		}else{
-			return "pilotStudyQ13D";
-		}    
-	}else{
-		return "pilotStudyQ14";
-	}	
 }
+
 
 string next19_clicked(){
 
@@ -1166,17 +1114,6 @@ string next19_clicked(){
 		
 }
 
-string back19_clicked(){
-
-	if(pilotStudy.question17== "1. Daily"){
-		return "pilotStudyQ18A";
-	}else if(pilotStudy.question17== "2. Yes but not daily"){
-		return "pilotStudyQ18B";
-	}else if(pilotStudy.question17== "3. Not at all"){
-		return "pilotStudyQ18C";
-	}
-	
-}
 
 string next20_clicked(){
 
@@ -1246,37 +1183,37 @@ string next25_clicked(){
 
 string next26_clicked(){
 
-	pilotStudy.question26 = selectedOptionQ26();
-	
-	if(pilotStudy.question26 == null || pilotStudy.question26 == ""){
-		Mez:alert("error.select_value");		
-		return null;
-	}	
-    return "pilotStudyQ27";
-}
-
-string next27_clicked(){
-
-	if(pilotStudy.question27 == null){
+	if(pilotStudy.question26 == null){
 		Mez:alert("error.select_value");		
 		return null;
 	}
 	
-	return "pilotStudyQ28";
+	return "pilotStudySectCView";
 		
+}
+
+
+string next27_clicked(){
+
+	pilotStudy.question27 = selectedOptionQ27();
+	
+	if(pilotStudy.question27 == null || pilotStudy.question27 == ""){
+		Mez:alert("error.select_value");		
+		return null;
+	}	
+    return "pilotStudyQ28";
 }
 
 string next28_clicked(){
 
-	pilotStudy.question28 = selectedOptionQ28();
-	
-	if(pilotStudy.question28 == null || pilotStudy.question28 == ""){
+	if(pilotStudy.question28 == null){
 		Mez:alert("error.select_value");		
 		return null;
-	}	
-    return "pilotStudyQ29";
+	}
+	
+	return "pilotStudyQ29";
+		
 }
-
 
 string next29_clicked(){
 
@@ -1289,16 +1226,18 @@ string next29_clicked(){
     return "pilotStudyQ30";
 }
 
+
 string next30_clicked(){
 
-	if(pilotStudy.question30 == null){
+	pilotStudy.question30 = selectedOptionQ30();
+	
+	if(pilotStudy.question30 == null || pilotStudy.question30 == ""){
 		Mez:alert("error.select_value");		
 		return null;
-	}
-	
-	return "pilotStudyQ31";
-		
+	}	
+    return "pilotStudySectDView";
 }
+
 
 string next31_clicked(){
 

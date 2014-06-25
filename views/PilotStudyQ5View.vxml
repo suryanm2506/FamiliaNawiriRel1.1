@@ -5,12 +5,27 @@
     <view label="healthWorker.pilotStudy.edit.q5.view.label" unit="PilotStudyEdit">
 	
 		<navigation outcome="pilotStudyQ4" target="PilotStudyQ4View" />
-        <navigation outcome="pilotStudyQ6" target="PilotStudyQ6View" />
+        <navigation outcome="pilotStudyQ6" target="PilotStudyQ6View" />		
 		
-        <select label="healthWorker.pilotStudy.edit.label.question5">
-            <binding variable="pilotStudy"><attribute name="question5"/></binding>
-			<collectionSource function="CodeValueList:getHIVStatus"/>
+		<info  label="healthWorker.pilotStudy.edit.label.question5">
+			<binding variable="temp"/>
+		</info>
+		
+        <select label="healthWorker.pilotStudy.edit.label.day">
+            <binding variable="pilotStudy"><attribute name="dobGaurdianDay"/></binding>
+			<collectionSource function="CodeValueList:getDays"/>
         </select>
+		
+        <select label="healthWorker.pilotStudy.edit.label.month">
+            <binding variable="pilotStudy"><attribute name="dobGaurdianMonth"/></binding>
+			<collectionSource function="CodeValueList:getMonths"/>
+        </select>
+		
+        <select label="healthWorker.pilotStudy.edit.label.year">
+            <binding variable="pilotStudy"><attribute name="dobGaurdianYear"/></binding>
+			<collectionSource function="getOptionsYears"/>
+        </select>
+
  
         <button label="healthWorker.pilotStudy.edit.action.back" outcome="pilotStudyQ4"/>
 		<submit label="healthWorker.pilotStudy.edit.action.next" action="PilotStudyEdit:next5_clicked"/>

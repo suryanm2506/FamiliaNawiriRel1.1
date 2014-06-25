@@ -3,15 +3,15 @@
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xsi:schemaLocation="http://uiprogram.mezzanine.com/View ../../xsd/View.xsd">
     <view label="healthWorker.pilotStudy.edit.q31.view.label" unit="PilotStudyEdit">	
-		<navigation outcome="pilotStudyQ30" target="PilotStudyQ30View" />
+		<navigation outcome="pilotStudySectDView" target="PilotStudySectDView" />
 		<navigation outcome="pilotStudyQ32" target="PilotStudyQ32View" />
 		
         <select label="healthWorker.pilotStudy.edit.label.question31">
             <binding variable="pilotStudy"><attribute name="question31"/></binding>
-			<collectionSource function="CodeValueList:getOptionsQ25"/>
+			<collectionSource function="CodeValueList:getOptionsQ30"/>
         </select>
  
-        <button label="healthWorker.pilotStudy.edit.action.back" outcome="pilotStudyQ30"/>
+        <button label="healthWorker.pilotStudy.edit.action.back" outcome="pilotStudySectDView"/>
 		<submit label="healthWorker.pilotStudy.edit.action.next" action="PilotStudyEdit:next31_clicked"/>
     </view>
 </ui>
