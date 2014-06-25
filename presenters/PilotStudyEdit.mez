@@ -113,7 +113,7 @@ MultiSelectObj[] computeOptionsQ37(){
 }
 
 MultiSelectObj[] computeOptionsQ30(){
-	string[] tempOptions = CodeValueList:getOptionsQ30();
+	string[] tempOptions = CodeValueList:getOptionsQ29();
 	MultiSelectObj[] resMultiSelectObj;
 	string[] tmpresult;
 	if(status == "View"){
@@ -139,7 +139,7 @@ MultiSelectObj[] computeOptionsQ30(){
 
 
 MultiSelectObj[] computeOptionsQ29(){
-	string[] tempOptions = CodeValueList:getOptionsQ29();
+	string[] tempOptions = CodeValueList:getOptionsQ28();
 	MultiSelectObj[] resMultiSelectObj;
 	string[] tmpresult;
 	if(status == "View"){
@@ -166,7 +166,7 @@ MultiSelectObj[] computeOptionsQ29(){
 
 
 MultiSelectObj[] computeOptionsQ27(){
-	string[] tempOptions = CodeValueList:getOptionsQ27();
+	string[] tempOptions = CodeValueList:getOptionsQ26();
 	MultiSelectObj[] resMultiSelectObj;
 	string[] tmpresult;
 	if(status == "View"){
@@ -285,14 +285,14 @@ void toggleConditionQ27() {
 
 void toggleCondition() {
     
-    for(int i = optionsQ3.length() - 1; i >= 0; i--) {
-        MultiSelectObj tempObj = optionsQ3.get(i);
-        if(tempObj == optionQ3) {
+    for(int i = optionsQ8.length() - 1; i >= 0; i--) {
+        MultiSelectObj tempObj = optionsQ8.get(i);
+        if(tempObj == optionQ8) {
             if(tempObj.checked == true) {
-				optionQ3.checked = false;
+				optionQ8.checked = false;
 				tempObj.checked = false;
             } else {
-				optionQ3.checked = true;
+				optionQ8.checked = true;
 				tempObj.checked = true;
             }			
         }
@@ -351,7 +351,7 @@ string selectedOptionQ29(){
 }
 
 
-string selectedOptionQ26(){
+string selectedOptionQ27(){
 
 	string returnString = "";
     for(int i = optionsQ27.length() - 1; i >= 0; i--) {
@@ -776,10 +776,6 @@ string next5_clicked(){
 
 string back6_clicked(){
 
-	if(pilotStudy.question6 == null){
-		Mez:alert("error.select_value");		
-		return null;
-	}
 	
 	if(pilotStudy.question5 == null){
 		return "pilotStudyQ4";
@@ -862,7 +858,7 @@ string next10_clicked(){
 
 string back11_clicked(){
 
-	if(pilotStudy.question10 == "No"){
+	if(pilotStudy.question9 == "No"){
 		return "pilotStudyQ9";
 	}else{
 		return "pilotStudyQ10";
@@ -1091,15 +1087,22 @@ string next18b_clicked(){
 }
 
 string backSectB_clicked(){
-	
+
+/*	
 	if(pilotStudy.question17 != null){
 		return "pilotStudyQ17";
-	}else if(pilotStudy.question18a != null){
+	}
+	
+	if(pilotStudy.question18a != null){
 		return "pilotStudyQ18A";
-	}else if(pilotStudy.question18b != null){
+	}else{
 		return "pilotStudyQ18B";
-	} 
+	}
+*/
+	
+	return "pilotStudyQ17";
 
+	
 }
 
 

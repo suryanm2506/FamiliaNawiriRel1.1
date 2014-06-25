@@ -5,7 +5,7 @@
     <view label="healthWorker.pilotStudy.edit.q43.view.label" unit="PilotStudyEdit">	
 
 		<navigation outcome="pilotStudyQ42" target="PilotStudyQ42View" />
-		<navigation outcome="pilotStudySaveConfirm" target="PilotStudySectEView" />		
+		<navigation outcome="pilotStudySaveConfirm" target="PilotStudySectFView" />		
 		
         <select label="healthWorker.pilotStudy.edit.label.question43">
             <binding variable="pilotStudy"><attribute name="question43"/></binding>

@@ -7,12 +7,8 @@
 		<navigation outcome="pilotStudyQ38" target="PilotStudyQ38View" />
         <navigation outcome="pilotStudyQ39" target="PilotStudyQ39View" />
 		
-		<info label="healthWorker.pilotStudy.edit.q30.view.label">
+		<info label="healthWorker.pilotStudy.edit.q31.view.label">
             <binding variable="temp"/>
-        </info>		
-
-		<info label="healthWorker.pilotStudy.edit.label.question30">
-            <binding variable="pilotStudy"><attribute name="question30"/></binding>
         </info>		
  
 		<info label="healthWorker.pilotStudy.edit.label.question31">

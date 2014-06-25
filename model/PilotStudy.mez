@@ -45,7 +45,7 @@ persistent object PilotStudy{
 	string question12;
 	
 	string question13;
-	string question13b;
+	string question13a;
 
 	string question14;
 	string question14a;

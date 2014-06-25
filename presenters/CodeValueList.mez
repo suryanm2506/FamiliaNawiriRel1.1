@@ -101,7 +101,11 @@ void createAllCodeValues(){
 	createCodeValue("OPTIONSQ3","14. Fever/Malaria");
 	createCodeValue("OPTIONSQ3","15. TB");
 	createCodeValue("OPTIONSQ3","16. STI");
-	createCodeValue("OPTIONSQ3","17. Others");
+	createCodeValue("OPTIONSQ3","17. Ear Infection");
+	createCodeValue("OPTIONSQ3","18. Measles");
+	createCodeValue("OPTIONSQ3","19. Routine Immunization");
+	createCodeValue("OPTIONSQ3","20. Eye Infection");	
+	createCodeValue("OPTIONSQ3","21. Others");
 		
 	createCodeValue("SCHOOLING","1. Nursery or kindergarten");
 	createCodeValue("SCHOOLING","2. Post-primary/vocational");
@@ -190,7 +194,7 @@ void createAllCodeValues(){
 	createCodeValue("OPTIONSQ25","5. 3hrs");	
 	createCodeValue("OPTIONSQ25","6. More than 3hrs");		
 	
-	
+	createCodeValue("OPTIONSQ26","00. Do not know");	
 	createCodeValue("OPTIONSQ26","01. Unbalanced diet");
 	createCodeValue("OPTIONSQ26","02. Old food/unwashed food");
 	createCodeValue("OPTIONSQ26","03. Mothers milk");
@@ -215,7 +219,7 @@ void createAllCodeValues(){
 	createCodeValue("OPTIONSQ28","05. Repeated vomiting");	
 	createCodeValue("OPTIONSQ28","06. Fever");		
 	createCodeValue("OPTIONSQ28","07. Blood in stool");
-	createCodeValue("OPTIONSQ28","08. Does not know");
+	createCodeValue("OPTIONSQ28","08. Do not know");
 	createCodeValue("OPTIONSQ28","09. Immediately");	
 	createCodeValue("OPTIONSQ28","10. Others");
 
@@ -228,7 +232,7 @@ void createAllCodeValues(){
 	createCodeValue("OPTIONSQ29","05. Noisy breathing");	
 	createCodeValue("OPTIONSQ29","06. Fever");		
 	createCodeValue("OPTIONSQ29","07. Has a blocked nose");
-	createCodeValue("OPTIONSQ29","08. Does not know");
+	createCodeValue("OPTIONSQ29","08. Do not know");
 	createCodeValue("OPTIONSQ29","09. Immediately");		
 	createCodeValue("OPTIONSQ29","10. Others");
 

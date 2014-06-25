@@ -8,8 +8,8 @@
         <navigation outcome="pilotStudyQ10" target="PilotStudyQ10View" />
 		<navigation outcome="pilotStudyQ11" target="PilotStudyQ11View" />
 		
-        <select label="healthWorker.pilotStudy.edit.label.question4">
-            <binding variable="pilotStudy"><attribute name="question4"/></binding>
+        <select label="healthWorker.pilotStudy.edit.label.question9">
+            <binding variable="pilotStudy"><attribute name="question9"/></binding>
 			<collectionSource function="CodeValueList:getYesNo"/>
         </select>
  

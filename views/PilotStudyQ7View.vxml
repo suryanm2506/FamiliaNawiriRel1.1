@@ -7,8 +7,8 @@
 		<navigation outcome="pilotStudyQ6" target="PilotStudyQ6View" />
         <navigation outcome="pilotStudySectAView" target="PilotStudySectAView" />
 		
-        <select label="healthWorker.pilotStudy.edit.label.question6">
-            <binding variable="pilotStudy"><attribute name="question6"/></binding>
+        <select label="healthWorker.pilotStudy.edit.label.question7">
+            <binding variable="pilotStudy"><attribute name="question7"/></binding>
 			<collectionSource function="CodeValueList:getSchooling"/>
         </select>
  
