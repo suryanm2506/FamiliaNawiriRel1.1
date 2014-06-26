@@ -4,12 +4,12 @@
     xsi:schemaLocation="http://uiprogram.mezzanine.com/View ../../xsd/View.xsd">
     <view label="healthWorker.pilotStudy.edit.q18.view.label" unit="PilotStudyEdit">
 
-		<navigation outcome="pilotStudyQ15" target="PilotStudyQ15View" />
+		<navigation outcome="pilotStudyQ14" target="PilotStudyQ14View" />
 		<navigation outcome="pilotStudyQ14A" target="PilotStudyQ14AView" />		
 		<navigation outcome="pilotStudyQ15" target="PilotStudyQ15View" />
 		<navigation outcome="pilotStudyQ16" target="PilotStudyQ16View" />		
 		
-		<navigation outcome="pilotStudySectBView" target="PilotStudySectBView" />
+		<navigation outcome="pilotStudyBack" target="PilotStudySectBView" />
 	
 		
         <select label="healthWorker.pilotStudy.edit.label.question18b">

@@ -42,17 +42,15 @@
   QUESTION10,
   QUESTION11,
   QUESTION12,
+  QUESTION13,
   QUESTION13A,
-  QUESTION13B,
-  QUESTION13C,
-  QUESTION13D,
   QUESTION14,
+  QUESTION14A,
   QUESTION15,
   QUESTION16,
   QUESTION17,
   QUESTION18A,
   QUESTION18B,
-  QUESTION18C,
   QUESTION19,
   QUESTION20,
   QUESTION21,
@@ -119,17 +117,15 @@ ORDER BY INTERVIEWDATE DESC]]>
 	<field name="QUESTION10" class="java.lang.String"/>
 	<field name="QUESTION11" class="java.lang.String"/>
 	<field name="QUESTION12" class="java.lang.String"/>
+	<field name="QUESTION13" class="java.lang.String"/>
 	<field name="QUESTION13A" class="java.lang.String"/>
-	<field name="QUESTION13B" class="java.lang.String"/>
-	<field name="QUESTION13C" class="java.lang.String"/>
-	<field name="QUESTION13D" class="java.lang.String"/>
 	<field name="QUESTION14" class="java.lang.String"/>
+	<field name="QUESTION14A" class="java.lang.String"/>
 	<field name="QUESTION15" class="java.lang.String"/>
 	<field name="QUESTION16" class="java.lang.String"/>
 	<field name="QUESTION17" class="java.lang.String"/>
 	<field name="QUESTION18A" class="java.lang.String"/>
 	<field name="QUESTION18B" class="java.lang.String"/>
-	<field name="QUESTION18C" class="java.lang.String"/>
 	<field name="QUESTION19" class="java.lang.String"/>
 	<field name="QUESTION20" class="java.lang.String"/>
 	<field name="QUESTION21" class="java.lang.String"/>
@@ -310,23 +306,19 @@ ORDER BY INTERVIEWDATE DESC]]>
 			</staticText>
 			<staticText>
 				<reportElement x="3876" y="0" width="114" height="15" forecolor="#736343" uuid="6f91a9e6-9cdf-418f-8420-b2bd40d85027"/>
-				<text><![CDATA[QUESTION13A]]></text>
+				<text><![CDATA[QUESTION13]]></text>
 			</staticText>
 			<staticText>
 				<reportElement x="3990" y="0" width="114" height="15" forecolor="#736343" uuid="8d6b236e-2d16-49ba-a863-4a50c99455a9"/>
-				<text><![CDATA[QUESTION13B]]></text>
-			</staticText>
-			<staticText>
-				<reportElement x="4104" y="0" width="114" height="15" forecolor="#736343" uuid="01c5ff6e-1238-4870-a2a8-13b95c760f94"/>
-				<text><![CDATA[QUESTION13C]]></text>
+				<text><![CDATA[QUESTION13A]]></text>
 			</staticText>
 			<staticText>
 				<reportElement x="4218" y="0" width="114" height="15" forecolor="#736343" uuid="5a9460bf-2386-4935-afbd-352283dee795"/>
-				<text><![CDATA[QUESTION13D]]></text>
+				<text><![CDATA[QUESTION14]]></text>
 			</staticText>
 			<staticText>
 				<reportElement x="4332" y="0" width="114" height="15" forecolor="#736343" uuid="8b9958f9-a623-4490-a4a7-48c7ad2f3b92"/>
-				<text><![CDATA[QUESTION14]]></text>
+				<text><![CDATA[QUESTION14A]]></text>
 			</staticText>
 			<staticText>
 				<reportElement x="4446" y="0" width="114" height="15" forecolor="#736343" uuid="49368625-4f45-40c6-adb0-4170b2343441"/>
@@ -347,10 +339,6 @@ ORDER BY INTERVIEWDATE DESC]]>
 			<staticText>
 				<reportElement x="4902" y="0" width="114" height="15" forecolor="#736343" uuid="022c818d-8e75-44cf-a8cf-3c3b6986b2ce"/>
 				<text><![CDATA[QUESTION18B]]></text>
-			</staticText>
-			<staticText>
-				<reportElement x="5016" y="0" width="114" height="15" forecolor="#736343" uuid="9a18f98f-bfc9-47fe-81b8-5dae6aa319ca"/>
-				<text><![CDATA[QUESTION18C]]></text>
 			</staticText>
 			<staticText>
 				<reportElement x="5130" y="0" width="114" height="15" forecolor="#736343" uuid="d3e94432-43a1-42cd-b8c6-9f5a2f0d488d"/>
@@ -596,23 +584,19 @@ ORDER BY INTERVIEWDATE DESC]]>
 				</textField>
 				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
 					<reportElement x="3876" y="0" width="114" height="15" uuid="3bda0c0b-f0c0-4c0f-825b-b36269bbaa37"/>
-					<textFieldExpression><![CDATA[$F{QUESTION13A}]]></textFieldExpression>
+					<textFieldExpression><![CDATA[$F{QUESTION13}]]></textFieldExpression>
 				</textField>
 				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
 					<reportElement x="3990" y="0" width="114" height="15" uuid="ad2a0e90-3ebf-46fd-8eac-155dd72b245d"/>
-					<textFieldExpression><![CDATA[$F{QUESTION13B}]]></textFieldExpression>
-				</textField>
-				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
-					<reportElement x="4104" y="0" width="114" height="15" uuid="d0e96175-05cf-47d0-b50d-e8e37ed2f07d"/>
-					<textFieldExpression><![CDATA[$F{QUESTION13C}]]></textFieldExpression>
+					<textFieldExpression><![CDATA[$F{QUESTION13A}]]></textFieldExpression>
 				</textField>
 				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
 					<reportElement x="4218" y="0" width="114" height="15" uuid="a09d7331-3acb-4039-b375-fb75f4b83038"/>
-					<textFieldExpression><![CDATA[$F{QUESTION13D}]]></textFieldExpression>
+					<textFieldExpression><![CDATA[$F{QUESTION14}]]></textFieldExpression>
 				</textField>
 				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
 					<reportElement x="4332" y="0" width="114" height="15" uuid="2783bb5e-6d0d-4fb0-b4d5-e0a5b0181138"/>
-					<textFieldExpression><![CDATA[$F{QUESTION14}]]></textFieldExpression>
+					<textFieldExpression><![CDATA[$F{QUESTION14A}]]></textFieldExpression>
 				</textField>
 				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
 					<reportElement x="4446" y="0" width="114" height="15" uuid="4047e1b0-d83d-4a11-9c67-9556c70d5760"/>
@@ -633,10 +617,6 @@ ORDER BY INTERVIEWDATE DESC]]>
 				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
 					<reportElement x="4902" y="0" width="114" height="15" uuid="58cdea0b-49cd-40eb-977f-7ba49901ad61"/>
 					<textFieldExpression><![CDATA[$F{QUESTION18B}]]></textFieldExpression>
-				</textField>
-				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
-					<reportElement x="5016" y="0" width="114" height="15" uuid="3ed9d50f-c24d-4997-9644-c96c61cf6ad0"/>
-					<textFieldExpression><![CDATA[$F{QUESTION18C}]]></textFieldExpression>
 				</textField>
 				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
 					<reportElement x="5130" y="0" width="114" height="15" uuid="cc11a7ca-7209-4d4d-8ee2-4e75059f1608"/>

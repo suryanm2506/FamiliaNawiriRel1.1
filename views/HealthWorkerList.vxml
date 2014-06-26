@@ -4,6 +4,8 @@
     xsi:schemaLocation="http://uiprogram.mezzanine.com/View ../views/xsd/View.xsd">
     <view label="admin.healthWorkerList.title" unit="HealthWorkerList" init="init">
 
+	    <navigation outcome="pilotStudyDelete" target="PilotStudyFilterTableDeleteView"/>    
+		
         <menuitem label="admin.healthWorkerList.menu" icon="Users" order="1">
             <userRole>Administrator</userRole>
         </menuitem>
@@ -27,7 +29,8 @@
 		
         <submit label="admin.healthWorkerList.submitInvite" action="submitInvite"/>
 		<button label="admin.healthWorkerList.initializeMasters" action="CodeValueList:createAllCodeValues"/>
-		<button label="admin.healthWorkerList.ClearAll" action="CodeValueList:clearAllRecords"/>		
+		<button label="admin.healthWorkerList.ClearAll" action="CodeValueList:clearAllRecords"/>	
+		<button label="admin.healthWorkerList.pilotStudy.Delete" outcome="pilotStudyDelete"/>
 
         <table title="admin.healthWorkerList.list.title">
             <collectionSource function="getHealthWorkers"/>

@@ -49,6 +49,7 @@ admin.healthWorkerList.ClearAll=Clear All Master Data
 admin.healthWorkerList.phoneNumber=Re-Enter Mobile Number
 admin.healthWorkerList.invite.firstName=First Name
 admin.healthWorkerList.invite.lastName=Last Name
+admin.healthWorkerList.pilotStudy.Delete=Delete Pilot Studies
 
 admin.healthWorkerList.list.table.rowAction.delete = Delete
 
@@ -59,7 +60,7 @@ healthWorker.mainMenu.option2=Family Questionnaire
 
 healthWorker.pilotStudyMenu.title=Pilot Study Menu
 healthWorker.pilotStudyMenu.option1=New Interview
-healthWorker.pilotStudyMenu.option2=View Interview
+healthWorker.pilotStudyMenu.option2=Edit Interview
 healthWorker.pilotStudyMenu.option3=Main Menu
 
 
@@ -92,7 +93,9 @@ healthWorker.pilotStudy.edit.label.visitReason=Reason for Visiting the Health Fa
 healthWorker.pilotStudy.filter.view.label=Filter Criteria
 healthWorker.pilotStudy.filter.view.ward.label=Filter Criteria-Ward Name
 healthWorker.pilotStudy.filter.interview.label=Select Pilot Study to View
+healthWorker.pilotStudy.filter.interview.label.delete=Select Pilot Study to Delete
 healthWorker.pilotStudy.edit.label.question.button.view=View
+healthWorker.pilotStudy.edit.label.question.button.delete=Delete
 
 healthWorker.pilotStudy.edit.action.cancel.confirm=Changes will be lost. Do you want to continue?
 healthWorker.pilotStudy.edit.action.cancel.subject=Deleting the Interview
@@ -124,22 +127,21 @@ healthWorker.pilotStudy.edit.sect.view.label=Review Data Input
 healthWorker.pilotStudy.edit.label.question1=Q1. Has the informed consent been sorted and received from the participant, parent or guardian?
 healthWorker.pilotStudy.edit.label.question2=Q2. Has participant lived in same village for the last 6 months?
 healthWorker.pilotStudy.edit.label.question3=Q3. Gender
-healthWorker.pilotStudy.edit.label.question4=Q4. Age of participant (DOB)
-healthWorker.pilotStudy.edit.label.question5=Q5. Age of mother or guardian (DOB) 
+healthWorker.pilotStudy.edit.label.question4=Q4. Age of participant (DOB). If date not known pick 15, if month not known pick June.
+healthWorker.pilotStudy.edit.label.question5=Q5. Age of mother or guardian (DOB). If date not known pick 15, if month not known pick June. 
 healthWorker.pilotStudy.edit.label.question6=Q6. Have you ever attended school?
 healthWorker.pilotStudy.edit.label.question7=Q7. What is the highest level of school you have attended?
 healthWorker.pilotStudy.edit.label.question8=Q8. Reason for attending health facility today (Medical condition or service)
 healthWorker.pilotStudy.edit.label.question9=Q9. Do you know your HIV status?
 healthWorker.pilotStudy.edit.label.question10=Q10. What is your HIV status?
 healthWorker.pilotStudy.edit.label.question11=Q11. Have you suffered from diarrhea in the last two weeks?
-healthWorker.pilotStudy.edit.label.question12=Q12. Have you suffered from any respiratory infection or symptom such as (pneumonia, bronchitis,
-cold/cough, difficulty breathing, chest pain, sore throat, sneezing, or runny nose) in the last 2 weeks
+healthWorker.pilotStudy.edit.label.question12=Q12. Have you suffered from any respiratory infection or symptom such as (pneumonia, bronchitis, cold/cough, difficulty breathing, chest pain, sore throat, sneezing, or runny nose) in the last 2 weeks
 healthWorker.pilotStudy.edit.label.question13=Q13. Did you receive Rotavirus Vaccination?
 healthWorker.pilotStudy.edit.label.question13a=Q13a. Is there a vaccination card to verify Rotavirus Vaccination?
 healthWorker.pilotStudy.edit.label.question14=Q14. Did you receive Pneumococcal Vaccination?
 healthWorker.pilotStudy.edit.label.question14a=Q14a. Is there a vaccination card to verify Pneumococcal Vaccination?
 healthWorker.pilotStudy.edit.label.question15=Q15. Was the child breastfed or is the child breastfeeding?
-healthWorker.pilotStudy.edit.label.question16=Q16. Do you currently smoke any tobacco products such as cigarettes or hand-rolled cigarettes
+healthWorker.pilotStudy.edit.label.question16=Q16. Do you currently smoke any tobacco products such as cigarettes or hand-rolled cigarettes?
 healthWorker.pilotStudy.edit.label.question17=Q17. How many cigarettes per day do you smoke?
 healthWorker.pilotStudy.edit.label.question18a=Q18. How many cigarettes per week do you smoke?
 healthWorker.pilotStudy.edit.label.question18b=Q18. Do you live with a family member who smokes?
@@ -148,7 +150,7 @@ healthWorker.pilotStudy.edit.label.question20=Q20. How many rooms for sleeping d
 healthWorker.pilotStudy.edit.label.question21=Q21. What is the main material of the exterior wall?
 healthWorker.pilotStudy.edit.label.question22=Q22. What is the main material of the floor?
 healthWorker.pilotStudy.edit.label.question23=Q23. What is the main material of the roof?
-healthWorker.pilotStudy.edit.label.question24=Q24. What mode of transport do you use to get to your nearest health facility
+healthWorker.pilotStudy.edit.label.question24=Q24. What mode of transport do you use to get to your nearest health facility?
 healthWorker.pilotStudy.edit.label.question25=Q25. How long does it take to get to the health facility from your house?
 healthWorker.pilotStudy.edit.label.question26=Q26. How far do you travel to get to your main source of water?
 healthWorker.pilotStudy.edit.label.question27=Q27. Do you know what causes diarrhea? (More than one answers possible)

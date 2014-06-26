@@ -45,6 +45,6 @@
 
 		
 		<button label="healthWorker.pilotStudy.edit.action.back" outcome="pilotStudyQ38"/>
-		<button label="healthWorker.pilotStudy.edit.action.reviewed" outcome="pilotStudyQ39"/>
+		<button label="healthWorker.pilotStudy.edit.action.reviewed" action="PilotStudyEdit:nextSectE_clicked"/>
     </view>
 </ui>

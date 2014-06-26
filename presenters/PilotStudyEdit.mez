@@ -606,18 +606,18 @@ string savePilotStudy(){
 
 	if(status == "New"){
 		pilotStudy.save();
-		Mez:alert("healthWorker.pilotStudy.edit.action.saved");
+		//Mez:alert("healthWorker.pilotStudy.edit.action.saved");
 		status = null;
 		saveCalledForm=null;
 		return "pilotStudyMenu";
 	}else{
-		Mez:alert("healthWorker.pilotStudy.edit.action.viewSaved");
+		pilotStudy.save();
+		//Mez:alert("healthWorker.pilotStudy.edit.action.viewSaved");
 		status = null;
 		saveCalledForm=null;
 		return "pilotStudyMenu";		
 	}
 	
-
 }
 
 
@@ -1055,9 +1055,8 @@ string next18a_clicked(){
 
 string back18b_clicked(){
 
-	if(pilotStudy.question16 != null){
-		return "pilotStudyQ16";
-	}else {
+	/*
+	if(pilotStudy.question16 == null){		
 		if(ageOfParticipant<2){			
 			return "pilotStudyQ15";	
 		}else if (ageOfParticipant<5){
@@ -1071,7 +1070,12 @@ string back18b_clicked(){
 			return "pilotStudyQ12";					
 		}
 		
-	} 
+	}else{
+		return "pilotStudyQ16";
+	}	
+	*/
+	
+	return "pilotStudyQ16";
 	
 }
 
@@ -1082,13 +1086,12 @@ string next18b_clicked(){
 		return null;
 	}
 	
-	return "pilotStudySectBView";
+	return "pilotStudyBack";
 		
 }
 
 string backSectB_clicked(){
 
-/*	
 	if(pilotStudy.question17 != null){
 		return "pilotStudyQ17";
 	}
@@ -1098,7 +1101,6 @@ string backSectB_clicked(){
 	}else{
 		return "pilotStudyQ18B";
 	}
-*/
 	
 	return "pilotStudyQ17";
 
@@ -1451,3 +1453,36 @@ string saveConfirm_clicked(){
 	return savePilotStudy();
 }
 
+string nextSectA_clicked(){
+
+	savePilotStudy();
+	return "pilotStudyQ8";
+	
+}
+
+string nextSectB_clicked(){
+
+	savePilotStudy();
+	return "pilotStudyQ19";
+	
+}
+
+string nextSectC_clicked(){
+
+	savePilotStudy();
+	return "pilotStudyQ27";
+	
+}
+
+string nextSectD_clicked(){
+
+	savePilotStudy();
+	return "pilotStudyQ31";
+	
+}
+
+
+string nextSectE_clicked(){
+	savePilotStudy();
+	return "pilotStudyQ39";	
+}

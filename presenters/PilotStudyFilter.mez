@@ -109,6 +109,10 @@ string filterCancel_clicked(){
 	return "pilotStudyMenu";
 }
 
-
+PilotStudy[] getAllPilotStudies(){
+	return PilotStudy:notEmpty(participantID);
+}
+	
+void deletePilotStudy(){PilotStudy:delete(filterPilotStudy);}
 
 
