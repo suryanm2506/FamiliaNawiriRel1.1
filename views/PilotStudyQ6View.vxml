@@ -9,7 +9,11 @@
 		<navigation outcome="pilotStudyQ7" target="PilotStudyQ7View" />
         <navigation outcome="pilotStudySectAView" target="PilotStudySectAView" />	
 		
-        <select label="healthWorker.pilotStudy.edit.label.question6">
+		<info label="healthWorker.pilotStudy.edit.label.question6">
+            <binding variable="temp"/>
+        </info>		
+		
+        <select label="healthWorker.pilotStudy.edit.label.blanklabel">
             <binding variable="pilotStudy"><attribute name="question6"/></binding>
 			<collectionSource function="CodeValueList:getYesNo"/>
         </select>
