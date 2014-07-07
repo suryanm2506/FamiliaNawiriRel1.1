@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="report21" pageWidth="842" pageHeight="595" orientation="Landscape" columnWidth="802" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="3afcb603-9ac6-4d26-89b7-d31144e94694">
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="Helium"/>	
+	<style name="Row" mode="Transparent">
+		<conditionalStyle>
+			<conditionExpression><![CDATA[$V{REPORT_COUNT}%2 == 0]]></conditionExpression>
+			<style backcolor="#E6DAC3"/>
+		</conditionalStyle>
+	</style>
+	<parameter name="SCHEMA_NAME" class="java.lang.String">
+		<defaultValueExpression><![CDATA["sandboxed_novpilotstudy_001"]]></defaultValueExpression>
+	</parameter>		
+	<queryString language="SQL">
+		<![CDATA[select _id_, firstname, lastname, phonenumber, registered from $P!{SCHEMA_NAME} .HEALTHWORKER order by registered]]>
+	</queryString>
+	<field name="_ID_" class="java.lang.String"/>
+	<field name="FIRSTNAME" class="java.lang.String"/>
+	<field name="LASTNAME" class="java.lang.String"/>
+	<field name="PHONENUMBER" class="java.lang.String"/>
+	<field name="REGISTERED" class="java.sql.Timestamp"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch"/>
+	</title>
+	<pageHeader>
+		<band height="35" splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="24" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="2" width="235" height="20" uuid="cca282b3-2c7f-469a-9540-7bc9148b1d06"/>
+				<text><![CDATA[_ID_]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="249" y="2" width="148" height="20" uuid="e857ec6d-0e1e-4c8b-bbf9-c7b99c0d3fd4"/>
+				<text><![CDATA[FIRSTNAME]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="409" y="2" width="147" height="20" uuid="1ca87932-8e99-4efa-98a1-0fda7c1b4805"/>
+				<text><![CDATA[LASTNAME]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="572" y="2" width="100" height="20" uuid="c030746c-e45a-404d-8d7b-1aed93e416e7"/>
+				<text><![CDATA[PHONENUMBER]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="690" y="2" width="100" height="20" uuid="e736a73b-3955-487e-a4ae-13cc38bf2beb"/>
+				<text><![CDATA[REGISTERED]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="21" splitType="Stretch">
+			<textField>
+				<reportElement x="0" y="0" width="235" height="20" uuid="07a24efc-1da6-459d-b79a-fabb2824bd58"/>
+				<textFieldExpression><![CDATA[$F{_ID_}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="249" y="0" width="148" height="20" uuid="e1442c2b-0467-445b-8135-337aa6043842"/>
+				<textFieldExpression><![CDATA[$F{FIRSTNAME}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="409" y="0" width="147" height="20" uuid="18891654-1799-406f-bdbd-2348c1f8c7da"/>
+				<textFieldExpression><![CDATA[$F{LASTNAME}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="572" y="0" width="100" height="20" uuid="085b01f4-ea2f-4af4-87d3-90363614b7aa"/>
+				<textFieldExpression><![CDATA[$F{PHONENUMBER}]]></textFieldExpression>
+			</textField>
+			<textField pattern="dd/MM/yyyy HH:mm">
+				<reportElement x="690" y="0" width="100" height="20" uuid="39f32cad-f832-44df-b387-7235f0f712ab"/>
+				<textFieldExpression><![CDATA[$F{REGISTERED}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<pageFooter>
+		<band height="54" splitType="Stretch"/>
+	</pageFooter>
+</jasperReport>

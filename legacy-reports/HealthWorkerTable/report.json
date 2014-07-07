@@ -1,0 +1,5 @@
+{
+	"name":"Health Worker Table Extract",
+	"description":"Health Worker Table Extract",
+	"rolesAllowed":["Administrator"]
+}

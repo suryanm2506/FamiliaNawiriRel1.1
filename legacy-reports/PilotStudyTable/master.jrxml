@@ -76,17 +76,12 @@
   QUESTION41,
   QUESTION42,
   QUESTION43,
-  FIRSTNAME,
-  LASTNAME,
-  PHONENUMBER
-FROM $P!{SCHEMA_NAME} .PILOTSTUDY p LEFT OUTER JOIN $P!{SCHEMA_NAME} .HEALTHWORKER h
-ON p.HEALTHWORKER_FK = h._ID_
+  HEALTHWORKER_FK
+FROM $P!{SCHEMA_NAME} .PILOTSTUDY 
 ORDER BY INTERVIEWDATE DESC]]>
 	</queryString>
 	<field name="INTERVIEWDATE" class="java.sql.Timestamp"/>
-	<field name="FIRSTNAME" class="java.lang.String"/>
-	<field name="LASTNAME" class="java.lang.String"/>
-	<field name="PHONENUMBER" class="java.lang.String"/>
+	<field name="HEALTHWORKER_FK" class="java.lang.String"/>
 	<field name="IC1" class="java.lang.String"/>
 	<field name="IC2" class="java.lang.String"/>
 	<field name="IC3" class="java.lang.String"/>
@@ -173,16 +168,8 @@ ORDER BY INTERVIEWDATE DESC]]>
 				<text><![CDATA[INTERVIEWDATE]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="114" y="0" width="114" height="15" forecolor="#736343" uuid="d3940257-6fb5-4e74-82b2-8341dc2f5374"/>
-				<text><![CDATA[FIRSTNAME]]></text>
-			</staticText>
-			<staticText>
-				<reportElement x="228" y="0" width="114" height="15" forecolor="#736343" uuid="48050c8e-b93c-4b3e-b2b6-de09c3a8cc01"/>
-				<text><![CDATA[LASTNAME]]></text>
-			</staticText>
-			<staticText>
-				<reportElement x="342" y="0" width="114" height="15" forecolor="#736343" uuid="5e3edea8-915b-4461-b62e-3c4b8b5de28f"/>
-				<text><![CDATA[PHONENUMBER]]></text>
+				<reportElement x="114" y="0" width="342" height="15" forecolor="#736343" uuid="d3940257-6fb5-4e74-82b2-8341dc2f5374"/>
+				<text><![CDATA[HEALTHWORKER_FK]]></text>
 			</staticText>
 			<staticText>
 				<reportElement x="456" y="0" width="114" height="15" forecolor="#736343" uuid="9c83a11e-8a8a-4c77-b071-0aa5451ffcf6"/>
@@ -451,16 +438,8 @@ ORDER BY INTERVIEWDATE DESC]]>
 					<textFieldExpression><![CDATA[$F{INTERVIEWDATE}]]></textFieldExpression>
 				</textField>
 				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
-					<reportElement x="114" y="0" width="114" height="15" uuid="916447e7-cdda-4696-9a87-f25cba6db80d"/>
-					<textFieldExpression><![CDATA[$F{FIRSTNAME}]]></textFieldExpression>
-				</textField>
-				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
-					<reportElement x="228" y="0" width="114" height="15" uuid="ac9c48b2-539a-44f7-917d-486c7431682f"/>
-					<textFieldExpression><![CDATA[$F{LASTNAME}]]></textFieldExpression>
-				</textField>
-				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
-					<reportElement x="342" y="0" width="114" height="15" uuid="acd1bcba-f3c1-486b-ae0c-e13ad1b5f067"/>
-					<textFieldExpression><![CDATA[$F{PHONENUMBER}]]></textFieldExpression>
+					<reportElement x="114" y="0" width="342" height="15" uuid="916447e7-cdda-4696-9a87-f25cba6db80d"/>
+					<textFieldExpression><![CDATA[$F{HEALTHWORKER_FK}]]></textFieldExpression>
 				</textField>
 				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
 					<reportElement x="456" y="0" width="114" height="15" uuid="c245e178-98f4-4b2a-ac2c-62b74a0c770a"/>
